@@ -1,0 +1,35 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "MRSEM_KEY"; 
+            externalType = NUMBER; 
+            name = mrsemKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "RNAFF_ETAT"; 
+            externalType = NUMBER; 
+            name = rnaffEtat; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (mrsemKey); 
+    className = IpBilanrnOk; 
+    classProperties = (fannKey, mrsemKey, rnaffEtat); 
+    externalName = "IP_BILANRN_OK"; 
+    fetchSpecificationDictionary = {}; 
+    name = IpBilanrnOk; 
+    primaryKeyAttributes = (mrsemKey); 
+}

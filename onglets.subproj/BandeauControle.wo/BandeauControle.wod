@@ -1,0 +1,46 @@
+GenericContainer1: WOGenericContainer {
+	background = uneOption.srcImgOM;
+	elementName = "TD";
+	width = 68;
+	ALIGN="CENTER";
+	VALIGN="MIDDLE";
+}
+
+Repetition1: WORepetition {
+	item = uneOption;
+	list = menuCtrlr.listeOptions;
+}
+
+hl1: WOHyperlink {
+	action = choixOM;
+	disabled = uneOption.lienInactif;
+}
+
+imFiller: WOImage {
+	alt = "F";
+	border = 0;
+	height = 54;
+	src = menuCtrlr.imgBtBFiller;
+	width = 9;
+}
+
+imFillerAfter: WOImage {
+	alt = "F";
+	border = 0;
+	height = 54;
+	src = uneOption.imgBtBFiller;
+	width = 15;
+}
+
+imFinLigneOnglets: WOImage {
+	alt = "F";
+	border = 0;
+	height = 54;
+	src = "images/cadreSeul_HautD.gif";
+	width = 9;
+}
+
+sOM1: WOString {
+	value = uneOption.titreOM;
+}
+

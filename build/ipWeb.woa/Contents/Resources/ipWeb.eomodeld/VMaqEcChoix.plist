@@ -1,0 +1,162 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MEC_CODE"; 
+            externalType = VARCHAR2; 
+            name = mecCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "MEC_HORAIRE_ETU"; 
+            externalType = NUMBER; 
+            name = mecHoraireEtu; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            columnName = "MEC_KEY"; 
+            externalType = NUMBER; 
+            name = mecKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MEC_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = mecLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "MEC_LIBELLE_COURT"; 
+            externalType = VARCHAR2; 
+            name = mecLibelleCourt; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "MEC_POINTS"; 
+            externalType = NUMBER; 
+            name = mecPoints; 
+            precision = 4; 
+            scale = 2; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }, 
+        {
+            columnName = "MREC_KEY"; 
+            externalType = NUMBER; 
+            name = mrecKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MREC_ORDRE"; 
+            externalType = NUMBER; 
+            name = mrecOrdre; 
+            precision = 2; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MUE_KEY"; 
+            externalType = NUMBER; 
+            name = mueKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NBH_CM"; 
+            externalType = NUMBER; 
+            name = nbhCm; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NBH_TD"; 
+            externalType = NUMBER; 
+            name = nbhTd; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NBH_TP"; 
+            externalType = NUMBER; 
+            name = nbhTp; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }
+    ); 
+    attributesUsedForLocking = (mrecKey); 
+    className = EOGenericRecord; 
+    classProperties = (
+        fannKey, 
+        mecCode, 
+        mecHoraireEtu, 
+        mecKey, 
+        mecLibelle, 
+        mecLibelleCourt, 
+        mecPoints, 
+        mrecKey, 
+        mrecOrdre, 
+        mueKey, 
+        nbhCm, 
+        nbhTd, 
+        nbhTp, 
+        toRepartEcComment
+    ); 
+    externalName = "V_MAQ_EC_CHOIX"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            fannKey, 
+            mecCode, 
+            mecHoraireEtu, 
+            mecKey, 
+            mecLibelle, 
+            mecLibelleCourt, 
+            mecPoints, 
+            mrecKey, 
+            mrecOrdre, 
+            mueKey, 
+            nbhCm, 
+            nbhTd, 
+            nbhTp
+        ); 
+    }; 
+    name = VMaqEcChoix; 
+    primaryKeyAttributes = (mrecKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = RepartEcComment; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mrecKey; sourceAttribute = mrecKey; }); 
+            name = toRepartEcComment; 
+            propagatesPrimaryKey = Y; 
+        }
+    ); 
+}

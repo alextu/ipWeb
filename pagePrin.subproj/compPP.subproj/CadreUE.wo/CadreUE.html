@@ -1,0 +1,169 @@
+<fieldset>
+	<legend>Unit&eacute; d'Enseignement&nbsp;
+		<WEBOBJECT NAME=String7></WEBOBJECT>&nbsp;:&nbsp;
+		<B><WEBOBJECT NAME=AncreUE2><WEBOBJECT NAME=String14></WEBOBJECT></WEBOBJECT></B>
+		<WEBOBJECT NAME=Cdebug>&nbsp;(<WEBOBJECT NAME=String18></WEBOBJECT>)</WEBOBJECT>
+	</legend>
+<DIV class=hide><WEBOBJECT NAME=chpCacheUEDetail></WEBOBJECT></DIV>
+<P>
+		<TABLE CELLPADDING=0 BORDER=0 CELLSPACING=0>
+			<WEBOBJECT NAME=GC_TR_RESUM>
+				<TD WIDTH=30 ALIGN=LEFT>
+					<WEBOBJECT NAME=DIV_DETAIL><WEBOBJECT NAME=imgDetaille></WEBOBJECT></WEBOBJECT>
+					<WEBOBJECT NAME=DIV_MASQUER_DETAIL><WEBOBJECT NAME=imgCacherDet></WEBOBJECT></WEBOBJECT>
+				</TD>
+				<TD WIDTH=460>
+					<B>
+						UE<WEBOBJECT NAME=SOrdreUE></WEBOBJECT>&nbsp;-
+						<WEBOBJECT NAME=SNomUe></WEBOBJECT>&nbsp;:&nbsp; 
+						<FONT COLOR=#b4016c><WEBOBJECT NAME=SNbrePointsUE></WEBOBJECT></FONT>
+					</B>
+				</TD>
+				<TD WIDTH=30 ALIGN=CENTER>
+					<WEBOBJECT NAME=CChoixAFaireUE>
+						<WEBOBJECT NAME=ImageUEincomplete></WEBOBJECT>
+					</WEBOBJECT>
+					<WEBOBJECT NAME=CChoixOkUE>
+						<WEBOBJECT NAME=ImageUeOK></WEBOBJECT>
+					</WEBOBJECT>
+				</TD>
+				<TD WIDTH=300 ALIGN=LEFT>
+					<WEBOBJECT NAME=CUeAvecChoix>
+						<WEBOBJECT NAME=CPasEnModeModif>
+							<WEBOBJECT NAME=lienVersModifUEavecPbEcts>
+								<WEBOBJECT NAME=cssUE>
+									<WEBOBJECT NAME=SMsgEctsUE></WEBOBJECT>
+								</WEBOBJECT>
+							</WEBOBJECT>
+						</WEBOBJECT>
+						<WEBOBJECT NAME=CEnModeModif>
+							<WEBOBJECT NAME=cssUE>
+								<WEBOBJECT NAME=SMsgEctsUE></WEBOBJECT>
+							</WEBOBJECT>
+						</WEBOBJECT>
+					</WEBOBJECT>
+					<WEBOBJECT NAME=CUeSansChoix>
+						<WEBOBJECT NAME=cssUE>
+							<WEBOBJECT NAME=SMsgEctsUE></WEBOBJECT>
+						</WEBOBJECT>
+					</WEBOBJECT>
+				</TD>
+			</WEBOBJECT>
+		</TABLE>
+		<WEBOBJECT NAME=DIV_CTDETAIL>
+			<WEBOBJECT NAME=CIpAuxEc>
+				<TABLE BGCOLOR=#afb7cc BORDER=0 CELLSPACING=1 CELLPADDING=0>
+					<TR>
+						<TH WIDTH=60><FONT COLOR=#000000><FONT SIZE=2>Type EC</FONT></FONT></TH>
+						<TH WIDTH=360><FONT COLOR=#000000>Elements Constitutifs (EC)</FONT></TH>
+						<TH WIDTH=40><FONT COLOR=#800080>ECTS</FONT></TH>
+						<TH WIDTH=360><FONT COLOR=#000000>Remarques</FONT></TH>
+					</TR>
+					<WEBOBJECT NAME=RepetitionEcAAfficher>
+						<WEBOBJECT NAME=GC_TR>
+							<TD ALIGN=CENTER WIDTH=60>
+								<WEBOBJECT NAME=CEcBloque>
+									<B><WEBOBJECT NAME=flyOverTypeEc>
+											<WEBOBJECT NAME=STypeEcEnCours></WEBOBJECT>
+										</WEBOBJECT>
+									</B>
+								</WEBOBJECT>
+								<WEBOBJECT NAME=CEcNonBloque>
+									<WEBOBJECT NAME=CBEcEnCours></WEBOBJECT>
+								</WEBOBJECT>
+							</TD>
+							<TD WIDTH=360>
+								<WEBOBJECT NAME=CEcEnErreur>
+									<WEBOBJECT NAME=ImageCroix></WEBOBJECT>
+								</WEBOBJECT>&nbsp;
+								<WEBOBJECT NAME=SlibelleLongEc></WEBOBJECT>&nbsp;
+								<FONT COLOR=#800080><I>(<WEBOBJECT NAME=SNbHCmTdTp></WEBOBJECT>)</I></FONT>
+								<WEBOBJECT NAME=Cdebug>
+									&nbsp;(<WEBOBJECT NAME=SCodeEc></WEBOBJECT>&nbsp;-&nbsp;<WEBOBJECT NAME=SMrecKey></WEBOBJECT>)
+								</WEBOBJECT>
+							</TD>
+							<TD ALIGN=CENTER WIDTH=40>
+								<FONT SIZE=3>
+									<WEBOBJECT NAME=CEcAvecIp>
+										<B>
+											<WEBOBJECT NAME=SPointsECTS></WEBOBJECT>
+										</B>
+									</WEBOBJECT>
+									<WEBOBJECT NAME=CEcSansIp>
+										<WEBOBJECT NAME=SPointsECTS></WEBOBJECT>
+									</WEBOBJECT>
+								</FONT>
+							</TD>
+							<TD WIDTH=360>
+								<WEBOBJECT NAME=Generic1>
+									<WEBOBJECT NAME=CEcEnErreurSansConseil>
+										<WEBOBJECT NAME=SMsgStatutEc></WEBOBJECT>
+									</WEBOBJECT>
+									<WEBOBJECT NAME=CEcEnErreurAvecConseil>
+										<WEBOBJECT NAME=lienVersMsgErrFlyOver>
+											<WEBOBJECT NAME=SMsgStatutEc></WEBOBJECT>
+										</WEBOBJECT>
+									</WEBOBJECT>
+								</WEBOBJECT>
+							</TD>
+						</WEBOBJECT>
+					</WEBOBJECT>
+				</TABLE>
+				<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=0>
+					<TR>
+						<TD ALIGN=LEFT WIDTH=320 HEIGHT=30>
+							<WEBOBJECT NAME=CUeAvecChoix>
+								<WEBOBJECT NAME=CEnModeModif>
+									<WEBOBJECT NAME=SBValiderModif></WEBOBJECT>&nbsp;&nbsp;&nbsp;&nbsp;
+									<WEBOBJECT NAME=SBannulerModif></WEBOBJECT>
+								</WEBOBJECT>
+								<WEBOBJECT NAME=CPasEnModeModif>
+									<webobject name = CUeNonFacultative>
+										<WEBOBJECT NAME=SBdemanderModif></WEBOBJECT>
+									</webobject>
+									<webobject name = CUeFacultativeEtChoixPossible>
+										<WEBOBJECT NAME=SBdemanderModif></WEBOBJECT>
+									</webobject>	
+										
+								</WEBOBJECT>
+							</WEBOBJECT>
+						</TD>
+						<TD ALIGN=RIGHT WIDTH=100 VALIGN=MIDDLE>
+							<webobject name = CUeNonFacultative>
+								<B>Total ECTS&nbsp;:&nbsp;</B>
+							</webobject>
+						</TD>
+						<TD ALIGN=CENTER WIDTH=40 VALIGN=MIDDLE>
+							<webobject name = CUeNonFacultative>
+								<FONT SIZE=4><B>
+									<WEBOBJECT NAME=GCcoulTexteCumulEcts>
+										<WEBOBJECT NAME=SCumulEctsUe></WEBOBJECT>
+									</WEBOBJECT>
+								</B></FONT>
+							</webobject>	
+						</TD>
+						<TD VALIGN=MIDDLE WIDTH=360>
+							<WEBOBJECT NAME=CAfficheMsgCumulECTS>
+								<WEBOBJECT NAME=CUeEnErreur>
+									<WEBOBJECT NAME=ImageCroix></WEBOBJECT>
+								</WEBOBJECT>
+								<WEBOBJECT NAME=GCcoulTexteCumulEcts>
+									<WEBOBJECT NAME=SMsgCumulEcts></WEBOBJECT>
+								</WEBOBJECT>
+							</WEBOBJECT>
+						</TD>
+					</TR>
+				</TABLE>
+			</WEBOBJECT>
+			<WEBOBJECT NAME=CAucuneIpAuxEc>
+				<B><I>
+					<WEBOBJECT NAME=AncreUE>
+						Aucune inscription&nbsp;prise pour cette UE pour l'instant...
+					</WEBOBJECT>
+				</I></B>
+				<WEBOBJECT NAME=CPasEnModeModif>&nbsp;:&nbsp;
+					<WEBOBJECT NAME=SBAjouterChoix></WEBOBJECT>
+				</WEBOBJECT>
+			</WEBOBJECT>
+		</WEBOBJECT>
+</fieldset>

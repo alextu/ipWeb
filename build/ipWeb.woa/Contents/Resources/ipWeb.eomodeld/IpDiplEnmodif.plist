@@ -1,0 +1,103 @@
+{
+    attributes = (
+        {
+            columnName = "AUTORISE_REDOUBLANT"; 
+            externalType = VARCHAR2; 
+            name = autoriseRedoublant; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FDOM_CODE"; 
+            externalType = VARCHAR2; 
+            name = fdomCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "FSPN_KEY"; 
+            externalType = NUMBER; 
+            name = fspnKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IDIPL_ANNEE_SUIVIE"; 
+            externalType = NUMBER; 
+            name = idiplAnneeSuivie; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "INTEGRATION_IP"; 
+            externalType = VARCHAR2; 
+            name = integrationIp; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "IP_ACTIF"; 
+            externalType = VARCHAR2; 
+            name = ipActif; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IP_DATES_DEBUT"; 
+            externalType = DATE; 
+            name = ipDatesDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IP_DATES_FIN"; 
+            externalType = DATE; 
+            name = ipDatesFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "MSEM_ORDRE"; 
+            externalType = NUMBER; 
+            name = msemOrdre; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (fannKey, fspnKey, ipActif, msemOrdre); 
+    className = EOGenericRecord; 
+    classProperties = (
+        autoriseRedoublant, 
+        fannKey, 
+        fdomCode, 
+        fspnKey, 
+        idiplAnneeSuivie, 
+        integrationIp, 
+        ipActif, 
+        ipDatesDebut, 
+        ipDatesFin, 
+        msemOrdre
+    ); 
+    externalName = "IP_DIPL_ENMODIF"; 
+    fetchSpecificationDictionary = {}; 
+    name = IpDiplEnmodif; 
+    primaryKeyAttributes = (fannKey, fspnKey, msemOrdre); 
+}

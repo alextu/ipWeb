@@ -1,0 +1,82 @@
+CheckBox1: WOCheckBox {
+	checked = ecEnCours.caseCochee;
+	disabled = true;
+	id = ecEnCours.idCaseACoche;
+	onClick = ecEnCours.appelJSCocheLigne;
+}
+
+Conditional1: WOConditional {
+	condition = ecEnCours.isEcBloque;
+}
+
+Conditional2: WOConditional {
+	condition = ecEnCours.isEcBloque;
+	negate = true;
+	id = ecEnCours.idCaseACoche;
+}
+
+GCcoulTexte5: WOGenericContainer {
+	elementName = "span";
+	CLASS = monUeCtrlr.coulTexteCumulEcts;
+}
+
+Generic1: WOGenericContainer {
+	elementName = ecEnCours.miseEnFormeStatut;
+}
+
+Generic2: WOGenericContainer {
+	elementName = "span";
+	class = ecEnCours.miseEnFormeStatut;
+}
+
+Repetition1: WORepetition {
+	item = ecEnCours;
+	list = listeEcAffichage;
+}
+
+String1: WOString {
+	value = ecEnCours.msgStatutEc;
+}
+
+String10: WOString {
+	value = ecEnCours.typeEc;
+}
+
+codeUE: WOString {
+	value = monUeCtrlr.codeUe;
+}
+
+String21: WOString {
+	value = monUeCtrlr.pointsUe;
+}
+
+nomUE: WOString {
+	value = monUeCtrlr.nomUe;
+}
+
+ordreUE: WOString {
+	value = monUeCtrlr.ordreUe;
+}
+
+String3: WOString {
+	value = monUeCtrlr.msgEctsUE;
+	escapeHTML = false;
+}
+
+String4: WOString {
+	value = ecEnCours.libelleLongEc;
+}
+
+String6: WOString {
+	value = ecEnCours.nbHCmTdTp;
+}
+
+String9: WOString {
+	value = ecEnCours.stPointsECTS;
+}
+
+flyOverTypeEc: WOHyperlink {
+	href = "javascript:void(0);";
+	onMouseOut = "return nd();";
+	onMouseOver = ecEnCours.msgOlTypeEc;
+}

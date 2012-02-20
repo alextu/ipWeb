@@ -1,0 +1,58 @@
+
+{
+    arguments = 
+    (
+       
+       {
+           allowsNull = Y;
+           columnName = 10_idiplnumero;
+           externalType = NUMBER;
+           name = 10_idiplnumero;
+           parameterDirection = 1;
+           valueClassName = NSNumber;
+           valueType = i;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = 20_mrsemkeyAnc;
+           externalType = NUMBER;
+           name = 20_mrsemkeyAnc;
+           parameterDirection = 1;
+           valueClassName = NSNumber;
+           valueType = i;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = 40_msemordre;
+           externalType = NUMBER;
+           name = 40_msemordre;
+           parameterDirection = 1;
+           valueClassName = NSNumber;
+           valueType = i;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = 50_fannkey;
+           externalType = NUMBER;
+           name = 50_fannkey;
+           parameterDirection = 1;
+           valueClassName = NSNumber;
+           valueType = i;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = 30_mrsemkeyNou;
+           externalType = NUMBER;
+           name = 30_mrsemkeyNou;
+           parameterDirection = 1;
+           valueClassName = NSNumber;
+           valueType = i;
+       }
+    );
+    externalName = P_IPW_Ins_Isemestre;
+    name = pIpwInsIsemestre;
+}

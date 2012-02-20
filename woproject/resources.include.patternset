@@ -1,0 +1,10 @@
+**/Properties
+**/*.eomodeld/
+**/*.d2wmodel
+**/*.wo/
+**/*.api
+**/*.strings
+**/*.plist
+**/*.jasper
+**/*.pdf
+**/*.config

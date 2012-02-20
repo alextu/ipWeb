@@ -1,0 +1,42 @@
+
+{
+    DYNAMIC_CODE_GEN = YES;
+    English_RESOURCES = 
+    {};
+    FILESTABLE = 
+    {
+        CLASSES = 
+        (
+           src/BandeauControle.java, 
+           src/classesOnglets/Droit.java, 
+           src/classesOnglets/FonctionsCtrlr.java, 
+           src/classesOnglets/MenuCtrlr.java, 
+           src/classesOnglets/OngletsCtrlr.java, 
+           src/classesOnglets/OptionMenu.java
+        );
+        OTHER_LINKED = 
+        ();
+        OTHER_SOURCES = 
+        ();
+        SUBPROJECTS = 
+        ();
+        WEBSERVER_RESOURCES = 
+        ();
+        WOAPP_RESOURCES = 
+        (
+           BandeauControle.api
+        );
+        WO_COMPONENTS = 
+        (
+           BandeauControle.wo
+        );
+    };
+    FRAMEWORKSEARCH = 
+    (
+       "$(NEXT_ROOT)$(LOCAL_LIBRARY_DIR)/Frameworks"
+    );
+    LANGUAGE = English;
+    PROJECTNAME = ipWeb;
+    PROJECTTYPE = JavaWebObjectsSubproject;
+    PROJECTVERSION = 2.8;
+}

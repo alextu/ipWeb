@@ -1,0 +1,86 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "MPAR_KEY"; 
+            externalType = NUMBER; 
+            name = mparKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "MRSEM_ETAT_CALCUL"; 
+            externalType = NUMBER; 
+            name = mrsemEtatCalcul; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "MRSEM_KEY"; 
+            externalType = NUMBER; 
+            name = mrsemKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MRSEM_MOYENNE1"; 
+            externalType = NUMBER; 
+            isReadOnly = N; 
+            name = mrsemMoyenne1; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MRSEM_MOYENNE2"; 
+            externalType = NUMBER; 
+            isReadOnly = N; 
+            name = mrsemMoyenne2; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "MSEM_KEY"; 
+            externalType = NUMBER; 
+            name = msemKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (mrsemKey); 
+    className = EOGenericRecord; 
+    classProperties = (
+        fannKey, 
+        mparKey, 
+        mrsemEtatCalcul, 
+        mrsemKey, 
+        mrsemMoyenne1, 
+        mrsemMoyenne2, 
+        msemKey, 
+        toScolMaquetteSemestre
+    ); 
+    externalName = "SCOLARITE.SCOL_MAQUETTE_REPARTITION_SEM"; 
+    fetchSpecificationDictionary = {}; 
+    name = ScolMaquetteRepartitionSem; 
+    primaryKeyAttributes = (mrsemKey); 
+    relationships = (
+        {
+            destination = ScolMaquetteSemestre; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = msemKey; sourceAttribute = msemKey; }); 
+            name = toScolMaquetteSemestre; 
+        }
+    ); 
+}

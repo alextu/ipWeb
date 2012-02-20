@@ -1,0 +1,60 @@
+{
+    attributes = (
+        {
+            columnName = "ECI_KEY"; 
+            externalType = NUMBER; 
+            name = eciKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            definition = "toIpGroupeEcIncompatibles.fannKey"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "GECI_KEY"; 
+            externalType = NUMBER; 
+            name = geciKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            definition = "toIpGroupeEcIncompatibles.geciLibelle"; 
+            externalType = VARCHAR2; 
+            name = geciLibelle; 
+            valueClassName = NSString; 
+            width = 150; 
+        }, 
+        {
+            columnName = "MEC_KEY"; 
+            externalType = NUMBER; 
+            name = mecKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (fannKey, geciKey, mecKey); 
+    className = EOGenericRecord; 
+    classProperties = (fannKey, geciKey, geciLibelle, mecKey, toIpGroupeEcIncompatibles); 
+    externalName = "IP_EC_INCOMPATIBLES"; 
+    fetchSpecificationDictionary = {}; 
+    name = IpEcIncompatibles; 
+    primaryKeyAttributes = (eciKey); 
+    relationships = (
+        {
+            destination = IpGroupeEcIncompatibles; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = geciKey; sourceAttribute = geciKey; }); 
+            name = toIpGroupeEcIncompatibles; 
+        }
+    ); 
+}

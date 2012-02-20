@@ -1,0 +1,101 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "FSPN_KEY"; 
+            externalType = NUMBER; 
+            name = fspnKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MPAR_ABREVIATION"; 
+            externalType = VARCHAR2; 
+            name = mparAbreviation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "MPAR_KEY"; 
+            externalType = NUMBER; 
+            name = mparKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MPAR_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = mparLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "MRSEM_KEY"; 
+            externalType = NUMBER; 
+            name = mrsemKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MSEM_KEY"; 
+            externalType = NUMBER; 
+            name = msemKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "MSEM_ORDRE"; 
+            externalType = NUMBER; 
+            name = msemOrdre; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (fannKey, fspnKey, mparKey, mrsemKey); 
+    className = ParcoursSpecialise; 
+    classProperties = (
+        fannKey, 
+        fspnKey, 
+        mparAbreviation, 
+        mparKey, 
+        mparLibelle, 
+        mrsemKey, 
+        msemKey, 
+        msemOrdre
+    ); 
+    externalName = "V_PARCOURS_SPECIALISE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            fannKey, 
+            fspnKey, 
+            mparAbreviation, 
+            mparKey, 
+            mparLibelle, 
+            mrsemKey, 
+            msemKey, 
+            msemOrdre
+        ); 
+    }; 
+    name = ParcoursSpecialise; 
+    primaryKeyAttributes = (fannKey, fspnKey, mparKey, msemOrdre); 
+}

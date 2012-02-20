@@ -1,0 +1,54 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FHAB_KEY"; 
+            externalType = NUMBER; 
+            name = fhabKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FHAB_NIVEAU"; 
+            externalType = NUMBER; 
+            name = fhabNiveau; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FSPN_KEY"; 
+            externalType = NUMBER; 
+            name = fspnKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }
+    ); 
+    attributesUsedForLocking = (fhabNiveau, fspnKey, persId); 
+    className = EOGenericRecord; 
+    classProperties = (fannKey, fhabKey, fhabNiveau, fspnKey, persId); 
+    externalName = "V_LISTE_DROIT_VISU_DIPLOME"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (persId); 
+        "_javaClientClassName" = VListeDroitVisuDiplome; 
+    }; 
+    name = VListeDroitVisuDiplome; 
+    primaryKeyAttributes = (fannKey, fhabNiveau, fspnKey, persId); 
+}

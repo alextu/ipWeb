@@ -1,0 +1,52 @@
+
+{
+    DYNAMIC_CODE_GEN = YES;
+    English_RESOURCES = 
+    {};
+    FILESTABLE = 
+    {
+        CLASSES = 
+        (
+           src/CadreIp.java, 
+           src/CadreParcours.java, 
+           src/CadreUE.java, 
+           src/CadreUEConsult.java, 
+           src/Formations.java, 
+           src/Identite.java
+        );
+        OTHER_LINKED = 
+        ();
+        OTHER_SOURCES = 
+        ();
+        SUBPROJECTS = 
+        ();
+        WEBSERVER_RESOURCES = 
+        ();
+        WOAPP_RESOURCES = 
+        (
+           CadreIp.api, 
+           CadreParcours.api, 
+           CadreUE.api, 
+           CadreUEConsult.api, 
+           Formations.api, 
+           Identite.api
+        );
+        WO_COMPONENTS = 
+        (
+           CadreIp.wo, 
+           CadreParcours.wo, 
+           CadreUE.wo, 
+           CadreUEConsult.wo, 
+           Formations.wo, 
+           Identite.wo
+        );
+    };
+    FRAMEWORKSEARCH = 
+    (
+       "$(NEXT_ROOT)$(LOCAL_LIBRARY_DIR)/Frameworks"
+    );
+    LANGUAGE = English;
+    PROJECTNAME = ipWeb;
+    PROJECTTYPE = JavaWebObjectsSubproject;
+    PROJECTVERSION = 2.8;
+}

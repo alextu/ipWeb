@@ -1,0 +1,83 @@
+Conditional1: WOConditional {
+	condition = monPhCtrlr.isPictPTFound;
+	negate = true;
+}
+
+Conditional2: WOConditional {
+	condition = monPhCtrlr.isPictPTFound;
+}
+
+Conditional3: WOConditional {
+	condition = telAttenteMAJ;
+}
+
+Conditional4: WOConditional {
+	condition = telAttenteMAJ;
+	negate = true;
+}
+
+Conditional5: WOConditional {
+	condition = chgeTelPossible;
+	negate = false;
+}
+
+Conditional6: WOConditional {
+	condition = visuOkCoord;
+}
+
+Form1: WOForm {
+	multipleSubmit = true;
+}
+
+Image1: WOImage {
+	src = "images/apropos.gif";
+}
+
+Image3: WOImage {
+	data = monPhCtrlr.getMyPetitePict;
+	height = monPhCtrlr.hauteurPTPhoto;
+	mimeType = "image/jpeg";
+	width = monPhCtrlr.largeurPTPhoto;
+}
+
+String1: WOString {
+	value = emailEtudiant;
+}
+
+String2: WOString {
+	value = numeroTelEtudiant;
+}
+
+String6: WOString {
+	value = numeroEtudiant;
+}
+
+SubmitButton1: WOSubmitButton {
+	action = deconnexion;
+	value = "Quitter l'application";
+	disabled = dmec;
+}
+
+SubmitButton2: WOSubmitButton {
+	action = ddeMajTel;
+	value = "changer n¡ Tel...";
+}
+
+SubmitButton3: WOSubmitButton {
+	action = validerTel;
+	value = "Valider mon n¡.";
+}
+
+TextField2: WOTextField {
+	disabled = telAttenteMAJ;
+	size = 14;
+	value = numeroTelEtudiant;
+}
+
+nom: WOString {
+	value = individuCt.nomPatronymique;
+}
+
+prenom: WOString {
+	value = individuCt.prenom;
+}

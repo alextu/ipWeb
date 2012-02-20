@@ -1,0 +1,207 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "AFF_RN"; 
+            externalType = NUMBER; 
+            name = affRn; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ANNEE_SUIVIE"; 
+            externalType = NUMBER; 
+            name = anneeSuivie; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "EMAIL_ETUDIANT"; 
+            externalType = VARCHAR2; 
+            name = emailEtudiant; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FSPN_KEY"; 
+            externalType = NUMBER; 
+            name = fspnKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FVOC_CODE"; 
+            externalType = VARCHAR2; 
+            name = fvocCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "IDIPL_NUMERO"; 
+            externalType = NUMBER; 
+            name = idiplNumero; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IDIPL_REDOUBLANT"; 
+            externalType = VARCHAR2; 
+            name = idiplRedoublant; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "IMRSEM_DISPENSE"; 
+            externalType = NUMBER; 
+            name = imrsemDispense; 
+            precision = 2; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IMRSEM_ETAT"; 
+            externalType = NUMBER; 
+            name = imrsemEtat; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MPAR_ABREVIATION"; 
+            externalType = VARCHAR2; 
+            name = mparAbreviation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "MPAR_CODE"; 
+            externalType = VARCHAR2; 
+            name = mparCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 15; 
+        }, 
+        {
+            columnName = "MPAR_KEY"; 
+            externalType = NUMBER; 
+            name = mparKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MPAR_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = mparLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "MPAR_VALIDITE"; 
+            externalType = VARCHAR2; 
+            name = mparValidite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "MRSEM_KEY"; 
+            externalType = NUMBER; 
+            name = mrsemKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MSEM_KEY"; 
+            externalType = NUMBER; 
+            name = msemKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MSEM_ORDRE"; 
+            externalType = NUMBER; 
+            name = msemOrdre; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (fannKey, fspnKey, idiplNumero, idiplRedoublant, msemOrdre); 
+    className = EOGenericRecord; 
+    classProperties = (
+        affRn, 
+        anneeSuivie, 
+        emailEtudiant, 
+        fannKey, 
+        fspnKey, 
+        fvocCode, 
+        idiplNumero, 
+        idiplRedoublant, 
+        imrsemDispense, 
+        imrsemEtat, 
+        mparAbreviation, 
+        mparCode, 
+        mparKey, 
+        mparLibelle, 
+        mparValidite, 
+        mrsemKey, 
+        msemKey, 
+        msemOrdre, 
+        vEcComments
+    ); 
+    externalName = "SCOL_INS_PARCOURS_SEMESTRE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            anneeSuivie, 
+            emailEtudiant, 
+            fannKey, 
+            fspnKey, 
+            fvocCode, 
+            idiplNumero, 
+            imrsemDispense, 
+            imrsemEtat, 
+            mparAbreviation, 
+            mparCode, 
+            mparKey, 
+            mparLibelle, 
+            mparValidite, 
+            mrsemKey, 
+            msemKey, 
+            msemOrdre
+        ); 
+    }; 
+    name = ScolInsParcoursSemestre; 
+    primaryKeyAttributes = (fannKey, idiplNumero, mrsemKey); 
+    relationships = (
+        {
+            destination = VEcComment; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = msemKey; sourceAttribute = msemKey; }); 
+            name = vEcComments; 
+        }
+    ); 
+}

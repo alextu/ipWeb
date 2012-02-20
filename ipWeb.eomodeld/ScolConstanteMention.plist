@@ -1,0 +1,55 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "CMEN_ABREVIATION"; 
+            externalType = VARCHAR2; 
+            name = cmenAbreviation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "CMEN_APPRECIATION"; 
+            externalType = VARCHAR2; 
+            name = cmenAppreciation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "CMEN_CODE"; 
+            externalType = VARCHAR2; 
+            name = cmenCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 3; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "CMEN_KEY"; 
+            externalType = NUMBER; 
+            name = cmenKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "CMEN_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = cmenLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }
+    ); 
+    attributesUsedForLocking = (cmenKey); 
+    className = EOGenericRecord; 
+    classProperties = (cmenAbreviation, cmenAppreciation, cmenCode, cmenKey, cmenLibelle); 
+    externalName = "SCOLARITE.SCOL_CONSTANTE_MENTION"; 
+    fetchSpecificationDictionary = {}; 
+    name = ScolConstanteMention; 
+    primaryKeyAttributes = (cmenKey); 
+}

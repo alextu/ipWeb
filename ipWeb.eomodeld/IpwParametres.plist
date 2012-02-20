@@ -1,0 +1,44 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "PARAM_COMMENTAIRES"; 
+            externalType = VARCHAR2; 
+            name = paramCommentaires; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 500; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PARAM_KEY"; 
+            externalType = VARCHAR2; 
+            name = paramKey; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            columnName = "PARAM_ORDRE"; 
+            externalType = NUMBER; 
+            name = paramOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PARAM_VALUE"; 
+            externalType = VARCHAR2; 
+            name = paramValue; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 180; 
+        }
+    ); 
+    attributesUsedForLocking = (paramCommentaires, paramKey, paramOrdre, paramValue); 
+    className = EOGenericRecord; 
+    classProperties = (paramCommentaires, paramKey, paramValue); 
+    externalName = "IPW_PARAMETRES"; 
+    name = IpwParametres; 
+    primaryKeyAttributes = (paramOrdre); 
+}

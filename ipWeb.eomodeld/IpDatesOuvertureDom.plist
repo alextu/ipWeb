@@ -1,0 +1,51 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FDOM_CODE"; 
+            externalType = VARCHAR2; 
+            name = fdomCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IP_DATES_DEBUT_DOM"; 
+            externalType = DATE; 
+            name = ipDatesDebutDom; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IP_DATES_FIN_DOM"; 
+            externalType = DATE; 
+            name = ipDatesFinDom; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "IP_SEMESTRE"; 
+            externalType = NUMBER; 
+            name = ipSemestre; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (fannKey, fdomCode, ipSemestre); 
+    className = EOGenericRecord; 
+    classProperties = (fannKey, fdomCode, ipDatesDebutDom, ipDatesFinDom, ipSemestre); 
+    externalName = "IP_DATES_OUVERTURE_DOM"; 
+    fetchSpecificationDictionary = {}; 
+    name = IpDatesOuvertureDom; 
+    primaryKeyAttributes = (fannKey, fdomCode, ipSemestre); 
+}

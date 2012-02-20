@@ -1,0 +1,29 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "FSPN_KEY"; 
+            externalType = NUMBER; 
+            name = fspnKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (fannKey, fspnKey); 
+    className = IpDiplSansRn; 
+    classProperties = (fannKey, fspnKey); 
+    externalName = "IP_DIPL_SANS_RN"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (fannKey, fspnKey); }; 
+    name = IpDiplSansRn; 
+    primaryKeyAttributes = (fannKey, fspnKey); 
+}

@@ -1,0 +1,55 @@
+
+{
+    DYNAMIC_CODE_GEN = YES;
+    English_RESOURCES = 
+    {};
+    FILESTABLE = 
+    {
+        CLASSES = 
+        (
+           src/Mod_IpEtud.java, 
+           src/Mod_autoRnDipl.java, 
+           src/Mod_commentaires.java, 
+           src/Mod_datesIpDipl.java, 
+           src/Mod_datesIpDom.java, 
+           src/Mod_diplAvecRN.java, 
+           src/Mod_listeDipl.java
+        );
+        OTHER_LINKED = 
+        ();
+        OTHER_SOURCES = 
+        ();
+        SUBPROJECTS = 
+        ();
+        WEBSERVER_RESOURCES = 
+        ();
+        WOAPP_RESOURCES = 
+        (
+           Mod_IpEtud.api, 
+           Mod_autoRnDipl.api, 
+           Mod_commentaires.api, 
+           Mod_datesIpDipl.api, 
+           Mod_datesIpDom.api, 
+           Mod_diplAvecRN.api, 
+           Mod_listeDipl.api
+        );
+        WO_COMPONENTS = 
+        (
+           Mod_IpEtud.wo, 
+           Mod_autoRnDipl.wo, 
+           Mod_commentaires.wo, 
+           Mod_datesIpDipl.wo, 
+           Mod_datesIpDom.wo, 
+           Mod_diplAvecRN.wo, 
+           Mod_listeDipl.wo
+        );
+    };
+    FRAMEWORKSEARCH = 
+    (
+       "$(NEXT_ROOT)$(LOCAL_LIBRARY_DIR)/Frameworks"
+    );
+    LANGUAGE = English;
+    PROJECTNAME = ipWeb;
+    PROJECTTYPE = JavaWebObjectsSubproject;
+    PROJECTVERSION = 2.8;
+}

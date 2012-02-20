@@ -1,0 +1,207 @@
+{
+    arguments = (
+        {
+            columnName = "10_histAnneeScol"; 
+            externalType = NUMBER; 
+            name = "10_histAnneeScol"; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "12_etudNumero"; 
+            externalType = NUMBER; 
+            name = "12_etudNumero"; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "14_histNumero"; 
+            externalType = NUMBER; 
+            name = "14_histNumero"; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "16_idiplNumero"; 
+            externalType = NUMBER; 
+            name = "16_idiplNumero"; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "18_noIndividu"; 
+            externalType = NUMBER; 
+            name = "18_noIndividu"; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "20_persId"; 
+            externalType = NUMBER; 
+            name = "20_persId"; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "22_iEtudKey"; 
+            externalType = NUMBER; 
+            name = "22_iEtudKey"; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "24_adrOrdreScol"; 
+            externalType = NUMBER; 
+            name = "24_adrOrdreScol"; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "26_adrOrdreParent"; 
+            externalType = NUMBER; 
+            name = "26_adrOrdreParent"; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "28_etudCodeIne"; 
+            externalType = NUMBER; 
+            name = "28_etudCodeIne"; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "30_adrCivilite"; 
+            externalType = VARCHAR2; 
+            name = "30_adrCivilite"; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 3; 
+        }, 
+        {
+            columnName = "32_adrNom"; 
+            externalType = VARCHAR2; 
+            name = "32_adrNom"; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            columnName = "34_adrPrenom"; 
+            externalType = VARCHAR2; 
+            name = "34_adrPrenom"; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 40; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "36_etudNomMaritial"; 
+            externalType = VARCHAR2; 
+            name = "36_etudNomMaritial"; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "38_fspnKey"; 
+            externalType = NUMBER; 
+            name = "38_fspnKey"; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "40_mparKey"; 
+            externalType = NUMBER; 
+            name = "40_mparKey"; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "42_idiplAnneeSuivie"; 
+            externalType = NUMBER; 
+            name = "42_idiplAnneeSuivie"; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "44_idiplTypeInscription"; 
+            externalType = NUMBER; 
+            name = "44_idiplTypeInscription"; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "46_idiplPassageConditionnel"; 
+            externalType = VARCHAR2; 
+            name = "46_idiplPassageConditionnel"; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "48_idiplDateInsc"; 
+            externalType = DATE; 
+            name = "48_idiplDateInsc"; 
+            parameterDirection = 1; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            columnName = "52_resCode"; 
+            externalType = VARCHAR2; 
+            name = "52_resCode"; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "50_idiplDateDemission"; 
+            externalType = DATE; 
+            name = "50_idiplDateDemission"; 
+            parameterDirection = 1; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "35_adrPenom2"; 
+            externalType = VARCHAR2; 
+            name = "35_adrPenom2"; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 40; 
+        }
+    ); 
+    externalName = "scolarite.P_LMD_INS_IETUDIANT"; 
+    name = pLmdInsIetudiant; 
+}

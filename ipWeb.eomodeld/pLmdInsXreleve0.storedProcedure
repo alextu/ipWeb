@@ -1,0 +1,98 @@
+
+{
+    arguments = 
+    (
+       
+       {
+           allowsNull = N;
+           columnName = 90_mectype;
+           externalType = NUMBER;
+           name = 90_mectype;
+           parameterDirection = 1;
+           valueClassName = NSNumber;
+           valueType = i;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = 10_fannkey;
+           externalType = NUMBER;
+           name = 10_fannkey;
+           parameterDirection = 1;
+           valueClassName = NSNumber;
+           valueType = i;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = 80_etudnumero;
+           externalType = NUMBER;
+           name = 80_etudnumero;
+           parameterDirection = 1;
+           valueClassName = NSNumber;
+           valueType = i;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = 20_fspnkey;
+           externalType = NUMBER;
+           name = 20_fspnkey;
+           parameterDirection = 1;
+           valueClassName = NSNumber;
+           valueType = i;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = 30_idiplanneesuivie;
+           externalType = NUMBER;
+           name = 30_idiplanneesuivie;
+           parameterDirection = 1;
+           valueClassName = NSNumber;
+           valueType = i;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = 40_mrsemkey;
+           externalType = NUMBER;
+           name = 40_mrsemkey;
+           parameterDirection = 1;
+           valueClassName = NSNumber;
+           valueType = i;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = 50_msemkey;
+           externalType = NUMBER;
+           name = 50_msemkey;
+           parameterDirection = 1;
+           valueClassName = NSNumber;
+           valueType = i;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = 60_msemordre;
+           externalType = NUMBER;
+           name = 60_msemordre;
+           parameterDirection = 1;
+           valueClassName = NSNumber;
+           valueType = i;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = 70_bcaletat;
+           externalType = NUMBER;
+           name = 70_bcaletat;
+           parameterDirection = 1;
+           valueClassName = NSNumber;
+           valueType = i;
+       }
+    );
+    externalName = P_LMD_INS_XRELEVE_0;
+    name = pLmdInsXreleve0;
+}

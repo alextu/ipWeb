@@ -1,0 +1,119 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FDOM_CODE"; 
+            externalType = VARCHAR2; 
+            name = fdomCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "MRUE_KEY"; 
+            externalType = NUMBER; 
+            name = mrueKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MRUE_ORDRE"; 
+            externalType = NUMBER; 
+            name = mrueOrdre; 
+            precision = 2; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MSEM_KEY"; 
+            externalType = NUMBER; 
+            name = msemKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MUE_CODE"; 
+            externalType = VARCHAR2; 
+            name = mueCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 15; 
+        }, 
+        {
+            columnName = "MUE_HORAIRE_ETU"; 
+            externalType = NUMBER; 
+            name = mueHoraireEtu; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }, 
+        {
+            columnName = "MUE_KEY"; 
+            externalType = NUMBER; 
+            name = mueKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MUE_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = mueLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "MUE_POINTS"; 
+            externalType = NUMBER; 
+            name = muePoints; 
+            precision = 4; 
+            scale = 2; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }
+    ); 
+    attributesUsedForLocking = (mrueKey, msemKey, mueKey); 
+    className = EOGenericRecord; 
+    classProperties = (
+        fannKey, 
+        fdomCode, 
+        mrueKey, 
+        mrueOrdre, 
+        msemKey, 
+        mueCode, 
+        mueHoraireEtu, 
+        mueKey, 
+        mueLibelle, 
+        muePoints
+    ); 
+    externalName = "V_maq_semestre_ue_choix"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            fannKey, 
+            fdomCode, 
+            mrueKey, 
+            mrueOrdre, 
+            msemKey, 
+            mueCode, 
+            mueHoraireEtu, 
+            mueKey, 
+            mueLibelle, 
+            muePoints
+        ); 
+    }; 
+    name = VMaqSemestreUeChoix; 
+    primaryKeyAttributes = (mrueKey, msemKey, mueKey); 
+}

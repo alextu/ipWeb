@@ -1,0 +1,120 @@
+{
+    attributes = (
+        {
+            columnName = "CPT_LOGIN"; 
+            externalType = VARCHAR2; 
+            name = cptLogin; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "DDIP_BILAN"; 
+            externalType = VARCHAR2; 
+            name = ddipBilan; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "DDIP_EDT"; 
+            externalType = VARCHAR2; 
+            name = ddipEdt; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "DDIP_EXAMENS"; 
+            externalType = VARCHAR2; 
+            name = ddipExamens; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "DDIP_GROUPES"; 
+            externalType = VARCHAR2; 
+            name = ddipGroupes; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "DDIP_IPEDAGOGIQUES"; 
+            externalType = VARCHAR2; 
+            name = ddipIpedagogiques; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "DDIP_MAQUETTES"; 
+            externalType = VARCHAR2; 
+            name = ddipMaquettes; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "DDIP_STATISTIQUES"; 
+            externalType = VARCHAR2; 
+            name = ddipStatistiques; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FHAB_KEY"; 
+            externalType = NUMBER; 
+            name = fhabKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FHAB_NIVEAU"; 
+            externalType = NUMBER; 
+            name = fhabNiveau; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FSPN_KEY"; 
+            externalType = NUMBER; 
+            name = fspnKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cptLogin, fhabKey, fhabNiveau, fspnKey); 
+    className = EOGenericRecord; 
+    classProperties = (
+        cptLogin, 
+        ddipBilan, 
+        ddipEdt, 
+        ddipExamens, 
+        ddipGroupes, 
+        ddipIpedagogiques, 
+        ddipMaquettes, 
+        ddipStatistiques, 
+        fannKey, 
+        fhabKey, 
+        fhabNiveau, 
+        fspnKey
+    ); 
+    externalName = "V_SCOL_DROIT_DIPLOME"; 
+    fetchSpecificationDictionary = {}; 
+    name = ScolDroitDiplome; 
+    primaryKeyAttributes = (cptLogin, fhabKey); 
+}

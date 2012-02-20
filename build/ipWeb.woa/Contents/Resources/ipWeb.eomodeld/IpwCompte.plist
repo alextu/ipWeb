@@ -1,0 +1,165 @@
+{
+    attributes = (
+        {
+            columnName = "CPT_CHARTE"; 
+            externalType = CHAR; 
+            name = cptCharte; 
+            valueClassName = NSString; 
+            valueType = c; 
+            width = 1; 
+        }, 
+        {
+            columnName = "CPT_CONNEXION"; 
+            externalType = CHAR; 
+            name = cptConnexion; 
+            valueClassName = NSString; 
+            valueType = c; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPT_DOMAINE"; 
+            externalType = VARCHAR2; 
+            name = cptDomaine; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 40; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPT_EMAIL"; 
+            externalType = VARCHAR2; 
+            name = cptEmail; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 40; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPT_LOGIN"; 
+            externalType = VARCHAR2; 
+            name = cptLogin; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "CPT_ORDRE"; 
+            externalType = NUMBER; 
+            name = cptOrdre; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPT_PASSWD"; 
+            externalType = VARCHAR2; 
+            name = cptPasswd; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 15; 
+        }, 
+        {
+            columnName = "CPT_UID_GID"; 
+            externalType = NUMBER; 
+            name = cptUidGid; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }, 
+        {
+            columnName = "CPT_VLAN"; 
+            externalType = VARCHAR2; 
+            name = cptVlan; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 15; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            definition = "vlans.priorite"; 
+            externalType = NUMBER; 
+            name = "vlans_priorite"; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        cptCharte, 
+        cptConnexion, 
+        cptDomaine, 
+        cptEmail, 
+        cptLogin, 
+        cptOrdre, 
+        cptPasswd, 
+        cptUidGid, 
+        cptVlan, 
+        dCreation, 
+        dModification, 
+        "vlans_priorite"
+    ); 
+    className = EOCompte; 
+    classProperties = (
+        cptCharte, 
+        cptConnexion, 
+        cptDomaine, 
+        cptEmail, 
+        cptLogin, 
+        cptPasswd, 
+        cptUidGid, 
+        cptVlan, 
+        dCreation, 
+        dModification, 
+        toRptCompte, 
+        vlans, 
+        "vlans_priorite"
+    ); 
+    externalName = COMPTE; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cptCharte, 
+            cptConnexion, 
+            cptDomaine, 
+            cptEmail, 
+            cptLogin, 
+            cptPasswd, 
+            cptUidGid, 
+            cptVlan, 
+            dCreation, 
+            dModification
+        ); 
+    }; 
+    name = IpwCompte; 
+    primaryKeyAttributes = (cptOrdre); 
+    relationships = (
+        {
+            destination = IpwRepartCompte; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cptOrdre; sourceAttribute = cptOrdre; }); 
+            name = toRptCompte; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            destination = Vlans; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cVlan; sourceAttribute = cptVlan; }); 
+            name = vlans; 
+        }
+    ); 
+}

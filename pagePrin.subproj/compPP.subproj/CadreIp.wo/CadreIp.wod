@@ -1,0 +1,430 @@
+CadreParcours1: CadreParcours {
+	monFormCt = leCtlrForm;
+}
+
+Conditional1: WOConditional {
+	condition = modeModif;
+	negate = true;
+}
+
+Conditional10: WOConditional {
+	condition = inscSem.modifPossible;
+	negate = true;
+}
+
+Conditional11: WOConditional {
+	condition = inscSem.semIpWeb;
+}
+
+Conditional12: WOConditional {
+	condition = inscSem.semIpWeb;
+	negate = true;
+}
+
+Conditional13: WOConditional {
+	condition = inscSem.modifPossible;
+}
+
+Conditional14: WOConditional {
+	condition = inscSem.modifPossible;
+}
+
+Conditional15: WOConditional {
+	condition = inscSem.modifPossible;
+	negate = true;
+}
+
+Conditional16: WOConditional {
+	condition = diplomeNonGere;
+	negate = true;
+}
+
+Conditional17: WOConditional {
+	condition = diplomeNonGere;
+}
+
+Conditional18: WOConditional {
+	condition = isErrDansLesIp;
+	negate = true;
+}
+
+Conditional19: WOConditional {
+	condition = isErrDansLesIp;
+}
+
+Conditional2: WOConditional {
+	condition = inscSem.modifPossible;
+}
+
+Conditional20: WOConditional {
+	condition = inscSem.choixCompletsValides;
+}
+
+Conditional21: WOConditional {
+	condition = inscSem.semestreDejaObtenu;
+}
+
+Conditional22: WOConditional {
+	condition = inscSem.ipPasEncoreOuvertes;
+}
+
+Conditional23: WOConditional {
+	condition = inscSem.aucunChoixAFaire;
+}
+
+Conditional24: WOConditional {
+	condition = inscSem.resteUeIncomplete;
+	negate = true;
+}
+
+Conditional25: WOConditional {
+	condition = inscSem.ipPasEncoreOuvertes;
+	negate = true;
+}
+
+Conditional26: WOConditional {
+	condition = inscSem.choixCompletsPasValides;
+}
+
+Conditional27: WOConditional {
+	condition = inscSem.aucunChoixAFaire;
+	negate = true;
+}
+
+Conditional28: WOConditional {
+	condition = afficheBoutonOuvertureDialogueParcours;
+}
+
+Conditional29: WOConditional {
+	condition = afficheDialogueParcours;
+	negate = true;
+}
+
+Conditional3: WOConditional {
+	condition = inscSem.resteUeIncomplete;
+}
+
+Conditional30: WOConditional {
+	condition = afficheDialogueParcours;
+	negate = true;
+}
+
+Conditional31: WOConditional {
+	condition = afficheDialogueParcours;
+}
+
+Conditional32: WOConditional {
+	condition = afficheDialogueParcours;
+	negate = true;
+}
+
+Conditional33: WOConditional {
+	condition = choixParcoursAFaire;
+}
+
+Conditional34: WOConditional {
+	condition = afficheDialogueParcours;
+	negate = true;
+}
+
+Conditional35: WOConditional {
+	condition = afficheDialogueParcours;
+	negate = true;
+}
+
+Conditional36: WOConditional {
+	condition = inscSem.resteUeIncomplete;
+	negate = true;
+}
+
+Conditional37: WOConditional {
+	condition = session.modeBackOffice;
+	negate = true;
+}
+
+Conditional38: WOConditional {
+	condition = inscSem.choixCompletsPasValides;
+}
+
+Conditional39: WOConditional {
+	condition = inscSem.choixCompletsValides;
+}
+
+Conditional4: WOConditional {
+	condition = inscSem.dateDebutIPWebConnue;
+}
+
+Conditional40: WOConditional {
+	condition = inscSem.choixCompletsValides;
+}
+
+Conditional41: WOConditional {
+	condition = session.modeBackOffice;
+	negate = true;
+}
+
+Conditional42: WOConditional {
+	condition = session.modeBackOffice;
+	negate = true;
+}
+
+Conditional43: WOConditional {
+	condition = inscSem.choixCompletsValides;
+}
+
+Conditional44: WOConditional {
+	condition = inscSem.choixCompletsValides;
+	negate = true;
+}
+
+Conditional45: WOConditional {
+	condition = inscSem.choixCompletsValides;
+}
+
+Conditional46: WOConditional {
+	condition = inscSem.ipTerminees;
+}
+
+Conditional47: WOConditional {
+	condition = inscSem.ipTerminees;
+	negate = true;
+}
+
+Conditional48: WOConditional {
+	condition = inscSem.redoublantBloque;
+}
+
+Conditional49: WOConditional {
+	condition = inscSem.dateDebutIPWebConnue;
+	negate = true;
+}
+
+Conditional5: WOConditional {
+	condition = session.debug;
+}
+
+Conditional50: WOConditional {
+	condition = modeModif;
+	negate = true;
+}
+
+Conditional51: WOConditional {
+	condition = modeModif;
+}
+
+Conditional52: WOConditional {
+	condition = inscSem.modifPossible;
+}
+
+Conditional6: WOConditional {
+	condition = inscSem.isUrgenceSignalee;
+	negate = false;
+}
+
+Conditional7: WOConditional {
+	condition = inscSem.resteUeIncomplete;
+}
+
+Conditional8: WOConditional {
+	condition = modeModif;
+}
+
+Conditional9: WOConditional {
+	condition = modeModif;
+	negate = true;
+}
+
+Form1: WOForm {
+	multipleSubmit = true;
+	id = "formIpEtud";
+}
+
+Generic1: WOGenericContainer {
+	elementName = "FONT";
+	COLOR = inscSem.coulStatutInscSemestre;
+	SIZE = 4;
+}
+
+Generic2: WOGenericContainer {
+	elementName = "FONT";
+	COLOR = inscSem.coulStatutInscSemestre;
+	SIZE = 4;
+}
+
+Generic3: WOGenericContainer {
+	elementName = "FONT";
+	COLOR = inscSem.coulStatutInscSemestre;
+	SIZE = 4;
+}
+
+Generic4: WOGenericContainer {
+	elementName = "FONT";
+	COLOR = inscSem.coulStatutInscSemestre;
+}
+
+Hyperlink1: WOHyperlink {
+	action = demanderModif;
+}
+
+Hyperlink2: WOHyperlink {
+	action = demanderModif;
+}
+
+Hyperlink3: WOHyperlink {
+	action = imprChoixPedag;
+	disabled = dmec;
+}
+
+Hyperlink4: WOHyperlink {
+	action = imprChoixPedag;
+}
+
+
+Hyperlink7: WOHyperlink {
+	action = demanderModif;
+}
+
+Image1: WOImage {
+	border = "0";
+	src = "images/iconePDF.gif";
+}
+
+Repetition1: WORepetition {
+	item = unUeCtrlr;
+	list = listeUECtrlr;
+}
+
+Repetition2: WORepetition {
+	item = unUeCtrlr;
+	list = listeUECtrlr;
+}
+
+String1: WOString {
+	value = parcours;
+}
+
+String10: WOString {
+	value = inscSem.stCumulEctsSem;
+}
+
+String12: WOString {
+	value = inscSem.dateFinIPWebIncluse;
+}
+
+String13: WOString {
+	value = inscSem.dateFinIPWebIncluse;
+}
+
+String14: WOString {
+	value = inscSem.dateDebutIPWeb;
+}
+
+String15: WOString {
+	value = inscSem.dateFinIPWebIncluse;
+}
+
+String16: WOString {
+	value = inscSem.dateFinIPWebIncluse;
+}
+
+String17: WOString {
+	value = diplome;
+}
+
+String18: WOString {
+	value = semOrdre;
+}
+
+String2: WOString {
+	value = diplome;
+}
+
+String3: WOString {
+	value = leCtlrForm.msemOrdre;
+}
+
+String4: WOString {
+	value = leCtlrForm.msemKeyPP;
+}
+
+String5: WOString {
+	value = leCtlrForm.idiplNumero;
+}
+
+String6: WOString {
+	escapeHTML = false;
+	value = inscSem.stNbreUeIncomplete;
+}
+
+String7: WOString {
+	escapeHTML = false;
+	value = inscSem.statutInscSemestre;
+}
+
+String8: WOString {
+	escapeHTML = false;
+	value = inscSem.stNbreUeIncomplete;
+}
+
+String9: WOString {
+	escapeHTML = false;
+	value = inscSem.statutInscSemestre;
+}
+
+SubmitButton1: WOSubmitButton {
+	action = annulerModif;
+	value = "ANNULER Modifs";
+}
+
+SubmitButton2: WOSubmitButton {
+	action = lanceDialogueParcours;
+	value = "Choix du parcours";
+}
+
+SubmitButton3: WOSubmitButton {
+	action = confirmationChoix;
+	value = "Je confirme mes choix pour ce semestre.";
+}
+
+SubmitButton4: WOSubmitButton {
+	action = annulationValidation;
+	value = "Je veux modifier mes choix pour ce semestre.";
+}
+
+SubmitButton5: WOSubmitButton {
+	action = confirmationChoix;
+	value = "Je confirme mes choix pour ce semestre.";
+}
+
+SubmitButton6: WOSubmitButton {
+	action = annulationValidation;
+	value = "Je veux modifier mes choix pour ce semestre.";
+}
+
+jsPourExplicationTexte: WOJavaScript {
+	scriptSource = "scripts/overlib_mini.js";
+}
+
+jsPourExplicationTexteParam: WOJavaScript {
+	scriptString = "var ol_delay = 300;\nvar ol_width = 200;\nvar ol_offsetx = 15;\nvar ol_offsety = 15;\nvar ol_css = CSSCLASS;\nvar ol_bgclass = \"previewTitleBox\"; \r\nvar ol_captionfontclass = \"previewTitleText\"; \r\nvar ol_fgclass = \"previewContentBox\"; \r\nvar ol_textfontclass = \"previewContentText\";";
+}
+
+lesUEenConsult: CadreUEConsult {
+	monUeCtrlr = unUeCtrlr;
+	monSemCt = leCtlrSem;
+}
+
+lesUEenConsult2: CadreUEConsult {
+	monUeCtrlr = unUeCtrlr;
+	monSemCt = leCtlrSem;
+}
+
+modifChoix2: WOSubmitButton {
+	action = validerModif;
+	value = "ENREGISTRER mes CHOIX";
+}
+
+uneUeDuSemestre: CadreUE {
+	monUeCtrlr = unUeCtrlr;
+	monSemCt = leCtlrSem;
+}

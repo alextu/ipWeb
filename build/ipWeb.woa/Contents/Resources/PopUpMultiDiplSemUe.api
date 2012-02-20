@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+    <wo class="PopUpMultiDiplSemUe" wocomponentcontent="false">
+        <binding name="action"/>
+        <binding name="typeSelection"/>
+        <binding defaults="Boolean" name="disabled"/>
+        <binding name="fspnKey"/>
+        <binding name="msemKey"/>
+        <binding name="msemKeyPc"/>
+        <binding name="mueKey"/>
+        <binding name="eoSelectionne"/>
+        <binding name="anneeSuivie"/>
+        <validation message="'typeSelection' is a required binding">
+            <unbound name="typeSelection"/>
+        </validation>
+        <validation message="'eoSelectionne' is a required binding">
+            <unbound name="eoSelectionne"/>
+        </validation>
+        <binding defaults="Boolean" name="refetchSelection"/>
+        <binding name="listeDiplPourRN"/>
+    <binding name="msemOrdre"/>
+    <binding name="fhabNiveau"/>
+    </wo>
+</wodefinitions>

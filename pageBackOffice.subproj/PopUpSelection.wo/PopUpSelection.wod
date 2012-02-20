@@ -1,0 +1,18 @@
+Form1: WOForm {
+	name = ^nomPopUp;
+	action = ^action;
+}
+
+String1: WOString {
+	value = ^libellePopUp;
+}
+
+popUpListeDipl: WOPopUpButton {
+	displayString = lePopUpDACT.displayString;
+	item = lePopUpDACT.itemEnCours;
+	list = lePopUpDACT.listeEOFetches;
+	selection = lePopUpDACT.itemChoisi;
+	disabled = ^disabled;
+	noSelectionString = lePopUpDACT.noSelectionString;
+	onChange = fctSubmitChoix;
+}

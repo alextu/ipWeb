@@ -1,0 +1,46 @@
+{
+    attributes = (
+        {
+            columnName = "CPT_LOGIN"; 
+            externalType = VARCHAR2; 
+            name = cptLogin; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "FDOM_CODE"; 
+            externalType = VARCHAR2; 
+            name = fdomCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "FDOM_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = fdomLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }
+    ); 
+    attributesUsedForLocking = (cptLogin, fannKey, fdomCode); 
+    className = EOGenericRecord; 
+    classProperties = (cptLogin, fannKey, fdomCode, fdomLibelle); 
+    externalName = "V_DOMAINE_VISIBLES"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (fannKey, fdomCode); }; 
+    name = VDomaineVisibles; 
+    primaryKeyAttributes = (cptLogin, fannKey, fdomCode); 
+}

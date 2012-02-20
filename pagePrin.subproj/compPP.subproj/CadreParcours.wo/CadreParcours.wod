@@ -1,0 +1,63 @@
+AnnuleChoixParcours: WOSubmitButton {
+	action = annuleChoixParcours;
+	value = "Annuler choix de parcours";
+}
+
+ChoixParcours : WORadioButtonMatrix {
+	item = niemeParcours;
+	list = listeChoixParcours;
+	selection = parcSelected;
+	maxColumns = 1;
+}
+
+Conditional1: WOConditional {
+	condition = dialogueChoixInitieParEtud;
+}
+
+Conditional2: WOConditional {
+	condition = reccueilChoix;
+}
+
+Conditional3: WOConditional {
+	condition = confirmationModif;
+}
+
+Conditional4: WOConditional {
+	condition = erreurModif;
+}
+
+Form1: WOForm {
+	multipleSubmit = true;
+}
+
+String1: WOString {
+	value = parcoursDejaChoisi;
+}
+
+String2: WOString {
+	value = nouveauParcoursChoisi;
+}
+
+String3: WOString {
+	value = niemeParcours.mparLibelle;
+}
+
+SubmitButton1: WOSubmitButton {
+	value = "Valider choix de parcours";
+	action = soumetChoixParcours;
+}
+
+SubmitButton2: WOSubmitButton {
+	action = confChgtParcours;
+	value = "Confirmer changement de parcours";
+}
+
+SubmitButton3: WOSubmitButton {
+	action = annuleChoixParcours;
+	value = "Annuler changement de parcours";
+}
+
+SubmitButton4: WOSubmitButton {
+	action = annuleChoixParcours;
+	value = "OK, revenir ˆ l'Žcran principal...";
+}

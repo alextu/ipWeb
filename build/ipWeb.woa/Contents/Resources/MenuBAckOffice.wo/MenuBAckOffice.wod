@@ -1,0 +1,173 @@
+CRIDefaultPage1: IPWebDefaultPage {
+	ignoreDecrypter = false;
+	pageTitle = "IP Web";
+	useDatePicker = true;
+}
+
+CRIHTMLFooter1: CRIHTMLFooter {
+	showBar = true;
+	useDefaultMail = true;
+}
+
+Conditional1: WOConditional {
+	condition = compChoisiIpEtud;
+}
+
+Conditional2: WOConditional {
+	condition = compChoisiListeDipl;
+}
+
+Conditional3: WOConditional {
+	condition = compChoisiDatesIpwDipl;
+}
+
+Conditional4: WOConditional {
+	condition = compChoisiDatesIpwDom;
+}
+
+Conditional5: WOConditional {
+	condition = compChoisiCommentEC;
+}
+
+Conditional6: WOConditional {
+	condition = compChoisiRnAutor;
+}
+
+Conditional7: WOConditional {
+	condition = compChoisiRnListeDipl;
+}
+
+Conditional8: WOConditional {
+	condition = compChoisiListeInscDipl;
+}
+
+CondEnvoiMail : WOConditional {
+	condition = compChoisiEnvoiMail;
+}
+
+
+Form1: WOForm {
+	name = nomFormChgtAnneeUniv;
+	action = chgtAnneeAction;
+}
+
+GC6G: WOGenericContainer {
+	background = session.srcImgCadreBordG;
+	elementName = "TD";
+	height = 6;
+	width = 7;
+}
+
+GCBordB: WOGenericContainer {
+	elementName = "TD";
+	background = session.srcImgCadreBas;
+	height = 9;
+}
+
+GCBordD: WOGenericContainer {
+	elementName = "TD";
+	background = session.srcImgCadreBordD;
+	width = 9;
+
+}
+
+GCBordG: WOGenericContainer {
+	elementName = "TD";
+	background = session.srcImgCadreBordG;
+	width = 7;
+	height = 450;
+}
+
+GContBandeau: WOGenericContainer {
+
+	elementName = "TD";
+
+	align = "LEFT";
+	valign = "TOP";
+	colspan = "2";
+}
+
+GenericContainer10: WOGenericContainer {
+	background = session.imgFinOnglets;
+	elementName = "TD";
+	ALIGN="LEFT";
+	HEIGHT="54";
+	COLSPAN="2";
+}
+
+ImBordDH: WOImage {
+	height = 58;
+	src = "images/cadreSeul_HautD.gif";
+	width = 25;
+}
+
+ImBordDH2: WOImage {
+	height = 6;
+	src = "images/cadreSeul_COINHD.gif";
+	width = 9;
+}
+
+ImagBordDB: WOImage {
+	heigth = 9;
+	src = "images/cadreSeul_BasD.gif";
+	width = 9;
+}
+
+ImagBordGB: WOImage {
+	heigth = 9;
+	src = "images/cadreSeul_basG.gif";
+	width = 7;
+}
+
+Mod_autoRnDipl: Mod_autoRnDipl {
+}
+
+Mod_commentaires1: Mod_commentaires {
+}
+
+Mod_datesIpDipl1: Mod_datesIpDipl {
+}
+
+Mod_datesIpDom1: Mod_datesIpDom {
+}
+
+Mod_diplAvecRN: Mod_diplAvecRN {
+}
+
+Mod_listeInscDipl: Mod_listeInscDipl {
+}
+
+Mod_EnvoiMail : Mod_envoiMail {	
+}
+
+
+PopUpButton1: WOPopUpButton {
+	item = occurAnneeUniv;
+	list = anneesUniv;
+	onChange = fctSubmitChange;
+	selection = anneeChoisie;
+}
+
+bandeauCtrl: BandeauControle {
+}
+
+imFinLigneOnglets: WOImage {
+	alt = "F";
+	border = 0;
+	height = 54;
+	src = "images/cadreSeul_HautD.gif";
+	width = 9;
+}
+
+lesOngletsDuBandeau: BandeauControle {
+}
+
+maListeDipl: Mod_listeDipl {
+}
+
+moduleIpEtud: Mod_IpEtud {
+}
+
+scriptCacheDetail: WOJavaScript {
+	scriptSource = "scripts/cacheDetailsDiv.js";
+}

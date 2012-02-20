@@ -1,0 +1,160 @@
+ActiveImage1: WOActiveImage {
+	action = imprListeIPincompletes;
+	src = "images/iconePDF.gif";
+}
+
+Conditional1: WOConditional {
+	condition = laStatDipl.convertIpPossible;
+}
+
+Conditional10: WOConditional {
+	condition = laStatDipl.isAnnulationDepassee;
+	negate = true;
+}
+
+Conditional11: WOConditional {
+	condition = laStatDipl.isAnnulationDepassee;
+	negate = true;
+}
+
+Conditional12: WOConditional {
+	condition = laStatDipl.isAnnulationDepassee;
+	negate = true;
+}
+
+Conditional13: WOConditional {
+	condition = laStatDipl.isAnnulationDepassee;
+	negate = true;
+}
+
+Conditional14: WOConditional {
+	condition = pasEncoreDIp;
+	negate = true;
+}
+
+Conditional15: WOConditional {
+	condition = pasEncoreDIp;
+}
+
+Conditional2: WOConditional {
+	condition = laStatDipl.integrationIPFaite;
+}
+
+Conditional3: WOConditional {
+	condition = laStatDipl.integrationIPFaite;
+	negate = true;
+}
+
+Conditional4: WOConditional {
+	condition = laStatDipl.isIpWebEnCours;
+	negate = true;
+}
+
+Conditional5: WOConditional {
+	condition = laStatDipl.isIpWebEnCours;
+}
+
+Conditional6: WOConditional {
+	condition = laStatDipl.convertIpPossible;
+	negate = true;
+}
+
+Conditional7: WOConditional {
+	condition = laStatDipl.convertIpPossible;
+}
+
+Conditional8: WOConditional {
+	condition = laStatDipl.ipDebutees;
+}
+
+Conditional9: WOConditional {
+	condition = laStatDipl.ipDebutees;
+	negate = true;
+}
+
+Form1: WOForm {
+	multipleSubmit = true;
+}
+
+Form2: WOForm {
+	action = changerPariteSemestres;
+	name = nomFormChoixPariteSem;
+}
+
+GC_TR: WOGenericContainer {
+	bgcolor = laStatDipl.bGColor;
+	elementName = "TR";
+	onMouseOver = laStatDipl.coulSelection;
+	onmouseout = "this.style.backgroundColor=''";
+}
+
+Hyperlink1: WOHyperlink {
+	action = refetchListeDiplome;
+	title = "Mettre ï¿½ jour les donnï¿½es sur les diplomes !";
+}
+
+Image1: WOImage {
+	filename = "images/_valider16.gif";
+	framework = "app";
+}
+
+RadioButton1: WORadioButton {
+	name = "rbParite";
+	onChange = fctSubmitChoixPariteSem;
+	selection = pariteSelected;
+	value = "Impairs";
+}
+
+RadioButton2: WORadioButton {
+	name = "rbParite";
+	onChange = fctSubmitChoixPariteSem;
+	selection = pariteSelected;
+	value = "Pairs";
+}
+
+Repetition1: WORepetition {
+	item = laStatDipl;
+	list = listeStatDiplCt;
+}
+
+String1: WOString {
+	value = laStatDipl.diplome;
+}
+
+String2: WOString {
+	value = laStatDipl.periodeIpWebDipl;
+}
+
+String3: WOString {
+	value = laStatDipl.semestre;
+}
+
+String4: WOString {
+	value = laStatDipl.nbInscrits;
+}
+
+String5: WOString {
+	value = laStatDipl.nbIpDebutees;
+	
+}
+
+String6: WOString {
+	value = laStatDipl.nbIpCompletes;
+}
+
+String7: WOString {
+	numberformat = "0";
+	value = laStatDipl.pourcentIpComplete;
+}
+
+SubmitButton1: WOSubmitButton {
+	action = laStatDipl.lancerIntegration;
+	value = "IntŽgrer Choix";
+	disabled = pasDeDroit;
+}
+
+SubmitButton2: WOSubmitButton {
+	action = laStatDipl.annulerIntegration;
+	value = "annul.Integration";
+	disabled = pasDeDroit;
+}

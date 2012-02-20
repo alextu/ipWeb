@@ -1,0 +1,108 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "ETUD_CODE_INE"; 
+            externalType = VARCHAR2; 
+            name = etudCodeIne; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 11; 
+        }, 
+        {
+            columnName = "ETUD_NUMERO"; 
+            externalType = NUMBER; 
+            name = etudNumero; 
+            precision = 6; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FSPN_KEY"; 
+            externalType = NUMBER; 
+            name = fspnKey; 
+            precision = 6; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IDIPL_ANNEE_SUIVIE"; 
+            externalType = NUMBER; 
+            name = idiplAnneeSuivie; 
+            precision = 1; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IDIPL_NUMERO"; 
+            externalType = NUMBER; 
+            name = idiplNumero; 
+            precision = 6; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IETUD_NUMERO"; 
+            externalType = NUMBER; 
+            name = iEtudNumero; 
+            precision = 6; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "RES_CODE"; 
+            externalType = VARCHAR2; 
+            name = resCode; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (idiplNumero, iEtudNumero); 
+    className = EOGenericRecord; 
+    classProperties = (
+        etudCodeIne, 
+        etudNumero, 
+        fannKey, 
+        fspnKey, 
+        idiplAnneeSuivie, 
+        idiplNumero, 
+        iEtudNumero, 
+        resCode
+    ); 
+    externalName = "V_ANONYME_A_IDENTIFIER"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            etudCodeIne, 
+            etudNumero, 
+            fannKey, 
+            fspnKey, 
+            idiplAnneeSuivie, 
+            idiplNumero, 
+            iEtudNumero, 
+            resCode
+        ); 
+    }; 
+    name = VAnonymeAIdentifier; 
+    primaryKeyAttributes = (idiplNumero); 
+}

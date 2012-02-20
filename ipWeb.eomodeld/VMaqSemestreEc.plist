@@ -1,0 +1,151 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FDSC_CODE"; 
+            externalType = VARCHAR2; 
+            name = fdscCode; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "MEC_CODE"; 
+            externalType = VARCHAR2; 
+            name = mecCode; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "MEC_HORAIRE_ETU"; 
+            externalType = NUMBER; 
+            name = mecHoraireEtu; 
+            precision = 5; 
+            scale = 2; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }, 
+        {
+            columnName = "MEC_KEY"; 
+            externalType = NUMBER; 
+            name = mecKey; 
+            precision = 6; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MEC_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = mecLibelle; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "MEC_POINTS"; 
+            externalType = NUMBER; 
+            name = mecPoints; 
+            precision = 4; 
+            scale = 2; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }, 
+        {
+            columnName = "MREC_KEY"; 
+            externalType = NUMBER; 
+            name = mrecKey; 
+            precision = 6; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MREC_ORDRE"; 
+            externalType = NUMBER; 
+            name = mrecOrdre; 
+            precision = 2; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MRUE_ORDRE"; 
+            externalType = NUMBER; 
+            name = mrueOrdre; 
+            precision = 2; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MSEM_KEY"; 
+            externalType = NUMBER; 
+            name = msemKey; 
+            precision = 6; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MTEC_CODE"; 
+            externalType = VARCHAR2; 
+            name = mtecCode; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (mecKey, mrecKey, msemKey); 
+    className = EOGenericRecord; 
+    classProperties = (
+        fannKey, 
+        fdscCode, 
+        mecCode, 
+        mecHoraireEtu, 
+        mecKey, 
+        mecLibelle, 
+        mecPoints, 
+        mrecKey, 
+        mrecOrdre, 
+        mrueOrdre, 
+        msemKey, 
+        mtecCode
+    ); 
+    externalName = "V_MAQ_SEMESTRE_EC"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            fannKey, 
+            fdscCode, 
+            mecCode, 
+            mecHoraireEtu, 
+            mecKey, 
+            mecLibelle, 
+            mecPoints, 
+            mrecKey, 
+            mrecOrdre, 
+            mrueOrdre, 
+            msemKey, 
+            mtecCode
+        ); 
+    }; 
+    name = VMaqSemestreEc; 
+    primaryKeyAttributes = (mecKey, mrecKey, msemKey); 
+}

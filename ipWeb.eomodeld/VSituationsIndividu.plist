@@ -1,0 +1,114 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "ACTUEL_ENS"; 
+            externalType = NUMBER; 
+            isReadOnly = Y; 
+            name = actuelEns; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ACTUEL_ETUD"; 
+            externalType = NUMBER; 
+            isReadOnly = Y; 
+            name = actuelEtud; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ACTUEL_NON_ENS"; 
+            externalType = NUMBER; 
+            isReadOnly = Y; 
+            name = actuelNonEns; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ACTUEL_VAC"; 
+            externalType = NUMBER; 
+            isReadOnly = Y; 
+            name = actuelVac; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ANCIEN_ENS"; 
+            externalType = NUMBER; 
+            isReadOnly = Y; 
+            name = ancienEns; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ANCIEN_ETUD"; 
+            externalType = NUMBER; 
+            isReadOnly = Y; 
+            name = ancienEtud; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ANCIEN_NON_ENS"; 
+            externalType = NUMBER; 
+            isReadOnly = Y; 
+            name = ancienNonEns; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ANCIEN_VAC"; 
+            externalType = NUMBER; 
+            isReadOnly = Y; 
+            name = ancienVac; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            isReadOnly = Y; 
+            name = noIndividu; 
+            precision = 8; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        actuelEns, 
+        actuelEtud, 
+        actuelNonEns, 
+        actuelVac, 
+        ancienEns, 
+        ancienEtud, 
+        ancienNonEns, 
+        ancienVac, 
+        noIndividu
+    ); 
+    className = VSituationsIndividu; 
+    classProperties = (
+        actuelEns, 
+        actuelEtud, 
+        actuelNonEns, 
+        actuelVac, 
+        ancienEns, 
+        ancienEtud, 
+        ancienNonEns, 
+        ancienVac, 
+        noIndividu
+    ); 
+    externalName = "GRHUM.V_SITUATIONS_INDIVIDU"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "V_SITUATIONS_INDIVIDU"; }; 
+    isReadOnly = Y; 
+    name = VSituationsIndividu; 
+    primaryKeyAttributes = (noIndividu); 
+}

@@ -1,0 +1,13 @@
+{
+    diplPourEc = {
+        class = EOFetchSpecification; 
+        entityName = VListeDiplPourEc; 
+        prefetchingRelationshipKeyPaths = (); 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = mecKey; 
+            selectorName = isEqualTo; 
+            value = {"_key" = mecKey; class = EOQualifierVariable; }; 
+        }; 
+    }; 
+}

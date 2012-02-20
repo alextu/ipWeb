@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="PopUpSelection" wocomponentcontent="false">
+
+		<binding name="nomPopUp"/>
+		<binding name="lePopUpDACT"/>
+		<binding name="libellePopUp"/>
+		<binding name="action"/>
+		<binding name="disabled" defaults="Boolean"/>
+
+		<validation message="&apos;nomPopUp&apos; is a required binding">
+			<unbound name="nomPopUp"/>
+		</validation>
+
+		<validation message="&apos;lePopUpDACT&apos; is a required binding">
+			<unbound name="lePopUpDACT"/>
+		</validation>
+	</wo>
+</wodefinitions>

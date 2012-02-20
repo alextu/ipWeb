@@ -1,0 +1,26 @@
+===============================
+ Historique des modification :
+===============================
+
+
+Version en cours...
+****************************
+*       Version 1.2.0      *
+****************************
+
+A) Fonctionnalités :
+----------------------
+- possibilité d'une authentification alternative des étudiant (email + passwd de leur compte étudiant)
+- gestion des IP Anonymes (demande de l'Université de Provence)
+
+
+B) Fichier de configuration :
+-----------------------------
+ajout d'un nouveau paramètre = APP_USE_EMAIL_FOR_LOGIN
+# Méthode d'authentification des étudiants : si TRUE, utilisation de l'email comme login et du mot de passe...
+
+ajout d'un nouveau paramètre = APP_USE_IP_ANONYMES
+# si TRUE on autorise les IP Anonymes dans IP Web (IP avant l'inscription administrative)
+
+
+

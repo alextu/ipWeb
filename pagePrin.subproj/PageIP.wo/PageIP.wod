@@ -1,0 +1,35 @@
+CRIDefaultPage1: IPWebDefaultPage {
+	ignoreDecrypter = false;
+	pageTitle = "IP Web";
+	useDatePicker = true;
+}
+
+CRIHTMLFooter1: CRIHTMLFooter {
+	showBar = true;
+	useDefaultMail = true;
+}
+
+datePickerSrc: CRIDatePickerSrc {
+}
+
+decrypterSrc: CRIDecrypterSrc {
+}
+
+idEtudiant: Identite {
+}
+
+idEtudiant2: Identite {
+}
+
+lesFormationsSuivies: Formations {
+}
+
+lesIpDuSemestre: CadreIp {
+}
+
+pageContent: WOComponentContent {
+}
+
+scriptCacheDetail: WOJavaScript {
+	scriptSource = "scripts/cacheDetailsDiv.js";
+}

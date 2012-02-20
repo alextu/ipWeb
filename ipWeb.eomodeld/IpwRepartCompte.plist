@@ -1,0 +1,60 @@
+{
+    attributes = (
+        {
+            columnName = "CPT_ORDRE"; 
+            externalType = NUMBER; 
+            name = cptOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cptOrdre, dCreation, dModification, persId); 
+    className = EORepartCompte; 
+    classProperties = (dCreation, dModification, toCompte, toIndividuUlr); 
+    externalName = "REPART_COMPTE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (dCreation, dModification, toCompte); }; 
+    name = IpwRepartCompte; 
+    primaryKeyAttributes = (cptOrdre, persId); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = IpwCompte; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cptOrdre; sourceAttribute = cptOrdre; }); 
+            name = toCompte; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = IpwIndividuUlr; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = persId; sourceAttribute = persId; }); 
+            name = toIndividuUlr; 
+        }
+    ); 
+}

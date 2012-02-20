@@ -1,0 +1,37 @@
+{
+    attributes = (
+        {
+            columnName = "IP_CODE_DROIT"; 
+            externalType = VARCHAR2; 
+            name = ipCodeDroit; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 3; 
+        }, 
+        {
+            columnName = "IP_TYPE_REF_SPD"; 
+            externalType = VARCHAR2; 
+            name = ipTypeRefSpd; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "SPD_COLONNE"; 
+            externalType = VARCHAR2; 
+            name = spdColonne; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }
+    ); 
+    attributesUsedForLocking = (ipCodeDroit, ipTypeRefSpd, spdColonne); 
+    cachesObjects = Y; 
+    className = EOGenericRecord; 
+    classProperties = (ipTypeRefSpd, spdColonne); 
+    externalName = "IPW_DROITS_SCOLPEDA"; 
+    fetchSpecificationDictionary = {}; 
+    isReadOnly = Y; 
+    name = IpwDroitsScolpeda; 
+    primaryKeyAttributes = (ipCodeDroit); 
+}

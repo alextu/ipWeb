@@ -1,0 +1,152 @@
+
+ <fieldset>
+     <legend><b>Liste d'inscrits <webobject name="String21"></webobject> g&eacute;r&eacute;e par IP&nbsp;Web :</b></legend>
+     <table>
+		<tr>
+			<td valign="bottom"><webobject name="Form2"><u>Consulter la liste des inscrits&nbsp;:</u>&nbsp;<webobject name="RadioButton1"></webobject><webobject name="Generic2">&agrave; une formation...</webobject>&nbsp;&nbsp;<webobject name="RadioButton2"></webobject><webobject name="Generic3">aux EC&nbsp;d'une formation...</webobject><br></webobject></td>
+			<td align="right" width="200" valign="bottom"><webobject name="Form1"><webobject name="Conditional8"><webobject name="Conditional3"><webobject name="SubmitButton2"></webobject></webobject></webobject><webobject name="Conditional9"><webobject name="Conditional6"><webobject name="SubmitButton3"></webobject></webobject></webobject></webobject></td>
+		</tr>
+	</table>
+
+     <webobject name="Conditional4">
+		<webobject name="PopUpMultiDiplSemUe1"></webobject>
+		<webobject name="Conditional1"><webobject name="FormAccel">
+			<table width="100%">
+				<tr>
+					<td width="400">
+						Nom commen&ccedil;ant &nbsp;par&nbsp;:&nbsp;<webobject name="TextField1"></webobject>&nbsp;<webobject name="SubmitButton1"></webobject>
+					</td>
+					<td>
+						<webobject name="String4"></webobject>&nbsp;inscrits&nbsp;<webobject name="String10"></webobject>...
+					</td>
+				</tr>
+			</table>
+		</webobject>
+		<br>
+		<table cellspacing="1" width="100%" border="1">
+			<tr bgcolor="#57e8ff">
+				<th>Nom &amp; Pr&eacute;nom</th>
+				<th width="35">Etat IP</th>
+				<th width="10">insc.</th>
+				<th>dispense</th>
+				<th>r&eacute;sultat</th>
+				<th>Moy s1</th>
+				<th>Moy s2</th>
+			</tr>
+			<webobject name="Repetition1">
+				<tr>
+					<td width="250">
+						<table>
+							<tr>
+								<td width="10"><b><font color="#ffb347"><webobject name="String12"></webobject></font></b></td>
+								<td><webobject name="Hyperlink1">
+										<webobject name="String1"></webobject>&nbsp;<webobject name="String2"></webobject>
+									</webobject>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<td width="15">
+									<webobject name="Conditional2">
+										<webobject name="Hyperlink2"><i>=&gt;</i></webobject>
+									</webobject>
+								</td>
+								<td>
+									<webobject name="Generic1">
+										<webobject name="String13"></webobject>
+									</webobject>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td align="center">
+						<webobject name="String3"></webobject>
+					</td>
+					<td>
+						<webobject name="String5"></webobject>&nbsp;
+					</td>
+					<td width="200">
+						<webobject name="String6"></webobject>&nbsp;
+					</td>
+					<td>
+						<table width="100%">
+							<tr>
+								<td align="right" width="70%">
+									<b><webobject name="String7"></webobject></b>
+								</td>
+								<td align="center">
+									<webobject name="String9"></webobject>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table width="100%">
+							<tr>
+								<td align="right" width="70%">
+									<b><webobject name="String11"></webobject></b>
+								</td>
+								<td align="center">
+									<webobject name="String8"></webobject>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</webobject>
+		</table>
+		<p>&nbsp;&nbsp;</p>
+	</webobject>
+     </webobject>
+     <webobject name="Conditional5">
+     	<webobject name="PopUpMultiDiplSemUe2"></webobject>
+		<webobject name="Conditional7">
+			<table>
+				<td>
+					<webobject name = "siInscrits"><webobject name = "extractionExcel"></webobject></webobject>
+				</td>
+				<td>	
+					<webobject name="FormAccel2">
+						<table>
+							<tr>
+								<td>
+									Nom commen&ccedil;ant &nbsp;par&nbsp;:&nbsp;<webobject name="TextField2"></webobject>&nbsp;
+									<webobject name="SubmitButton4"></webobject>
+								</td>
+								<td>
+									&nbsp;&nbsp;&nbsp;<webobject name="String20"></webobject>&nbsp;inscrits qui suivent<b><font color="#920040">(*)</font></b> cet EC<webobject name="String19"></webobject>...
+								</td>
+							</tr>
+						</table>
+					</webobject>
+				</td>	
+			</table>
+			<font color="#920040"><b>(*)</B><i> : &nbsp;on ne comptabilise pas les &eacute;tudiants ayant d&eacute;j&agrave; valid&eacute; cet EC lors d'une inscription ant&eacute;rieure.</i></font>
+			<table cellspacing="1" width="100%" border="1">
+				<tr bgcolor="#57e8ff">
+					<th bgcolor="#6a1a3b"><font color="#ffffff">Dipl&ocirc;me</font></th>
+					<th bgcolor="#6a1a3b"><font color="#ffffff">Nom &amp; Pr&eacute;nom</font></th>
+					<th bgcolor="#6a1a3b" width="100"><font color="#ffffff">Int&eacute;gration Choix</font></th>
+					<th bgcolor="#6a1a3b"><font color="#ffffff">r&eacute;sultat</font></th>
+					<th bgcolor="#6a1a3b"><font color="#ffffff">Moy s1</font></th>
+					<th bgcolor="#6a1a3b"><font color="#ffffff">Moy s2</font></th>	
+				</tr>
+				<webobject name="Repetition2">
+					<tr>
+						<webobject name="Generic4"><webobject name="String14"></webobject></webobject>
+						<td>&nbsp;<webobject name="Hyperlink4"><webobject name="String23"></webobject>&nbsp;<webobject name="String22"></webobject></webobject></td>
+						<td align="center" width="80"><webobject name="String15"></webobject></td>
+						<td width="150"><webobject name="String16"></webobject></td>
+						<td align="center" width="90"><webobject name="String17"></webobject></td>
+						<td align="center" width="90"><webobject name="String18"></webobject></td>
+					</tr>
+				</webobject>
+			</table>
+		</webobject>
+	</webobject>
+
+<br>
+ </fieldset>

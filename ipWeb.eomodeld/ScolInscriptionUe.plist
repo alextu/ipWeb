@@ -1,0 +1,200 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IDIPL_NUMERO"; 
+            externalType = NUMBER; 
+            name = idiplNumero; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IMRUE_ABSENCE1"; 
+            externalType = NUMBER; 
+            name = imrueAbsence1; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IMRUE_ABSENCE2"; 
+            externalType = NUMBER; 
+            name = imrueAbsence2; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IMRUE_COEFFICIENT"; 
+            externalType = NUMBER; 
+            name = imrueCoefficient; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            columnName = "IMRUE_DISPENSE"; 
+            externalType = NUMBER; 
+            name = imrueDispense; 
+            precision = 2; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IMRUE_ETAT"; 
+            externalType = NUMBER; 
+            name = imrueEtat; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IMRUE_MENTION1"; 
+            externalType = NUMBER; 
+            name = imrueMention1; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IMRUE_MENTION2"; 
+            externalType = NUMBER; 
+            name = imrueMention2; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IMRUE_NOTE_BASE"; 
+            externalType = NUMBER; 
+            name = imrueNoteBase; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IMRUE_OBTENTION"; 
+            externalType = VARCHAR2; 
+            name = imrueObtention; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IMRUE_POINT_JURY"; 
+            externalType = NUMBER; 
+            name = imruePointJury; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IMRUE_POINTS1"; 
+            externalType = NUMBER; 
+            name = imruePoints1; 
+            precision = 4; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IMRUE_POINTS2"; 
+            externalType = NUMBER; 
+            name = imruePoints2; 
+            precision = 4; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IMRUE_PONDERATION"; 
+            externalType = NUMBER; 
+            name = imruePonderation; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            columnName = "IMRUE_SEMESTRE"; 
+            externalType = NUMBER; 
+            name = imrueSemestre; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IMRUE_SESSION1"; 
+            externalType = NUMBER; 
+            name = imrueSession1; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IMRUE_SESSION2"; 
+            externalType = NUMBER; 
+            name = imrueSession2; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }, 
+        {
+            columnName = "MRUE_KEY"; 
+            externalType = NUMBER; 
+            name = mrueKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (fannKey, idiplNumero, imrueSemestre, mrueKey); 
+    className = EOGenericRecord; 
+    classProperties = (
+        fannKey, 
+        idiplNumero, 
+        imrueAbsence1, 
+        imrueAbsence2, 
+        imrueCoefficient, 
+        imrueDispense, 
+        imrueEtat, 
+        imrueMention1, 
+        imrueMention2, 
+        imrueNoteBase, 
+        imrueObtention, 
+        imruePointJury, 
+        imruePoints1, 
+        imruePoints2, 
+        imruePonderation, 
+        imrueSemestre, 
+        imrueSession1, 
+        imrueSession2, 
+        mrueKey
+    ); 
+    externalName = "SCOL_INSCRIPTION_UE"; 
+    fetchSpecificationDictionary = {}; 
+    name = ScolInscriptionUe; 
+    primaryKeyAttributes = (idiplNumero, imrueSemestre, mrueKey); 
+}

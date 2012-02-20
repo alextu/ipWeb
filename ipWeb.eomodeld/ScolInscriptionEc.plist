@@ -1,0 +1,209 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IDIPL_NUMERO"; 
+            externalType = NUMBER; 
+            name = idiplNumero; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IMREC_ABSENCE1"; 
+            externalType = NUMBER; 
+            name = imrecAbsence1; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IMREC_ABSENCE2"; 
+            externalType = NUMBER; 
+            name = imrecAbsence2; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IMREC_COEFFICIENT"; 
+            externalType = NUMBER; 
+            name = imrecCoefficient; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            columnName = "IMREC_DISPENSE"; 
+            externalType = NUMBER; 
+            name = imrecDispense; 
+            precision = 2; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IMREC_ETAT"; 
+            externalType = NUMBER; 
+            name = imrecEtat; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IMREC_MENTION1"; 
+            externalType = NUMBER; 
+            name = imrecMention1; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IMREC_MENTION2"; 
+            externalType = NUMBER; 
+            name = imrecMention2; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IMREC_NOTE_BASE"; 
+            externalType = NUMBER; 
+            name = imrecNoteBase; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IMREC_OBTENTION"; 
+            externalType = VARCHAR2; 
+            name = imrecObtention; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IMREC_POINT_JURY"; 
+            externalType = NUMBER; 
+            name = imrecPointJury; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IMREC_POINTS1"; 
+            externalType = NUMBER; 
+            name = imrecPoints1; 
+            precision = 4; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IMREC_POINTS2"; 
+            externalType = NUMBER; 
+            name = imrecPoints2; 
+            precision = 4; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IMREC_PONDERATION"; 
+            externalType = NUMBER; 
+            name = imrecPonderation; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            columnName = "IMREC_SEMESTRE"; 
+            externalType = NUMBER; 
+            name = imrecSemestre; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IMREC_SESSION1"; 
+            externalType = NUMBER; 
+            name = imrecSession1; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IMREC_SESSION2"; 
+            externalType = NUMBER; 
+            name = imrecSession2; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }, 
+        {
+            columnName = "MREC_KEY"; 
+            externalType = NUMBER; 
+            name = mrecKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MSEM_KEY"; 
+            externalType = NUMBER; 
+            name = msemKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (idiplNumero, imrecSemestre, mrecKey, msemKey); 
+    className = EOGenericRecord; 
+    classProperties = (
+        fannKey, 
+        idiplNumero, 
+        imrecAbsence1, 
+        imrecAbsence2, 
+        imrecCoefficient, 
+        imrecDispense, 
+        imrecEtat, 
+        imrecMention1, 
+        imrecMention2, 
+        imrecNoteBase, 
+        imrecObtention, 
+        imrecPointJury, 
+        imrecPoints1, 
+        imrecPoints2, 
+        imrecPonderation, 
+        imrecSemestre, 
+        imrecSession1, 
+        imrecSession2, 
+        mrecKey, 
+        msemKey
+    ); 
+    externalName = "SCOL_INSCRIPTION_EC"; 
+    fetchSpecificationDictionary = {}; 
+    name = ScolInscriptionEc; 
+    primaryKeyAttributes = (idiplNumero, imrecSemestre, mrecKey); 
+}

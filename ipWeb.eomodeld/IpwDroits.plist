@@ -1,0 +1,90 @@
+{
+    attributes = (
+        {
+            columnName = "IP_CODE_FONCTION"; 
+            externalType = VARCHAR2; 
+            name = ipCodeFonction; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IP_ENS"; 
+            externalType = VARCHAR2; 
+            name = ipEns; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "IP_LIB_FONCTION"; 
+            externalType = VARCHAR2; 
+            name = ipLibFonction; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IP_PERS"; 
+            externalType = VARCHAR2; 
+            name = ipPers; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 3; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IP_VAC"; 
+            externalType = VARCHAR2; 
+            name = ipVac; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "IPM_KEY"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "IP_CODE_MODULE"; }; 
+            name = ipmKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (ipCodeFonction, ipmKey); 
+    className = EOGenericRecord; 
+    classProperties = (
+        ipCodeFonction, 
+        ipEns, 
+        ipLibFonction, 
+        ipPers, 
+        ipVac, 
+        ipmKey, 
+        ipwDroitsScolpeda, 
+        ipwModules
+    ); 
+    externalName = "IPW_DROITS"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (ipCodeFonction, ipEns, ipLibFonction, ipPers, ipVac, ipmKey); 
+    }; 
+    name = IpwDroits; 
+    primaryKeyAttributes = (ipCodeFonction, ipmKey); 
+    relationships = (
+        {
+            destination = IpwDroitsScolpeda; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ipCodeDroit; sourceAttribute = ipPers; }); 
+            name = ipwDroitsScolpeda; 
+        }, 
+        {
+            destination = IpwModules; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ipmKey; sourceAttribute = ipmKey; }); 
+            name = ipwModules; 
+        }
+    ); 
+}

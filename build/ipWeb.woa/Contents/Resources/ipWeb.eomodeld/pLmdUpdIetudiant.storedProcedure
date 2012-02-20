@@ -1,0 +1,38 @@
+{
+    arguments = (
+        {
+            columnName = "10_etudNumero"; 
+            externalType = NUMBER; 
+            name = "10_etudNumero"; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "20_idiplNumero"; 
+            externalType = NUMBER; 
+            name = "20_idiplNumero"; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "30_ietudNumero"; 
+            externalType = NUMBER; 
+            name = "30_ietudNumero"; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "40_fannKey"; 
+            externalType = NUMBER; 
+            name = "40_fannKey"; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    externalName = "scolarite.P_LMD_UPD_IETUDIANT"; 
+    name = pLmdUpdIetudiant; 
+}
