@@ -25,6 +25,7 @@ lesFormationsSuivies: Formations {
 }
 
 lesIpDuSemestre: CadreIp {
+	showScolariteAnterieure = true;
 }
 
 pageContent: WOComponentContent {

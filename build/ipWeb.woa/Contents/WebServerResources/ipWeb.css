@@ -24,3 +24,8 @@ span.selected { color: #c00; font-size: inherit; font-weight: bold; text-decorat
 /* definition integree au document des styles specifiques � IP Web ! */
  *.hide {display: none;}
  *.show {display: block;}
+
+.annee {
+	border-bottom:1px dotted #fff;
+	margin-left:20px;
+}
