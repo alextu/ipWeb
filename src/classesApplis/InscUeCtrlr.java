@@ -628,7 +628,11 @@ public class InscUeCtrlr {
 			case -1 : {
 				if (!inscSemCt.ipPasEncoreOuvertes()) {
 					String ectsManque = maSession.formattedouble(pointsUe-cumulEctsUe(),false);
-					ectsManque = "Il manque "+ectsManque+" ECTS !";
+					if (!ectsManque.equals("0")) {
+						ectsManque = "Il manque "+ectsManque+" ECTS !";
+					} else {
+						return "";
+					}
 					if (aucuneIpAuxEc()) ectsManque = ectsManque+" Aucun choix fait.";
 					return ectsManque; 
 				}

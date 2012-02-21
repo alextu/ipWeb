@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <wodefinitions>
-        <wo wocomponentcontent="false" class="CadreIp">
+        <wo class="CadreIp" wocomponentcontent="false">
 
-        </wo>
+        <binding name="showScolariteAnterieure"/>
+    </wo>
 </wodefinitions>

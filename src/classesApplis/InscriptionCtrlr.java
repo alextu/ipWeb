@@ -9,11 +9,15 @@
  * @author olive
  *
  */
-import com.webobjects.foundation.*;
-import com.webobjects.eoaccess.EOUtilities;
-import com.webobjects.eocontrol.*;
-
-import java.util.*;
+import com.webobjects.eocontrol.EOEditingContext;
+import com.webobjects.eocontrol.EOFetchSpecification;
+import com.webobjects.eocontrol.EOGenericRecord;
+import com.webobjects.eocontrol.EOQualifier;
+import com.webobjects.eocontrol.EOSortOrdering;
+import com.webobjects.foundation.NSArray;
+import com.webobjects.foundation.NSDictionary;
+import com.webobjects.foundation.NSMutableArray;
+import com.webobjects.foundation.NSMutableDictionary;
 
 /* ATTENTE
 import org.cocktail.scolarix.serveur.metier.eos.EOPreEtudiant;
@@ -30,6 +34,9 @@ public class InscriptionCtrlr {
 	private NSArray inscriptionsCourantes;	//les dernières inscriptions en date de l'étudiant
 	private NSArray lesDiplAnneeCtrlr;		// les InscDiplAnneeCtrlr déclarés...
 
+	private NSArray toutesLesInscriptions;
+	private NSDictionary tousLesDiplAnneeCtrlParAnneeUniv;
+	
 //	private int anneeEnCours;
 	protected Session maSession;
 
@@ -288,5 +295,46 @@ public class InscriptionCtrlr {
 	    return lesDiplAnneeCtrlr;
 	}
 
+	private void chargerToutesLesInscriptionsParAnnee(Integer etudNumero) {
+		// fetcher avec n� etudiant et ann�e en cours
+		NSArray bindings = new NSArray(new Object[] { etudNumero });
+		EOQualifier qualifier = EOQualifier.qualifierWithQualifierFormat(
+				"etudNumero = %@", bindings);
+		EOSortOrdering typeInsc = EOSortOrdering.sortOrderingWithKey(
+				"idiplTypeInscription", EOSortOrdering.CompareAscending);
+		NSArray sortOrderings = new NSArray(new Object[] { typeInsc });
+		EOFetchSpecification fetchSpec = new EOFetchSpecification(
+				"IpwScolInscriptionEtudiant", qualifier, sortOrderings);
+		EOEditingContext ec = maSession.defaultEditingContext();
+		toutesLesInscriptions = ec.objectsWithFetchSpecification(fetchSpec);
+		// si des formations ont bien été récupérées...génerer les DiplAnneeCtrlr nécessaires
+		if (toutesLesInscriptions != null && toutesLesInscriptions.count()>0) {
+			NSMutableDictionary listeDiplAnneeParAnneeUniv = new NSMutableDictionary();
+			java.util.Enumeration enumerator = toutesLesInscriptions.objectEnumerator();
+			while (enumerator.hasMoreElements()) {
+				EOGenericRecord insc = (EOGenericRecord)enumerator.nextElement();
+				/* ATTENTE
+				InscDiplAnneeCtrlr diplAnneeCtlr = new InscDiplAnneeCtrlr(maSession, insc, preEtudiant != null);
+				 */
+				InscDiplAnneeCtrlr diplAnneeCtlr = new InscDiplAnneeCtrlr(maSession, insc, false);
+				Integer anneeUniv = diplAnneeCtlr.anneeUniv();
+				NSMutableArray listeDiplAnnee = (NSMutableArray) listeDiplAnneeParAnneeUniv.objectForKey(anneeUniv);
+				if (listeDiplAnnee == null) {
+					listeDiplAnnee = new NSMutableArray();
+					listeDiplAnneeParAnneeUniv.setObjectForKey(listeDiplAnnee, anneeUniv);
+				}
+				listeDiplAnnee.addObject(diplAnneeCtlr);
+			}
+			tousLesDiplAnneeCtrlParAnneeUniv = listeDiplAnneeParAnneeUniv.immutableClone();
+		}
+	}
+
+	public NSDictionary getTousLesDiplAnneeCtrlParAnneeUniv() {
+		if (tousLesDiplAnneeCtrlParAnneeUniv == null) {
+			Integer leEtudNumero = (Integer)etudiant.valueForKey("etudNumero");
+			chargerToutesLesInscriptionsParAnnee(leEtudNumero);
+		}
+		return tousLesDiplAnneeCtrlParAnneeUniv;
+	}
 	
 }

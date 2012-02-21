@@ -60,12 +60,12 @@ SubmitButton1: WOSubmitButton {
 
 SubmitButton2: WOSubmitButton {
 	action = ddeMajTel;
-	value = "changer n¡ Tel...";
+	value = "changer nÂ° Tel...";
 }
 
 SubmitButton3: WOSubmitButton {
 	action = validerTel;
-	value = "Valider mon n¡.";
+	value = "Valider mon nÂ°.";
 }
 
 TextField2: WOTextField {

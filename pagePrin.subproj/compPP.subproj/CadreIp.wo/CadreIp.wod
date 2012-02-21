@@ -428,3 +428,16 @@ uneUeDuSemestre: CadreUE {
 	monUeCtrlr = unUeCtrlr;
 	monSemCt = leCtlrSem;
 }
+
+ShowScolariteAnterieure : WOConditional {
+	condition = showScolariteAnterieure;
+}
+
+ToScolariteAnterieure : WOSubmitButton {
+	action = afficherScolariteAnterieure;
+	value = "Relevés de notes des années précédentes";
+}
+
+Form : WOForm {
+	
+}

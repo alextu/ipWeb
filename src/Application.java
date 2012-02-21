@@ -268,6 +268,7 @@ public class Application extends MyApp {
 
 		paramConfig = null;
 		
+		setPageRefreshOnBacktrackEnabled(true);
 		NSLog.out.appendln("fin d'appel de Application() !");		
 	}
 
@@ -692,7 +693,7 @@ public class Application extends MyApp {
 		// ajustement de l'heure de fin : 
 		if (nouvDateFin != null) {
 			if (zeroHeureDate(nouvDateFin)) {
-				// nouvDateFin = nouvDateFin.timestampByAddingGregorianUnits(0, 0, 0, 23, 59, 0);
+				 nouvDateFin = nouvDateFin.timestampByAddingGregorianUnits(0, 0, 0, 23, 59, 0);
 			}
 		}
 
