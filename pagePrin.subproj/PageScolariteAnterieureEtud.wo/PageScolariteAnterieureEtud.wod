@@ -1,0 +1,15 @@
+CRIDefaultPage1: IPWebDefaultPage {
+	ignoreDecrypter = false;
+	pageTitle = "IP Web";
+	useDatePicker = true;
+}
+
+CRIHTMLFooter1: CRIHTMLFooter {
+	showBar = true;
+	useDefaultMail = true;
+}
+
+ScolariteAnterieure : ScolariteAnterieure {
+	lesInscriptionsParAnnee = lesInscriptionsParAnnee;
+	onPrevious = previousPage;
+}

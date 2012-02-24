@@ -34,7 +34,7 @@
 	<classpathentry kind="lib" path="Libraries/JasperLib/poi-3.0-rc4-20070503.jar"/>
 	<classpathentry kind="var" path="NEXT_LOCAL_ROOT/Library/WebObjects/Extensions/axis-ant.jar"/>
 	<classpathentry kind="var" path="NEXT_LOCAL_ROOT/Library/WebObjects/Extensions/axis.jar"/>
-	<classpathentry kind="var" path="NEXT_LOCAL_ROOT/Library/WebObjects/Extensions/ojdbc14.jar"/>
+	<classpathentry kind="var" path="NEXT_LOCAL_ROOT/Library/WebObjects/Extensions/ojdbc5.jar"/>
 	<classpathentry kind="var" path="NEXT_LOCAL_ROOT/Library/WebObjects/Extensions/jaxrpc.jar"/>
 	<classpathentry kind="var" path="NEXT_LOCAL_ROOT/Library/WebObjects/Extensions/saaj.jar"/>
 	<classpathentry kind="var" path="NEXT_LOCAL_ROOT/Library/WebObjects/Extensions/wsdl4j.jar"/>

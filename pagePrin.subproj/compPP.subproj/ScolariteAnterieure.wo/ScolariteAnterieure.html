@@ -1,0 +1,56 @@
+
+  <div id = "overDiv" style = "position:absolute; visibility:hidden; z-index:1000;" align = "LEFT"></div>
+  <webobject name = "scriptCacheDetail" />
+  <webobject name = "jsPourExplicationTexte" />
+  <script language = "JavaScript">	
+    var ol_delay = 300; 
+    var ol_width = 250; 
+    var ol_offsetx = 15; 
+    var ol_offsety = 15; 
+    var ol_css = CSSCLASS; 
+    var ol_bgclass = "previewTitleBox"; 
+    var ol_captionfontclass = "previewTitleText"; 
+    var ol_fgclass = "previewContentBox"; 
+    var ol_textfontclass = "previewContentText";
+  </script>
+  <table align = "CENTER" border = "0" cellspacing = "2" cellpadding = "0" width = "1000">
+    <tr>
+      <td align = "CENTER" width = "150" valign = "TOP" bgcolor = "#ffd342"> <webobject name = "idEtudiant2" /> </td>
+      <td bgcolor = "#d5d5d5" valign = "TOP" width = "850">
+        <h1 style="margin-left:20px;margin-top:20px;">Inscriptions pr&eacute;c&eacute;dentes</h1>
+        <webobject name = "ToutesLesAnnees">
+          <h2 class = "annee"><webobject name = "AnneeCourante" /></h2>
+          <ul>
+            <webobject name = "LesInscriptionsAnneeCourante">
+              <li>
+                <webobject name = "TypeInsc" />
+                <br />
+  				<strong><webobject name = "Diplome" /></strong>
+                <br />
+                <strong><webobject name = "Annee" /></strong>
+                <ul>
+                  <webobject name = "LesFormsCtrl">
+                    <li>
+                      <webobject name = "CanShowLienRn">
+                        <webobject name = "ShowRN">
+                          RN du semestre 
+                          <webobject name = "Sem" />, session 
+                          <webobject name = "noSession" />
+                        </webobject>
+                      </webobject>
+                      <webobject name = "Else"> Aucun relev&eacute; de note disponible </webobject>
+                    </li>
+                  </webobject>
+                </ul>
+              </li>
+            </webobject>
+          </ul>
+        </webobject>
+        <div style="text-align:center">
+	          <webobject name = "Form">
+	  	<webobject name = "Back"></webobject>
+	  </webobject>
+	  </div>
+      </td>
+    </tr>
+  </table>

@@ -1,10 +1,32 @@
-<webobject name="Conditional1"><WEBOBJECT NAME=Form1><B>Voir les choix p&eacute;dagogiques de l'&eacute;tudiant :</B>
-	&nbsp;&nbsp;&nbsp;&nbsp;
-	N&deg;&nbsp;Etudiant&nbsp;:&nbsp;<WEBOBJECT NAME=TextField1></WEBOBJECT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<WEBOBJECT NAME=SubmitButton1></WEBOBJECT>&nbsp;<webobject name="Hyperlink1"><i><webobject name="String2"></webobject></i></webobject>&nbsp;&nbsp;&nbsp;<WEBOBJECT NAME=Generic1><WEBOBJECT NAME=String1></WEBOBJECT></WEBOBJECT></WEBOBJECT></webobject><WEBOBJECT NAME=Conditional2><TABLE ALIGN=CENTER BORDER=0 CELLSPACING=2 CELLPADDING=0 WIDTH=1000>
-		<TR>
-			<TD ALIGN=CENTER WIDTH=150 VALIGN=TOP BGCOLOR=#ffd342><WEBOBJECT NAME=idEtudiant2></WEBOBJECT><BR>
-				<WEBOBJECT NAME=lesFormationsSuivies></WEBOBJECT></TD>
-			<TD BGCOLOR=#d5d5d5 VALIGN=TOP WIDTH=850><webobject name="Conditional3"><WEBOBJECT NAME=lesIpDuSemestre></WEBOBJECT></webobject><webobject name="Conditional4"><webobject name="lesLogs"></webobject></webobject></TD>
-		</TR>
-	</TABLE>
-</WEBOBJECT>
+<webobject name = "Conditional1">
+  <webobject name = "Form1">
+    <b>Voir les choix p&eacute;dagogiques de l'&eacute;tudiant :</b>
+        
+    N° Etudiant : <webobject name = "TextField1" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<webobject name = "SubmitButton1" />&nbsp;<webobject name = "Hyperlink1">
+      <i><webobject name = "String2" /></i>
+    </webobject>&nbsp;&nbsp;&nbsp;<webobject name = "Generic1"><webobject name = "String1" /></webobject>
+  </webobject>
+</webobject>
+<webobject name = "Conditional2">
+  <table align = "CENTER" border = "0" cellspacing = "2" cellpadding = "0" width = "1000">
+    <tr>
+      <webobject name = "IsNotScolariteAnterieure">
+      <td align = "CENTER" width = "150" valign = "TOP" bgcolor = "#ffd342">
+        <webobject name = "idEtudiant2" />
+        <br />
+        <webobject name = "lesFormationsSuivies" />
+      </td>
+      <td bgcolor = "#d5d5d5" valign = "TOP" width = "850">
+        <webobject name = "Conditional3"><webobject name = "lesIpDuSemestre" /></webobject>
+        <webobject name = "Conditional4"><webobject name = "lesLogs" /></webobject>
+      </td>
+      </webobject>
+      <webobject name = "IsScolariteAnterieure">
+      <td></td>
+      <td bgcolor = "#d5d5d5" valign = "TOP" width = "850">
+          	<webobject name = "ScolariteAnterieure"></webobject>
+      </td>
+      </webobject>
+    </tr>
+  </table>
+</webobject>

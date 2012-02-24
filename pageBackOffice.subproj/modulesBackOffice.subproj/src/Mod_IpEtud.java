@@ -17,6 +17,10 @@ public class Mod_IpEtud extends CRIWebComponent {
 	
 	public String erreurEtud;
 
+	// Affichage de la scolarité antérieure de l'étudiant
+	private boolean modeScolariteAnterieure;
+	private NSDictionary lesInscriptionsParAnnee;
+	private WOComponent previousPage;
 	
     public Mod_IpEtud(WOContext context) {
         super(context);
@@ -76,6 +80,7 @@ public class Mod_IpEtud extends CRIWebComponent {
     			((Session)this.session()).signaleChgtEtud(nouvEtud, msemKey);
     			etudiantEnCours = true;
     		}
+    		setModeScolariteAnterieure(false);
      	}
         return null;
     }
@@ -84,9 +89,15 @@ public class Mod_IpEtud extends CRIWebComponent {
     public WOComponent swapAutreChoix() {
     	if (modeDetailIp) modeDetailIp = false;
     	else modeDetailIp = true;
+    	setModeScolariteAnterieure(false);
         return null;
     }
     
+    public WOActionResults toInscriptionActuelle() {
+    	setModeScolariteAnterieure(false);
+    	modeDetailIp = true;
+    	return null;
+    }
     
     //  -----------------------------------------------------    
     //  ------------- Reponse aux notifications -------------
@@ -113,6 +124,23 @@ public class Mod_IpEtud extends CRIWebComponent {
     }
     
   
+    public WOActionResults toScolariteAnterieure() {
+		IndividuCtrlr individuCt = ((Session)criSession()).getICEtudiant(); 
+        InscriptionCtrlr inscCt = individuCt.monCInsc();
+        setLesInscriptionsParAnnee(inscCt.getTousLesDiplAnneeCtrlParAnneeUniv());
+        setPreviousPage(getPage());
+        setModeScolariteAnterieure(true);
+        modeDetailIp = false;
+		return null;
+	}
+    
+	private WOComponent getPage() {
+		WOComponent currentComponent = this;
+		while (!currentComponent._isPage()) {
+			currentComponent = currentComponent.parent();
+		}
+		return currentComponent;
+	}
     
     //  public WOComponent changeIndividu(){
 // 	CompteCtrlr monCC = ((Session)session()).getCtrlrCompte();
@@ -160,5 +188,29 @@ public class Mod_IpEtud extends CRIWebComponent {
 	
 	public void setEtudNum(Integer etudNum) {
 		this.etudNum = etudNum;
+	}
+	
+	public void setModeScolariteAnterieure(boolean modeScolariteAnterieure) {
+		this.modeScolariteAnterieure = modeScolariteAnterieure;
+	}
+	
+	public boolean isModeScolariteAnterieure() {
+		return modeScolariteAnterieure;
+	}
+	
+	public NSDictionary getLesInscriptionsParAnnee() {
+		return lesInscriptionsParAnnee;
+	}
+	
+	public void setLesInscriptionsParAnnee(NSDictionary lesInscriptionsParAnnee) {
+		this.lesInscriptionsParAnnee = lesInscriptionsParAnnee;
+	}
+	
+	public WOComponent getPreviousPage() {
+		return previousPage;
+	}
+	
+	public void setPreviousPage(WOComponent previousPage) {
+		this.previousPage = previousPage;
 	}
 }

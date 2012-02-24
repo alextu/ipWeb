@@ -24,7 +24,6 @@ public class CadreIp extends UncWebComponent {		// on veut g�rer des ancres...
 
     private boolean errDansLesIp;
     private boolean dialogueParcoursDde;		// VRAI si on a demand� l'affichage d'un dialogue de choix du parcours ! 
-    private boolean showScolariteAnterieure;
     
     public CadreIp(WOContext context) {
         super(context);
@@ -43,6 +42,11 @@ public class CadreIp extends UncWebComponent {		// on veut g�rer des ancres...
     	chargerSemestre(maSession.getInscSemestreParDefaut());
     }
 
+    @Override
+    public boolean synchronizesVariablesWithBindings() {
+    	return false;
+    }
+    
     // Pour initialiser le controleur de formation pour le WO CadreParcours...
     public InscFormationCtrlr leCtlrForm() { return inscForm; }
 
@@ -329,14 +333,6 @@ public class CadreIp extends UncWebComponent {		// on veut g�rer des ancres...
     	inscSem.confirmerChoix(false);
     	return null;
     }
-
-	public boolean showScolariteAnterieure() {
-		return showScolariteAnterieure;
-	}
-
-	public void setShowScolariteAnterieure(boolean showScolariteAnterieure) {
-		this.showScolariteAnterieure = showScolariteAnterieure;
-	}
     
 //  Clic sur le bouton demandant d'annuler le dialogue de choix du parcours !
 //    public WOComponent annuleDialogueParcours() {
@@ -345,11 +341,8 @@ public class CadreIp extends UncWebComponent {		// on veut g�rer des ancres...
 //    }
 
 	public WOActionResults afficherScolariteAnterieure() {
-		ScolariteAnterieure nextPage = (ScolariteAnterieure)pageWithName(ScolariteAnterieure.class.getName());
-		IndividuCtrlr individuCt = ((Session)criSession()).getICEtudiant(); 
-        InscriptionCtrlr inscCt = individuCt.monCInsc();
-        nextPage.setLesInscriptionsParAnnee(inscCt.getTousLesDiplAnneeCtrlParAnneeUniv());
-		return nextPage;
+		return (WOActionResults) valueForBinding("onScolariteAnterieure");
 	}
+	
 }    
     

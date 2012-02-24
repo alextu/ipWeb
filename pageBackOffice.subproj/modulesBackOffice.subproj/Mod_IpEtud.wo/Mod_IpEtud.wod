@@ -54,7 +54,22 @@ lesFormationsSuivies: Formations {
 }
 
 lesIpDuSemestre: CadreIp {
+	onScolariteAnterieure = toScolariteAnterieure;
 }
 
 lesLogs: LogsIp {
+}
+
+IsScolariteAnterieure : WOConditional {
+	condition = isModeScolariteAnterieure;
+}
+
+IsNotScolariteAnterieure : WOConditional {
+	condition = isModeScolariteAnterieure;
+	negate = true;
+}
+
+ScolariteAnterieure : ScolariteAnterieure {
+	lesInscriptionsParAnnee = lesInscriptionsParAnnee;
+	onPrevious = toInscriptionActuelle;
 }

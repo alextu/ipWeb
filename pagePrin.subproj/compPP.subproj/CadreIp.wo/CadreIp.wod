@@ -203,19 +203,6 @@ Conditional5: WOConditional {
 	condition = session.debug;
 }
 
-Conditional50: WOConditional {
-	condition = modeModif;
-	negate = true;
-}
-
-Conditional51: WOConditional {
-	condition = modeModif;
-}
-
-Conditional52: WOConditional {
-	condition = inscSem.modifPossible;
-}
-
 Conditional6: WOConditional {
 	condition = inscSem.isUrgenceSignalee;
 	negate = false;
@@ -327,13 +314,6 @@ String16: WOString {
 	value = inscSem.dateFinIPWebIncluse;
 }
 
-String17: WOString {
-	value = diplome;
-}
-
-String18: WOString {
-	value = semOrdre;
-}
 
 String2: WOString {
 	value = diplome;
@@ -427,10 +407,6 @@ modifChoix2: WOSubmitButton {
 uneUeDuSemestre: CadreUE {
 	monUeCtrlr = unUeCtrlr;
 	monSemCt = leCtlrSem;
-}
-
-ShowScolariteAnterieure : WOConditional {
-	condition = showScolariteAnterieure;
 }
 
 ToScolariteAnterieure : WOSubmitButton {

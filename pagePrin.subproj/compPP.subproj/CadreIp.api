@@ -1,7 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <wodefinitions>
         <wo class="CadreIp" wocomponentcontent="false">
 
-        <binding name="showScolariteAnterieure"/>
+        
+    
+    
+        
+    <binding name="onScolariteAnterieure"/>
+        <validation message="'onScolariteAnterieure' is a required binding.">
+            <unbound name="onScolariteAnterieure"/>
+        </validation>
     </wo>
 </wodefinitions>

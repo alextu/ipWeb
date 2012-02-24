@@ -149,7 +149,7 @@ String7: WOString {
 
 SubmitButton1: WOSubmitButton {
 	action = laStatDipl.lancerIntegration;
-	value = "Intégrer Choix";
+	value = "Int√©grer Choix";
 	disabled = pasDeDroit;
 }
 
