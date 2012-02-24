@@ -4,6 +4,7 @@ import java.util.Enumeration;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Properties;
+import java.util.TimeZone;
 
 import com.webobjects.appserver.WOApplication;
 import com.webobjects.foundation.*;
@@ -108,7 +109,6 @@ public class Application extends MyApp {
 		super();
 		NSLog.out.appendln("et bien.. Welcome to " + this.name() + " !");
 		/* ** put your initialization code in here ** */
-
 		ecApp = new EOEditingContext();
 
 		
@@ -168,18 +168,19 @@ public class Application extends MyApp {
 
 		tz = NSTimeZone.timeZoneWithName(nomTimeZone,true);	// TODO : v�rifier s'il prend bien le TimeZone dans fichier de config !
 		NSTimeZone.setDefault(tz);
+		TimeZone.setDefault(tz);
 		//		tsF = new NSTimestampFormatter("%x %X");
 		tsF = new NSTimestampFormatter("%d/%m/%Y");
 //		tsF = new NSTimestampFormatter("%d/%m/%Y %H:%M");
-		tsF.setDefaultFormatTimeZone(tz);
+		//tsF.setDefaultFormatTimeZone(tz);
 
 		// UN formatteur de NSTimeStamp adapt�e au formattage de l'heure en heure locale HH24:MM
 		tsHLF = new NSTimestampFormatter("%H:%M");
-		tsHLF.setDefaultFormatTimeZone(tz);
+		//tsHLF.setDefaultFormatTimeZone(tz);
 
 		// Un autre formateur de NSTimeStamp pour la date du jour + l'heure en heure locale HH24:MM
 		tsDHLF = new NSTimestampFormatter("%a %d/%m/%Y %H:%M");
-		tsDHLF.setDefaultFormatTimeZone(tz);
+		//tsDHLF.setDefaultFormatTimeZone(tz);
 		
 		// ann�e en cours ?
 		NSTimestamp myNSTimestamp = new NSTimestamp();
@@ -187,7 +188,7 @@ public class Application extends MyApp {
 		myCalendar.setTime(myNSTimestamp);
 //		anneeEnCours = myCalendar.get(GregorianCalendar.YEAR);
 
-		System.out.println("Il est "+tsFormat(new NSTimestamp())+" dans le fuseau horaire "+tz.getDisplayName());
+		System.out.println("Il est "+tsDHLFormat(new NSTimestamp())+" dans le fuseau horaire "+tz.getDisplayName());
 
 		EOModel modele = EOModelGroup.defaultGroup().modelNamed("ipWeb");
 		EODatabaseContext dc = EODatabaseContext.registeredDatabaseContextForModel(modele, ecApp);
@@ -270,6 +271,11 @@ public class Application extends MyApp {
 		
 		setPageRefreshOnBacktrackEnabled(true);
 		NSLog.out.appendln("fin d'appel de Application() !");		
+		// Debug du driver JDBC
+		ERXJDBCConnectionAnalyzer connectionAnalyzer = new ERXJDBCConnectionAnalyzer("ipWeb");
+		connectionAnalyzer.analyzeConnection();
+		connectionAnalyzer.dumpExtensionDirectories();
+		connectionAnalyzer.dumpClasspath();
 	}
 
 	public CRIMailBus getMailBus() {
