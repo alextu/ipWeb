@@ -247,7 +247,7 @@ SubmitButton1: WOSubmitButton {
 
 SubmitButton2: WOSubmitButton {
 	action = raffraichir;
-	value = "Raffraichir...";
+	value = "Rafraîchir...";
 }
 
 SubmitButton3: WOSubmitButton {

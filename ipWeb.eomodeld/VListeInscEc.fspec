@@ -9,13 +9,13 @@
                 {
                     class = EOKeyValueQualifier; 
                     key = mecKey; 
-                    selectorName = isEqualTo; 
+                    selectorName = "isEqualTo:"; 
                     value = {"_key" = mecKey; class = EOQualifierVariable; }; 
                 }, 
                 {
                     class = EOKeyValueQualifier; 
                     key = fannKey; 
-                    selectorName = isEqualTo; 
+                    selectorName = "isEqualTo:"; 
                     value = {"_key" = fannKey; class = EOQualifierVariable; }; 
                 }
             ); 

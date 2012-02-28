@@ -144,9 +144,8 @@ public class Mod_listeInscDipl extends CRIWebComponent {
     					new NSArray(new String[] {"mecKey", "fannKey"}));
     			EOFetchSpecification fs = EOModelGroup.defaultGroup().fetchSpecificationNamed("fsListeInscEc", "VListeInscEc");
     			EOFetchSpecification fetchSpec = fs.fetchSpecificationWithQualifierBindings(binding);
-
     			fetchSpec.setRefreshesRefetchedObjects(true);
-
+    			fetchSpec.setUsesDistinct(true);
     			EOEditingContext ec = ((Session)session()).defaultEditingContext();
     			resFetch = ec.objectsWithFetchSpecification(fetchSpec);
     			// on garde resFetch comme base pour des sous-requète sur le nom !
@@ -159,7 +158,6 @@ public class Mod_listeInscDipl extends CRIWebComponent {
     					new NSArray(new String[] {"mecKey"}));
     			fs = EOModelGroup.defaultGroup().fetchSpecificationNamed("diplPourEc", "VListeDiplPourEc");
     			fetchSpec = fs.fetchSpecificationWithQualifierBindings(binding);
-
     			listeDiplPourEC = ec.objectsWithFetchSpecification(fetchSpec);
     			initCouleursDiplomes();
     			
