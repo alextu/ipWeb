@@ -82,6 +82,15 @@
             valueType = i; 
         }, 
         {
+            columnName = "IMREC_DISPENSE"; 
+            externalType = NUMBER; 
+            name = imrecDispense; 
+            precision = 6; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
             columnName = "IMREC_ETAT"; 
             externalType = NUMBER; 
             name = imrecEtat; 
@@ -124,7 +133,7 @@
             valueType = i; 
         }
     ); 
-    attributesUsedForLocking = (etatRN, idiplAnneeSuivie, imrecEtat); 
+    attributesUsedForLocking = (etatRN, idiplAnneeSuivie); 
     className = EOGenericRecord; 
     classProperties = (
         adrNom, 
@@ -136,6 +145,7 @@
         formationAbreviation, 
         fspnKey, 
         idiplAnneeSuivie, 
+        imrecDispense, 
         imrecEtat, 
         imrecSession1, 
         imrecSession2, 
@@ -150,6 +160,7 @@
             etudNumero, 
             fannKey, 
             fspnKey, 
+            imrecDispense, 
             imrecSession1, 
             imrecSession2, 
             mecKey

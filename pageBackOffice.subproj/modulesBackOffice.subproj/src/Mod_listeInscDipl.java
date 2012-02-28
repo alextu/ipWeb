@@ -30,6 +30,7 @@ import java.util.HashMap;
 
 public class Mod_listeInscDipl extends CRIWebComponent {
 	
+	private static final Integer CODE_DISPENSE = 14;
     private static String CONSULT_LOGS_IP = "CONSULT_LOGS_IP";
     private static String[] listeFonctions = new String[] {CONSULT_LOGS_IP};
     private FonctionsCtrlr ctlFonctions;
@@ -140,8 +141,8 @@ public class Mod_listeInscDipl extends CRIWebComponent {
     		mecCode = (String)eoEcSelected.valueForKey("mecCode");
     		if (mecKey != null) {
     			NSDictionary binding = new NSDictionary(
-    					new NSArray(new Object[] {mecKey, new Integer(((Session)session()).getAnneeEnCours())}),
-    					new NSArray(new String[] {"mecKey", "fannKey"}));
+    					new NSArray(new Object[] {mecKey, new Integer(((Session)session()).getAnneeEnCours()), CODE_DISPENSE}),
+    					new NSArray(new String[] {"mecKey", "fannKey", "imrecDispense"}));
     			EOFetchSpecification fs = EOModelGroup.defaultGroup().fetchSpecificationNamed("fsListeInscEc", "VListeInscEc");
     			EOFetchSpecification fetchSpec = fs.fetchSpecificationWithQualifierBindings(binding);
     			fetchSpec.setRefreshesRefetchedObjects(true);

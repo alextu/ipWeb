@@ -252,7 +252,7 @@ SubmitButton2: WOSubmitButton {
 
 SubmitButton3: WOSubmitButton {
 	action = raffraichirListeEC;
-	value = "Raffraichir...";
+	value = "Rafraîchir...";
 }
 
 SubmitButton4: WOSubmitButton {

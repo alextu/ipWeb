@@ -17,6 +17,12 @@
                     key = fannKey; 
                     selectorName = "isEqualTo:"; 
                     value = {"_key" = fannKey; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = imrecDispense; 
+                    selectorName = "isNotEqualTo:"; 
+                    value = {"_key" = imrecDispense; class = EOQualifierVariable; }; 
                 }
             ); 
         }; 
