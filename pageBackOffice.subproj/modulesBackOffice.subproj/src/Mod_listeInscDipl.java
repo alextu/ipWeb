@@ -112,7 +112,7 @@ public class Mod_listeInscDipl extends CRIWebComponent {
 		NSDictionary binding = new NSDictionary(
 				new NSArray(new Object[] {msemKey, new Integer(((Session)session()).getAnneeEnCours())}),
 				new NSArray(new String[] {"msemKey", "fannKey"}));
-    	EOFetchSpecification fs = EOModelGroup.defaultGroup().fetchSpecificationNamed("etudInscSem", "vEtudInscSemestreRes");
+    	EOFetchSpecification fs = EOModelGroup.defaultGroup().fetchSpecificationNamed("etudInscSem", "vEtudInscSemestreResEmail");
 		EOFetchSpecification fetchSpec = fs.fetchSpecificationWithQualifierBindings(binding);
 		
 		fetchSpec.setRefreshesRefetchedObjects(true);
@@ -232,6 +232,26 @@ public class Mod_listeInscDipl extends CRIWebComponent {
     	else return "Il y a "+ listeInscrits.count();
     }
 
+    public String mailToInscrits() {
+    	String mailTo = "mailTo:";
+    	if (listeInscrits != null && listeInscrits.count() > 0) {
+    		NSArray emails = (NSArray) listeInscrits.valueForKey("email");
+    		String emailsStr = emails.componentsJoinedByString(";");
+    		mailTo = mailTo + emailsStr;
+    	}
+    	return mailTo;
+    }
+    
+    public String mailToInscritsEc() {
+    	String mailTo = "mailTo:";
+    	if (listeInscritsEC != null && listeInscritsEC.count() > 0) {
+    		NSArray emails = (NSArray) listeInscritsEC.valueForKey("mailComplet");
+    		String emailsStr = emails.componentsJoinedByString(";");
+    		mailTo = mailTo + emailsStr;
+    	}
+    	return mailTo;
+    }
+    
     public boolean pasDIncrits() {
     	return (listeInscritsEC.count() == 0);
     }

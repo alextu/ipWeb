@@ -190,15 +190,16 @@
         {className = EOGenericRecord; name = IpwScolFormationAnnee; }, 
         {className = EOGenericRecord; name = IpwScolInscriptionEtudiant; }, 
         {className = EOGenericRecord; name = VAnonymeAIdentifier; }, 
-        {className = EOGenericRecord; name = vEtudInscSemestreRes; }, 
         {className = EOGenericRecord; name = VLogsComplets; }, 
         {className = EOGenericRecord; name = VMaqSemestreEc; }, 
         {className = EOGenericRecord; name = VListeInscEc; }, 
         {className = EOGenericRecord; name = VListeDiplPourEc; }, 
         {className = EOGenericRecord; name = VListeDroitVisuDiplome; }, 
         {className = EOGenericRecord; name = IpEcIncompatibles; }, 
-        {className = EOGenericRecord; name = IpGroupeEcIncompatibles; }
+        {className = EOGenericRecord; name = IpGroupeEcIncompatibles; }, 
+        {className = EOGenericRecord; name = vEtudInscSemestreResEmail; }
     ); 
+    internalInfo = {"_deletedEntityNamesInObjectStore" = (vEtudInscSemestreRes); }; 
     storedProcedures = (
         pIpwInsIsemestre, 
         pIpwIntegreSem, 

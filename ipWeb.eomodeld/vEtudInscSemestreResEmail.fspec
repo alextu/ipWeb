@@ -1,7 +1,7 @@
 {
     etudInscSem = {
         class = EOFetchSpecification; 
-        entityName = vEtudInscSemestreRes; 
+        entityName = vEtudInscSemestreResEmail; 
         prefetchingRelationshipKeyPaths = (); 
         qualifier = {
             class = EOAndQualifier; 
@@ -9,13 +9,13 @@
                 {
                     class = EOKeyValueQualifier; 
                     key = msemKey; 
-                    selectorName = isEqualTo; 
+                    selectorName = "isEqualTo:"; 
                     value = {"_key" = msemKey; class = EOQualifierVariable; }; 
                 }, 
                 {
                     class = EOKeyValueQualifier; 
                     key = fannKey; 
-                    selectorName = isEqualTo; 
+                    selectorName = "isEqualTo:"; 
                     value = {"_key" = fannKey; class = EOQualifierVariable; }; 
                 }
             ); 
