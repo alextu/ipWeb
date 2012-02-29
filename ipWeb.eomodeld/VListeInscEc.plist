@@ -131,6 +131,15 @@
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
             valueClassName = NSNumber; 
             valueType = i; 
+        }, 
+        {
+            columnName = "MSEM_KEY"; 
+            externalType = NUMBER; 
+            name = msemKey; 
+            precision = 12; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSNumber; 
+            valueType = i; 
         }
     ); 
     attributesUsedForLocking = (etatRN, idiplAnneeSuivie); 
@@ -149,7 +158,8 @@
         imrecEtat, 
         imrecSession1, 
         imrecSession2, 
-        mailComplet
+        mailComplet, 
+        msemKey
     ); 
     externalName = "V_LISTE_INSC_EC_MAIL"; 
     internalInfo = {
@@ -163,9 +173,10 @@
             imrecDispense, 
             imrecSession1, 
             imrecSession2, 
-            mecKey
+            mecKey, 
+            msemKey
         ); 
     }; 
     name = VListeInscEc; 
-    primaryKeyAttributes = (etudNumero, fspnKey, mecKey); 
+    primaryKeyAttributes = (etudNumero, fspnKey, mecKey, msemKey); 
 }
