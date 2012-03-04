@@ -1,6 +1,13 @@
 
 import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOComponent;
+import com.webobjects.eoaccess.EOModelGroup;
+import com.webobjects.eocontrol.EOEditingContext;
+import com.webobjects.eocontrol.EOFetchSpecification;
+import com.webobjects.eocontrol.EOGenericRecord;
+import com.webobjects.foundation.NSArray;
+import com.webobjects.foundation.NSDictionary;
+import com.webobjects.foundation.NSSet;
 
 import fr.univlr.cri.webapp.*;
 
@@ -15,7 +22,7 @@ public class Mod_envoiMail extends CRIWebComponent {
 	
 	private boolean redactionPossible;	// Si vrai, alors on peut rédiger un nouveau mail...
  
-    public boolean listeInscAuxEc;	// Si vrai, on s'intéresse aux inscrits à des EC (sinon inscrits à 1 diplôme et 1 année)
+    private boolean listeInscAuxEc;	// Si vrai, on s'intéresse aux inscrits à des EC (sinon inscrits à 1 diplôme et 1 année)
     public String messageErreur, messageEnvoiOk;
     public boolean affBtContinuer, affBtConfirmer, affBtRevenir, envoiOk, bloqueSaisieMail;
     
@@ -205,5 +212,30 @@ public class Mod_envoiMail extends CRIWebComponent {
 		return (listeInscAuxEc && monEnvoiMailCtrl.nbreInscritsEC()>0);
 	}
 	
-	
+    public String mailToInscrits() {
+    	String mailTo = "mailTo:";
+    	NSArray listeInscrits = monEnvoiMailCtrl.getListeInscrits();
+    	if (listeInscrits != null && listeInscrits.count() > 0) {
+    		NSSet emails = new NSSet((NSArray) listeInscrits.valueForKey("email"));
+    		String emailsStr = emails.allObjects().componentsJoinedByString(",");
+    		mailTo = mailTo + emailsStr;
+    	}
+    	return mailTo;
+    }
+    
+    public String mailToInscritsEc() {
+    	String mailTo = "mailTo:";
+    	NSArray listeInscritsEC = monEnvoiMailCtrl.getListeInscritsEC();
+    	if (listeInscritsEC != null && listeInscritsEC.count() > 0) {
+    		NSSet emails = new NSSet((NSArray) listeInscritsEC.valueForKey("mailComplet"));
+    		String emailsStr = emails.allObjects().componentsJoinedByString(",");
+    		mailTo = mailTo + emailsStr;
+    	}
+    	return mailTo;
+    }
+
+    public boolean isListeInscAuxEc() {
+		return listeInscAuxEc;
+	}
+    
 }

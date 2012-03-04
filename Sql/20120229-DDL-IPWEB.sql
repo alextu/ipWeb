@@ -1,5 +1,5 @@
 -- Rajout de l'email dans la vue listant les inscriptions
-CREATE OR REPLACE FORCE VIEW "IP_WEB"."V_ETUD_INSC_SEMESTRE_RES_EMAIL" ("IDIPL_NUMERO", "ETUD_NUMERO", "ADR_NOM", "ADR_PRENOM", "IDIPL_TYPE_INSCRIPTION", "RES_CODE", "FSPN_KEY", "FANN_KEY", "MSEM_ORDRE", "LIB_DISPENSE", "IMRSEM_ETAT", "LIB_RES_SEM", "IMRSEM_POINTS1", "IMRSEM_SESSION1", "MENTION1", "IMRSEM_POINTS2", "IMRSEM_SESSION2", "MENTION2", "MSEM_KEY", "IDIPL_REDOUBLANT", "ETAT_IP", "EMAIL")
+CREATE OR REPLACE FORCE VIEW "IP_WEB"."V_ETUD_INSC_SEMESTRE_RES_EMAIL" ("IDIPL_NUMERO", "ETUD_NUMERO", "ADR_NOM", "ADR_PRENOM", "IDIPL_TYPE_INSCRIPTION", "RES_CODE", "FSPN_KEY", "FANN_KEY", "MSEM_ORDRE", "LIB_DISPENSE", "IMRSEM_ETAT", "LIB_RES_SEM", "IMRSEM_POINTS1", "IMRSEM_SESSION1", "MENTION1", "IMRSEM_POINTS2", "IMRSEM_SESSION2", "MENTION2", "MSEM_KEY", "IDIPL_REDOUBLANT", "ETAT_IP", "EMAIL", "FHAB_NIVEAU")
 AS
   SELECT
   	v.idipl_numero,
@@ -23,14 +23,18 @@ AS
     v.msem_key,
     v.idipl_redoublant,
     v.etat_ip,
-    c.cpt_email || '@' || c.cpt_domaine
+    c.cpt_email || '@' || c.cpt_domaine,
+    sfh.fhab_niveau
   FROM IP_WEB.v_etud_insc_semestre_res v,
     grhum.etudiant et,
     grhum.individu_ulr ind,
     grhum.repart_compte rc,
-    grhum.compte c
+    grhum.compte c,
+    scolarite.scol_formation_habilitation sfh
   WHERE v.ETUD_NUMERO = et.ETUD_NUMERO
   AND et.NO_INDIVIDU  = ind.NO_INDIVIDU
   AND ind.PERS_ID     = rc.PERS_ID(+)
   AND rc.CPT_ORDRE    = c.CPT_ORDRE(+)
-  AND c.CPT_VLAN      = 'E';
+  AND c.CPT_VLAN      = 'E'
+  AND v.fann_key = sfh.fann_key(+)
+  AND v.fspn_key = sfh.fspn_key(+);

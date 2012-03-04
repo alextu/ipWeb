@@ -112,7 +112,7 @@ public class Mod_listeInscDipl extends CRIWebComponent {
 		NSDictionary binding = new NSDictionary(
 				new NSArray(new Object[] {msemKey, new Integer(((Session)session()).getAnneeEnCours())}),
 				new NSArray(new String[] {"msemKey", "fannKey"}));
-    	EOFetchSpecification fs = EOModelGroup.defaultGroup().fetchSpecificationNamed("etudInscSem", "vEtudInscSemestreResEmail");
+    	EOFetchSpecification fs = EOModelGroup.defaultGroup().fetchSpecificationNamed("etudInscSem", "vEtudInscSemestreRes");
 		EOFetchSpecification fetchSpec = fs.fetchSpecificationWithQualifierBindings(binding);
 		
 		fetchSpec.setRefreshesRefetchedObjects(true);

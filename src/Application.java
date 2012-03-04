@@ -7,6 +7,8 @@ import java.util.Properties;
 import java.util.TimeZone;
 
 import com.webobjects.appserver.WOApplication;
+import com.webobjects.appserver.WOContext;
+import com.webobjects.appserver.WOResponse;
 import com.webobjects.foundation.*;
 import com.webobjects.eoaccess.*;
 import com.webobjects.eocontrol.*;
@@ -278,6 +280,14 @@ public class Application extends MyApp {
 		connectionAnalyzer.dumpClasspath();
 	}
 
+	@Override
+	public WOResponse handleException(Exception anException, WOContext aContext) {
+		// On log l'exception !
+		NSLog.err.appendln("Une erreur est survenue dans IPWeb : \n");
+		NSLog.err.appendln(anException);
+		return super.handleException(anException, aContext);
+	}
+	
 	public CRIMailBus getMailBus() {
 		return mailBus();
 	}

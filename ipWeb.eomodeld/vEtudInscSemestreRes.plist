@@ -22,16 +22,6 @@
         }, 
         {
             allowsNull = Y; 
-            columnName = EMAIL; 
-            externalType = VARCHAR2; 
-            name = email; 
-            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
-            valueClassName = NSString; 
-            valueType = S; 
-            width = 100; 
-        }, 
-        {
-            allowsNull = Y; 
             columnName = "ETAT_IP"; 
             externalType = NUMBER; 
             name = etatIp; 
@@ -54,14 +44,6 @@
             externalType = NUMBER; 
             name = fannKey; 
             precision = 4; 
-            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
-            valueClassName = NSNumber; 
-            valueType = i; 
-        }, 
-        {
-            columnName = "FHAB_NIVEAU"; 
-            externalType = NUMBER; 
-            name = fhabNiveau; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
             valueClassName = NSNumber; 
             valueType = i; 
@@ -216,11 +198,9 @@
     classProperties = (
         adrNom, 
         adrPrenom, 
-        email, 
         etatIp, 
         etudNumero, 
         fannKey, 
-        fhabNiveau, 
         fspnKey, 
         idiplRedoublant, 
         idiplTypeInscription, 
@@ -237,12 +217,11 @@
         msemOrdre, 
         resCode
     ); 
-    externalName = "V_ETUD_INSC_SEMESTRE_RES_EMAIL"; 
+    externalName = "V_ETUD_INSC_SEMESTRE_RES"; 
     internalInfo = {
         "_clientClassPropertyNames" = (
             adrNom, 
             adrPrenom, 
-            email, 
             etatIp, 
             etudNumero, 
             fannKey, 
@@ -254,6 +233,6 @@
             resCode
         ); 
     }; 
-    name = vEtudInscSemestreResEmail; 
+    name = vEtudInscSemestreRes; 
     primaryKeyAttributes = (idiplNumero); 
 }

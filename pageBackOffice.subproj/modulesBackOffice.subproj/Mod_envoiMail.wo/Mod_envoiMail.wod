@@ -175,3 +175,35 @@ existeInscritsEc : WOConditional {
 nbInscEc : WOString {
   value = monEnvoiMailCtrl.nbreInscritsEC;
 }
+
+
+MailImg : WOImage {
+	filename = "edit.png";
+	alt = "Leur envoyer un email";
+	title = "Leur envoyer un email";
+}
+
+MailTo : WOHyperlink {
+	href = mailToInscrits;
+}
+
+MailToEc : WOHyperlink {
+	href = mailToInscritsEc;
+}
+
+HasInscrits : WOConditional {
+	condition = monEnvoiMailCtrl.listeInscrits;
+}
+
+HasInscritsEC : WOConditional {
+	condition = listeInscAuxEc;
+}
+
+IsListEC : WOConditional {
+	condition = isListeInscAuxEc;
+}
+
+IsNotListEC : WOConditional {
+	condition = isListeInscAuxEc;
+	negate = true;
+}

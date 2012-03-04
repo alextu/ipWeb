@@ -197,9 +197,9 @@
         {className = EOGenericRecord; name = VListeDroitVisuDiplome; }, 
         {className = EOGenericRecord; name = IpEcIncompatibles; }, 
         {className = EOGenericRecord; name = IpGroupeEcIncompatibles; }, 
-        {className = EOGenericRecord; name = vEtudInscSemestreResEmail; }
+        {className = EOGenericRecord; name = vEtudInscSemestreResEmail; }, 
+        {className = EOGenericRecord; name = vEtudInscSemestreRes; }
     ); 
-    internalInfo = {"_deletedEntityNamesInObjectStore" = (vEtudInscSemestreRes); }; 
     storedProcedures = (
         pIpwInsIsemestre, 
         pIpwIntegreSem, 

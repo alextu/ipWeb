@@ -22,7 +22,7 @@
 			<webobject name = "CondDestinatairesChoisis">
 				<fieldset>
 					<legend><b>
-						Rédaction de votre mail : 
+						Envoie de votre mail : 
 						<webobject name = "existeInscritsEc">
 							(<webobject name = "nbInscEc"/> destinataires)
 						</webobject>				
@@ -43,11 +43,26 @@
 							</tr>
 						</table>
 						<webobject name = "BoutonValider"/>&nbsp;&nbsp;&nbsp;<webobject name = "BoutonAnnuler"/><br>
-					</webobject>	
-					<webobject name="CondTypeFormation">
-						<br><i>Pour l'envoi de mails avec pi&egrave;ces jointes, utilisez votre client de messagerie habituel en cliquant ici :</i> 
-						<webobject name = "mailtoListeDiplome"><webobject name = "codeListeDiplome"/></webobject>
 					</webobject>
+					<br><i>Pour l'envoi de mails avec pi&egrave;ces jointes, utilisez votre client de messagerie habituel en cliquant sur le lien :</i> 
+					<ul>
+					<webobject name="CondTypeFormation">
+						<li>
+						<webobject name = "mailtoListeDiplome">Envoie à la liste de diffusion <webobject name = "codeListeDiplome"/></webobject>
+						</li>
+						ou
+					</webobject>
+					<webobject name = "IsListEC">
+						<li>
+						<webobject name = "HasInscritsEC"><webobject name = "MailToEc">Envoie aux adresses individuelles des étudiants de l'EC</webobject></webobject>
+						</li>
+					</webobject>
+					<webobject name = "IsNotListEC">
+						<li>
+						<webobject name = "HasInscrits"><webobject name = "MailTo">Envoie aux adresses individuelles des étudiants</webobject></webobject>
+						</li>
+					</webobject>						
+					</ul>
 		      	</fieldset>
 			</webobject>	
 			<webobject name = "errForm">	

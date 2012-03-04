@@ -22,7 +22,8 @@ public class EnvoiMailCtrl {
     private FonctionsCtrlr ctlFonctions;
 
 	private Session maSession;
-	public NSArray listeInscritsEC;
+	private NSArray listeInscritsEC;
+	private NSArray listeInscrits;
 
     // --- Pour les 2 composants PopUpMultiDiplSemUe...
     public Integer fspnKey, msemOrdre, fhabNiveau, anneeSuivie, msemKey;
@@ -46,7 +47,7 @@ public class EnvoiMailCtrl {
 	
 	public void selectionDiplAnnee () {
 		System.out.println("On vient de sélectionner le dipl "+ fspnKey + ", pour l'année "+ fhabNiveau);
-	
+		fetcherListeInscritsDiplAnnee();
 	}
 	
 	public void selectionEc() {
@@ -54,6 +55,21 @@ public class EnvoiMailCtrl {
 		fetcherListeInscritsEC();
 	}
 
+	   // Fetcher les étudiants selon les critères choisis...
+    private void fetcherListeInscritsDiplAnnee() {
+    	// TODO : AT fetcher en fonction de l'année !
+		NSDictionary binding = new NSDictionary(
+				new NSArray(new Object[] {fspnKey, fhabNiveau, new Integer(maSession.getAnneeEnCours())}),
+				new NSArray(new String[] {"fspnKey", "fhabNiveau", "fannKey"}));
+    	EOFetchSpecification fs = EOModelGroup.defaultGroup().fetchSpecificationNamed("etudInscSem", "vEtudInscSemestreResEmail");
+		EOFetchSpecification fetchSpec = fs.fetchSpecificationWithQualifierBindings(binding);
+		
+		fetchSpec.setRefreshesRefetchedObjects(true);
+		
+		EOEditingContext ec = maSession.defaultEditingContext();
+		listeInscrits = ec.objectsWithFetchSpecification(fetchSpec);
+    }
+	
     // Fetcher les étudiants selon les critères choisis pour les EC...
     private void fetcherListeInscritsEC() {
     	if (eoEcSelected != null) {
@@ -158,5 +174,13 @@ public class EnvoiMailCtrl {
     public String mailtoListeDiffusion() {
     	return ("mailto:"+nomListeDiffusion());
     }
+    
+    public NSArray getListeInscrits() {
+		return listeInscrits;
+	}
+    
+    public NSArray getListeInscritsEC() {
+		return listeInscritsEC;
+	}
     
 }
