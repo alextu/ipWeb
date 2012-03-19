@@ -198,7 +198,8 @@
         {className = EOGenericRecord; name = IpEcIncompatibles; }, 
         {className = EOGenericRecord; name = IpGroupeEcIncompatibles; }, 
         {className = EOGenericRecord; name = vEtudInscSemestreResEmail; }, 
-        {className = EOGenericRecord; name = vEtudInscSemestreRes; }
+        {className = EOGenericRecord; name = vEtudInscSemestreRes; }, 
+        {className = EOGenericRecord; name = VScolNbInscriptionEcFac; }
     ); 
     storedProcedures = (
         pIpwInsIsemestre, 

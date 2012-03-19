@@ -331,17 +331,16 @@ public class InscSemestreCtrlr {
 			
 			// Nbre d'EC facultatifs max par niveaux
 			int nbreMaxEcFacultatifs = maSession.interrogeParamConfigInt("NBRE_MAX_EC_FACULTATIFS");
-			nbreMaxEcFacultatifsAChoisir = nbreMaxEcFacultatifs;
-			
-			// TODO : utiliser une vue pour corriger cette valeur du nombre d'EC facultatifs déjà choisis dans ScolPedagogie 
-			//		  (y compris ceux validés pour le semestre en cours, pour les redoublants)
-			
-			RelationChoixFacultatif relFac = new RelationChoixFacultatif(listeEcCTFacultatifs, 
+			RelationChoixFacultatif relFac = new RelationChoixFacultatif(
+					inscFormCt.idiplNumero(),
+					listeEcCTFacultatifs, 
 					maSession.getAnneeEnCours(),
 					maSession.defaultEditingContext(), 
 					maSession.interrogeParamConfig("GROUPE_EC_FACULTATIFS_INCOMPATIBLES"),
 					nbreMaxEcFacultatifs);
 			listeRel.addObject(relFac);
+			// Nbre max d'EC facultatifs à choisir
+			nbreMaxEcFacultatifsAChoisir = relFac.nbEcFacultatifsRestant();
 		}
 
 		// traiter les formules de contraintes (équations booléennes) ...

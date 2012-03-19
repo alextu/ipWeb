@@ -32,7 +32,7 @@ public class RelationChoixFacultatif extends RelationChoixEc {
 	private int nbreEcFacultatifsDejaPris;
 	
 	// Constructeur de la relation : on lui balance une liste des EC Facultatifs parmi les EC de ce semestre...
-	public RelationChoixFacultatif(NSMutableArray listeEcFac,int anneeUniv, EOEditingContext ecSess,
+	public RelationChoixFacultatif(Integer idiplNumero, NSMutableArray listeEcFac,int anneeUniv, EOEditingContext ecSess,
 			boolean gereGroupeEcFacultatif,
 			int nbreMaxEcFac) {
 		relationEc = listeEcFac.immutableClone();
@@ -41,9 +41,7 @@ public class RelationChoixFacultatif extends RelationChoixEc {
 		gereGroupeEcFacultatifsIncompatibles = gereGroupeEcFacultatif;
 		nbreMaxEcFacultatifs = nbreMaxEcFac;
 		
-		nbreEcFacultatifsDejaPris = 0;
-		// TODO : ce nbre devrait être initialisé avec le nbre d'EC facultatifs choisis sur toute l'année
-		//        (y compris semestre impair si on est en sem pair), via un passage de paramètre			
+		nbreEcFacultatifsDejaPris = fetcherNbEcFacultatif(idiplNumero);
 	}
 	
 	// Les méthodes devant être suchargées...
@@ -126,7 +124,8 @@ public class RelationChoixFacultatif extends RelationChoixEc {
 			while (enumerator2.hasMoreElements()) {
 				InscEcCtrlr ecCt = (InscEcCtrlr)enumerator2.nextElement();
 				if ((ecCt.getCaseCochee() || ecCt.ecAvecIp()) && !ecCt.isEcBloque()) { 
-					ecCt.setErreur("VOUS N'AVEZ DROITS QU'A "+nbreMaxEcFacultatifs+" CHOIX FACULTATIFS pour l'année",
+					ecCt.setErreur("VOUS N'AVEZ DROITS QU'A "+nbEcFacultatifsRestant()+" CHOIX FACULTATIF(S) pour ce semestre (" +
+							nbreMaxEcFacultatifs + " pour l'année)",
 							"décochez les EC facultatifs en trop...");
 					dernierEcEnErreur = ecCt;
 				}
@@ -157,7 +156,23 @@ public class RelationChoixFacultatif extends RelationChoixEc {
 		else return null;
 	}
 	
+	private Integer fetcherNbEcFacultatif(Integer idiplNumero) {		
+		Integer nbEc = 0;
+		NSArray bindings = new NSArray(new Object[] {new Integer(anneeUniversitaire),idiplNumero});
+		EOQualifier qualifier = EOQualifier.qualifierWithQualifierFormat(
+				"fannKey = %@ and idiplNumero = %@", bindings);
+		EOFetchSpecification fetchSpec = new EOFetchSpecification("VScolNbInscriptionEcFac",qualifier, null);
+		NSArray res = ecSession.objectsWithFetchSpecification(fetchSpec);
+		if (res !=null && res.count()>0) {
+			EOGenericRecord nbRecord = (EOGenericRecord)res.objectAtIndex(0);
+			nbEc = (Integer)nbRecord.valueForKey("nbEcFacultatifs");
+		}
+		return nbEc;
+	}
 	
+	public Integer nbEcFacultatifsRestant() {
+		return nbreMaxEcFacultatifs - nbreEcFacultatifsDejaPris;
+	}
 	
 	public void scannerChoixAMasquer() { }	// pour l'instant on masque juste la méthode héritée...
 	public boolean choixIncoherentCoche() { return false; }

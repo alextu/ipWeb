@@ -1,0 +1,34 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IDIPL_NUMERO"; 
+            externalType = NUMBER; 
+            name = idiplNumero; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NB_EC_FACULTATIFS"; 
+            externalType = NUMBER; 
+            name = nbEcFacultatifs; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    className = EOGenericRecord; 
+    classProperties = (idiplNumero, nbEcFacultatifs); 
+    externalName = "IP_WEB.V_SCOL_NB_INSCRIPTION_EC_FAC"; 
+    fetchSpecificationDictionary = {}; 
+    name = VScolNbInscriptionEcFac; 
+    primaryKeyAttributes = (fannKey, idiplNumero); 
+}
