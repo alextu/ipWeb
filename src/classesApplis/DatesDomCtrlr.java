@@ -83,19 +83,21 @@ public class DatesDomCtrlr implements NSKeyValueCoding {
     // 
     // Pr�viens de charger les dates pour le domaine LMD s�lectionn� (parit�e Paire et Impaire)...
     public void chargerDatesDom(String fdomCode) {
-	NSArray bindings = new NSArray(new Object[] {fdomCode, new Integer(maSession.getAnneeEnCours())});
-	EOQualifier qualifier = EOQualifier.qualifierWithQualifierFormat(
-		"fdomCode = %@ and fannKey = %@", bindings);
+    	if (fdomCode != null) {
+    		NSArray bindings = new NSArray(new Object[] {fdomCode, new Integer(maSession.getAnneeEnCours())});
+    		EOQualifier qualifier = EOQualifier.qualifierWithQualifierFormat(
+    				"fdomCode = %@ and fannKey = %@", bindings);
 
-	EOSortOrdering ordreSem = EOSortOrdering.sortOrderingWithKey("ipSemestre",EOSortOrdering.CompareDescending);
-	NSArray sortOrderings = new NSArray(new Object[] {ordreSem});
+    		EOSortOrdering ordreSem = EOSortOrdering.sortOrderingWithKey("ipSemestre",EOSortOrdering.CompareDescending);
+    		NSArray sortOrderings = new NSArray(new Object[] {ordreSem});
 
-	EOFetchSpecification fetchSpec = new EOFetchSpecification("IpDatesOuvertureDom",qualifier, sortOrderings);
-	fetchSpec.setRefreshesRefetchedObjects(true);
+    		EOFetchSpecification fetchSpec = new EOFetchSpecification("IpDatesOuvertureDom",qualifier, sortOrderings);
+    		fetchSpec.setRefreshesRefetchedObjects(true);
 
-	EOEditingContext ec = maSession.defaultEditingContext();
+    		EOEditingContext ec = maSession.defaultEditingContext();
 
-	listePSemDom = ec.objectsWithFetchSpecification(fetchSpec);  
+    		listePSemDom = ec.objectsWithFetchSpecification(fetchSpec);
+    	}
 
     }
     
