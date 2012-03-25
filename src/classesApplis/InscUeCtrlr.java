@@ -703,7 +703,9 @@ public class InscUeCtrlr {
 //		System.out.println("reinit liste des EC de l'UE");
 	    monEnum = listeEcIpCt.objectEnumerator();
 		boolean encoreDesElements = monEnum.hasMoreElements();
-	    jrEcCt = (InscEcCtrlr)monEnum.nextElement();
+		if (encoreDesElements) {
+			jrEcCt = (InscEcCtrlr)monEnum.nextElement();
+		}
 	    return encoreDesElements;
 
 	}

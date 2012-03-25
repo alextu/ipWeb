@@ -7,11 +7,21 @@
  *
  */
 
-import java.util.HashMap;
 import java.io.ByteArrayOutputStream;
-import net.sf.jasperreports.engine.*;
-import net.sf.jasperreports.engine.export.*;
+import java.util.HashMap;
 
+import net.sf.jasperreports.engine.JRDataSource;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JRExporter;
+import net.sf.jasperreports.engine.JRExporterParameter;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.export.JRPdfExporter;
+import net.sf.jasperreports.engine.export.JRPdfExporterParameter;
+import net.sf.jasperreports.engine.export.JRXlsExporter;
+import net.sf.jasperreports.engine.export.JRXlsExporterParameter;
+
+import com.lowagie.text.pdf.PdfWriter;
 import com.webobjects.foundation.NSData;
 
 public class ImprJasper {
@@ -102,7 +112,7 @@ public class ImprJasper {
         exporter.setParameter(JRXlsExporterParameter.JASPER_PRINT, print);
         exporter.setParameter(JRXlsExporterParameter.OUTPUT_STREAM, tmpStream);
         exporter.setParameter(JRXlsExporterParameter.IS_ONE_PAGE_PER_SHEET, Boolean.FALSE);
-        exporter.setParameter(JRXlsExporterParameter.IS_AUTO_DETECT_CELL_TYPE, Boolean.TRUE);
+        exporter.setParameter(JRXlsExporterParameter.IS_DETECT_CELL_TYPE, Boolean.TRUE);
         exporter.setParameter(JRXlsExporterParameter.IS_WHITE_PAGE_BACKGROUND, Boolean.FALSE);
         exporter.setParameter(JRXlsExporterParameter.IS_REMOVE_EMPTY_SPACE_BETWEEN_ROWS, Boolean.TRUE);
 	    
@@ -115,7 +125,7 @@ public class ImprJasper {
 	    // encryption de tous les PDF sortis par l'appli.... le mot de passe est généré automatiquement par JRPdfExporter
 	    exporter.setParameter(JRPdfExporterParameter.IS_ENCRYPTED , new Boolean(true));
 	    exporter.setParameter(JRPdfExporterParameter.IS_128_BIT_KEY , new Boolean(true));
-	    exporter.setParameter(JRPdfExporterParameter.PERMISSIONS , new Integer(com.lowagie.text.pdf.PdfWriter.AllowPrinting));
+	    exporter.setParameter(JRPdfExporterParameter.PERMISSIONS , new Integer(PdfWriter.ALLOW_PRINTING));
 	    
 	    exporter.setParameter(JRExporterParameter.OUTPUT_STREAM, tmpStream);
 	    exporter.setParameter(JRExporterParameter.JASPER_PRINT, print);
