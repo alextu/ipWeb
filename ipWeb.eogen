@@ -1,0 +1,1 @@
+ -destination src/classeMetier -extension java -java -model ipWeb.eomodeld -packagedirs -subclassDestination src/classeMetier -verbose -loadModelGroup

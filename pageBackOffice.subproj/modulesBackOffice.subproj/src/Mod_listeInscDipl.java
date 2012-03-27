@@ -1,13 +1,19 @@
 /// Onglet permettant d'accèder à la liste des inscrits à un diplôme donné
 // Un click sur un des inscrits amène à sa fiche IPWeb..
 
-import com.webobjects.appserver.*;
+import java.text.NumberFormat;
+import java.util.HashMap;
+import java.util.Iterator;
+
+import nc.univ.ipweb.metier.scol.ScolMaquetteAp;
+
+import com.webobjects.appserver.WOComponent;
+import com.webobjects.appserver.WOContext;
 import com.webobjects.eoaccess.EOModelGroup;
 import com.webobjects.eocontrol.EOEditingContext;
 import com.webobjects.eocontrol.EOFetchSpecification;
 import com.webobjects.eocontrol.EOGenericRecord;
 import com.webobjects.eocontrol.EOQualifier;
-import com.webobjects.eocontrol.EOSortOrdering;
 import com.webobjects.foundation.NSArray;
 import com.webobjects.foundation.NSData;
 import com.webobjects.foundation.NSDictionary;
@@ -15,11 +21,9 @@ import com.webobjects.foundation.NSMutableDictionary;
 import com.webobjects.foundation.NSNotification;
 import com.webobjects.foundation.NSNotificationCenter;
 import com.webobjects.foundation.NSSelector;
+import com.webobjects.foundation.NSSet;
 
-import fr.univlr.cri.webapp.*;
-
-import java.text.NumberFormat;
-import java.util.HashMap;
+import fr.univlr.cri.webapp.CRIWebComponent;
 
 
 
@@ -72,7 +76,8 @@ public class Mod_listeInscDipl extends CRIWebComponent {
 	private NSArray coulDipl = new NSArray(new Object[] {"#fcff4d","#ff7a00","#b9ff50","#00ff54","#00ffca","#3dceff","#6d5eff","#ff60d4","#ff5a60"});
 	private NSMutableDictionary dictCoulDipl;
 	
-        
+    private ScolMaquetteAp currentAp;
+	
     public Mod_listeInscDipl(WOContext context) {
         super(context);
         
@@ -422,7 +427,23 @@ public class Mod_listeInscDipl extends CRIWebComponent {
     	return res;	
     }
     
+    public NSArray apsForEc() {
+    	Integer mecKey = (Integer)eoEcSelected.valueForKey("mecKey");
+    	return ScolMaquetteAp.fetchTpsAndTdsForEc(session().defaultEditingContext(), mecKey);
+    }
 
+    public ScolMaquetteAp getCurrentAp() {
+		return currentAp;
+	}
+    
+    public void setCurrentAp(ScolMaquetteAp currentAp) {
+		this.currentAp = currentAp;
+	}
+    
+    public String titleForExtractionPdf() {
+    	return "Extraire les feuilles de présence au " + currentAp.mhcoCode() + " de cet EC...";
+    }
+    
     //  --------------------------------------------------------    
     //  ---------------- Valeurs en E/S      -------------------
     //  --------------------------------------------------------    
@@ -537,6 +558,46 @@ public class Mod_listeInscDipl extends CRIWebComponent {
     // Lancer une extraction Excel des listes d'inscrits à l'EC en cours...
     // Impression d'une liste : Appel d'une page traffiquée pour renvoyer le fichier, 
     // et non le contenu HTML d'une nouvelle page !
+    public DownloadFic extractionFeuillePresenceEC()
+    {
+    	DownloadFic nextPage;
+    	nextPage = (DownloadFic)(pageWithName("DownloadFic"));
+    	// On passe le photo controleur...
+    	boolean res = nextPage.initDownloadPDF(
+    			extraitFeuillePresenceEC(), "Feuille_Presence_" + mecCode + "_" + currentAp.mhcoCode() + ".pdf");
+    	if (!res) return null;
+    	else return nextPage;
+    }
+    
+    private NSData extraitFeuillePresenceEC() {
+	    HashMap parametres = new HashMap();
+	    parametres.put("MECKEY", mecKey);
+	    parametres.put("SEMESTRE", msemOrdre);
+	    parametres.put("ANNEE", ((Session)session()).getAnneeEnCours());
+	    parametres.put("MECCODE", eoEcSelected.valueForKey("mecCode"));
+	    parametres.put("EC", eoEcSelected.valueForKey("mecLibelle"));
+	    // On va chercher le type d'AP et le nom du prof si dispo
+	    NSSet enseignants = new NSSet((NSArray)currentAp.scolMaquetteChargesAp().valueForKey("individu"));
+	    String nomAffichage = "";
+	    Iterator<EOGenericRecord> iterEns = enseignants.iterator();
+	    while (iterEns.hasNext()) {
+	    	EOGenericRecord enseignant = iterEns.next();
+		    String ensPrenom = (String) ((EOGenericRecord)enseignant).valueForKey("prenom");
+		    String ensNom = (String) ((EOGenericRecord)enseignant).valueForKey("nomUsuel");
+		    if (ensNom == null && ensPrenom == null) {
+		    	nomAffichage += "NC";
+		    } else {
+		    	nomAffichage += ensNom + " " + ensPrenom;
+		    }
+		    if (iterEns.hasNext()) {
+		    	nomAffichage += " / ";
+		    }
+	    }
+	    parametres.put("NOM_ENS", nomAffichage);
+	    parametres.put("TYPE_AP",currentAp.mhcoCode());
+	    return ((Session)session()).imprimePDF("feuillePresenceEc.jasper", parametres);
+    }
+    
     public DownloadFic extractionListeExcel()
     {
     	return imprimerDocXLS(extraitListeInscrits(),"Liste_Inscrits_"+mecCode+".xls");

@@ -199,7 +199,19 @@
         {className = EOGenericRecord; name = IpGroupeEcIncompatibles; }, 
         {className = EOGenericRecord; name = vEtudInscSemestreResEmail; }, 
         {className = EOGenericRecord; name = vEtudInscSemestreRes; }, 
-        {className = EOGenericRecord; name = VScolNbInscriptionEcFac; }
+        {className = EOGenericRecord; name = VScolNbInscriptionEcFac; }, 
+        {
+            className = "nc.univ.ipweb.metier.scol.ScolMaquetteAp"; 
+            name = ScolMaquetteAp; 
+        }, 
+        {
+            className = "nc.univ.ipweb.metier.scol.ScolMaquetteChargesAp"; 
+            name = ScolMaquetteChargesAp; 
+        }, 
+        {
+            className = "nc.univ.ipweb.metier.scol.ScolMaquetteRepartitionAp"; 
+            name = ScolMaquetteRepartitionAp; 
+        }
     ); 
     storedProcedures = (
         pIpwInsIsemestre, 

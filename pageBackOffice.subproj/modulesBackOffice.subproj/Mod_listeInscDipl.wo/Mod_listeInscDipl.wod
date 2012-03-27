@@ -277,7 +277,19 @@ extractionExcel: WOActiveImage {
 	style = "border:none;vertical-align:top;height:24px;width:24px;";
 }
 
+extractionFeuillePresence: WOActiveImage {
+	title = titleForExtractionPdf;
+	filename = "images/iconePDF.gif";
+	action = extractionFeuillePresenceEC;
+	style = "border:none;vertical-align:top;height:24px;width:24px;";
+}
+
 siInscrits : WOConditional {
 	condition = pasDIncrits;
 	negate = yes;
+}
+
+ApsForEc : WORepetition {
+	list = apsForEc;
+	item = currentAp;
 }
