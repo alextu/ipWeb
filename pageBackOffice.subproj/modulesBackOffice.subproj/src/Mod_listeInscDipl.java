@@ -1,6 +1,7 @@
 /// Onglet permettant d'accèder à la liste des inscrits à un diplôme donné
 // Un click sur un des inscrits amène à sa fiche IPWeb..
 
+import java.net.URL;
 import java.text.NumberFormat;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -595,6 +596,9 @@ public class Mod_listeInscDipl extends CRIWebComponent {
 	    }
 	    parametres.put("NOM_ENS", nomAffichage);
 	    parametres.put("TYPE_AP",currentAp.mhcoCode());
+	    // PS : ne marche pas en dev
+	    URL logoPath = application().resourceManager().pathURLForResourceNamed("images/logo.png", null, null);
+	    parametres.put("LOGO_PATH", logoPath != null ? logoPath.getFile() : null);
 	    return ((Session)session()).imprimePDF("feuillePresenceEc.jasper", parametres);
     }
     
