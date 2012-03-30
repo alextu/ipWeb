@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="feuillePresenceEc" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="820" leftMargin="11" rightMargin="11" topMargin="10" bottomMargin="10">
-	<property name="ireport.zoom" value="3.0"/>
-	<property name="ireport.x" value="1528"/>
-	<property name="ireport.y" value="33"/>
-	<parameter name="MECKEY" class="java.lang.Integer" isForPrompting="false">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="FondAlterne" mode="Opaque">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() % 2 == 0)]]></conditionExpression>
+			<style backcolor="#C1EEFF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="MAPKEY" class="java.lang.Integer" isForPrompting="false">
 		<parameterDescription><![CDATA[Mec Key de l'EC qui nous intéresse]]></parameterDescription>
-		<defaultValueExpression><![CDATA[new Integer(7631)]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[new Integer(23269)]]></defaultValueExpression>
 	</parameter>
 	<parameter name="SEMESTRE" class="java.lang.Integer"/>
 	<parameter name="ANNEE" class="java.lang.Integer"/>
@@ -14,21 +20,14 @@
 	<parameter name="NOM_ENS" class="java.lang.String"/>
 	<parameter name="TYPE_AP" class="java.lang.String"/>
 	<parameter name="LOGO_PATH" class="java.lang.String"/>
+	<parameter name="MECKEY" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
 	<queryString>
-		<![CDATA[select v.MREC_KEY, v.MEC_KEY, v.FANN_KEY, ec.MEC_CODE, ec.MEC_LIBELLE,
-       v.FORMATION_ABREVIATION as FILIERE, v.ADR_NOM || ' ' || initcap(v.ADR_PRENOM) NOM_PRENOM,
-       decode(h.HIST_BOURSE,0,'',7,'',8,'', b.LIB_TYPE_BOURSE) TYPE_BOURSE,
-       v.IMREC_SESSION1 M_S1, v.IMREC_SESSION2 M_S2
-from ip_web.v_liste_insc_ec v,
-     garnuche.historique h,
-     scolarite.scol_maquette_ec ec,
-     unc.bourse b
-where (v.ETUD_NUMERO = h.ETUD_NUMERO and v.FANN_KEY = h.HIST_ANNEE_SCOL)
-and   h.HIST_BOURSE = b.CODE_BOURSE
-and   ec.MEC_KEY = v.MEC_KEY
-and   v.MEC_KEY = $P{MECKEY}
-and   v.IMREC_DISPENSE <> 14
-order by v.ADR_NOM, v.ADR_PRENOM]]>
+		<![CDATA[select distinct NOM_PRENOM, FILIERE
+       from IP_WEB.v_scol_inscription_ap
+       where fann_key = 2012 and map_key = $P{MAPKEY} and mec_key = $P{MECKEY}
+       order by NOM_PRENOM asc]]>
 	</queryString>
 	<field name="NOM_PRENOM" class="java.lang.String"/>
 	<field name="FILIERE" class="java.lang.String"/>
@@ -353,8 +352,11 @@ order by v.ADR_NOM, v.ADR_PRENOM]]>
 	</columnHeader>
 	<detail>
 		<band height="14" splitType="Stretch">
+			<frame>
+				<reportElement style="FondAlterne" mode="Opaque" x="0" y="0" width="819" height="14"/>
+			</frame>
 			<textField>
-				<reportElement x="138" y="0" width="71" height="14"/>
+				<reportElement mode="Transparent" x="138" y="0" width="71" height="14" backcolor="#FFFFFF"/>
 				<box leftPadding="5" rightPadding="2">
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -367,7 +369,7 @@ order by v.ADR_NOM, v.ADR_PRENOM]]>
 				<textFieldExpression><![CDATA[$F{FILIERE}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="0" width="138" height="14"/>
+				<reportElement mode="Transparent" x="0" y="0" width="138" height="14" backcolor="#FFFFFF"/>
 				<box leftPadding="5" rightPadding="2">
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -380,7 +382,7 @@ order by v.ADR_NOM, v.ADR_PRENOM]]>
 				<textFieldExpression><![CDATA[$F{NOM_PRENOM}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement mode="Opaque" x="209" y="0" width="40" height="14" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="209" y="0" width="40" height="14" backcolor="#FFFFFF"/>
 				<box leftPadding="0">
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -393,7 +395,7 @@ order by v.ADR_NOM, v.ADR_PRENOM]]>
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="249" y="0" width="40" height="14" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="249" y="0" width="40" height="14" backcolor="#FFFFFF"/>
 				<box leftPadding="0">
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -406,7 +408,7 @@ order by v.ADR_NOM, v.ADR_PRENOM]]>
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="289" y="0" width="40" height="14" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="289" y="0" width="40" height="14" backcolor="#FFFFFF"/>
 				<box leftPadding="0">
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -419,7 +421,7 @@ order by v.ADR_NOM, v.ADR_PRENOM]]>
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="329" y="0" width="40" height="14" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="329" y="0" width="40" height="14" backcolor="#FFFFFF"/>
 				<box leftPadding="0">
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -432,7 +434,7 @@ order by v.ADR_NOM, v.ADR_PRENOM]]>
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="369" y="0" width="40" height="14" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="369" y="0" width="40" height="14" backcolor="#FFFFFF"/>
 				<box leftPadding="0">
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -445,7 +447,7 @@ order by v.ADR_NOM, v.ADR_PRENOM]]>
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="409" y="0" width="40" height="14" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="409" y="0" width="40" height="14" backcolor="#FFFFFF"/>
 				<box leftPadding="0">
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -458,7 +460,7 @@ order by v.ADR_NOM, v.ADR_PRENOM]]>
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="449" y="0" width="40" height="14" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="449" y="0" width="40" height="14" backcolor="#FFFFFF"/>
 				<box leftPadding="0">
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -471,7 +473,7 @@ order by v.ADR_NOM, v.ADR_PRENOM]]>
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="489" y="0" width="37" height="14" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="489" y="0" width="37" height="14" backcolor="#FFFFFF"/>
 				<box leftPadding="0">
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -484,7 +486,7 @@ order by v.ADR_NOM, v.ADR_PRENOM]]>
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="526" y="0" width="40" height="14" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="526" y="0" width="40" height="14" backcolor="#FFFFFF"/>
 				<box leftPadding="0">
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -497,7 +499,7 @@ order by v.ADR_NOM, v.ADR_PRENOM]]>
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="566" y="0" width="40" height="14" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="566" y="0" width="40" height="14" backcolor="#FFFFFF"/>
 				<box leftPadding="0">
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -510,7 +512,7 @@ order by v.ADR_NOM, v.ADR_PRENOM]]>
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="606" y="0" width="40" height="14" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="606" y="0" width="40" height="14" backcolor="#FFFFFF"/>
 				<box leftPadding="0">
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -523,7 +525,7 @@ order by v.ADR_NOM, v.ADR_PRENOM]]>
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="646" y="0" width="40" height="14" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="646" y="0" width="40" height="14" backcolor="#FFFFFF"/>
 				<box leftPadding="0">
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -536,7 +538,7 @@ order by v.ADR_NOM, v.ADR_PRENOM]]>
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="686" y="0" width="40" height="14" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="686" y="0" width="40" height="14" backcolor="#FFFFFF"/>
 				<box leftPadding="0">
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -549,7 +551,7 @@ order by v.ADR_NOM, v.ADR_PRENOM]]>
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="726" y="0" width="40" height="14" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="726" y="0" width="40" height="14" backcolor="#FFFFFF"/>
 				<box leftPadding="0">
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -562,7 +564,7 @@ order by v.ADR_NOM, v.ADR_PRENOM]]>
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="766" y="0" width="54" height="14" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="766" y="0" width="54" height="14" backcolor="#FFFFFF"/>
 				<box leftPadding="0">
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -577,7 +579,7 @@ order by v.ADR_NOM, v.ADR_PRENOM]]>
 		</band>
 	</detail>
 	<pageFooter>
-		<band height="14" splitType="Stretch">
+		<band height="19" splitType="Stretch">
 			<textField>
 				<reportElement x="553" y="4" width="256" height="10"/>
 				<textElement textAlignment="Right">

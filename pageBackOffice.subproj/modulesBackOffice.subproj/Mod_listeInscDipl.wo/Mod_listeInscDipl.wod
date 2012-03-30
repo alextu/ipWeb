@@ -270,18 +270,44 @@ TextField2: WOTextField {
 	value = chaineAccelEc;
 }
 
-extractionExcel: WOActiveImage {
-	title = "Extraire la liste des inscrits à cet EC...";
-	filename = "images/xls_icone.jpg";
+extractionExcelLnk : WOHyperlink {
 	action = extractionListeExcel;
-	style = "border:none;vertical-align:top;height:24px;width:24px;";
+	class = "button";
+	title = "Extraire la liste des inscrits à cet EC...";
 }
 
-extractionFeuillePresence: WOActiveImage {
+extractionExcel: WOImage {
+	title = "Extraire la liste des inscrits à cet EC...";
+	filename = "images/xls_icone.jpg";
+	style = "border:none;vertical-align:middle;height:16px;width:16px;";
+}
+
+extractionExcelNotesLnk : WOHyperlink {
+	action = extractionFeuilleNotesExcel;
+	class = "button";
+	title = "Extraire la feuille de notes des inscrits à cet EC...";
+}
+
+extractionExcelNotes: WOImage {
+	title = "Extraire la feuille de notes des inscrits à cet EC...";
+	filename = "images/xls_icone.jpg";
+	style = "border:none;vertical-align:middle;height:16px;width:16px;";
+}
+
+extractionFeuillePresenceLnk : WOHyperlink {
+	action = extractionFeuillePresenceEC;
+	class = "button";
+	title = titleForExtractionPdf;
+}
+
+extractionFeuillePresence: WOImage {
 	title = titleForExtractionPdf;
 	filename = "images/iconePDF.gif";
-	action = extractionFeuillePresenceEC;
-	style = "border:none;vertical-align:top;height:24px;width:24px;";
+	style = "border:none;vertical-align:middle;";
+}
+
+TdOuTp : WOString {
+	value = currentAp.mhcoCode;
 }
 
 siInscrits : WOConditional {
@@ -292,4 +318,8 @@ siInscrits : WOConditional {
 ApsForEc : WORepetition {
 	list = apsForEc;
 	item = currentAp;
+}
+
+HasUnSeulGroupe : WOConditional {
+	condition = unSeulGroupeForCurrentAp;
 }

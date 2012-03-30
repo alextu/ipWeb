@@ -106,12 +106,7 @@
 		<webobject name="Conditional7">
 			<table>
 				<td>
-					<webobject name = "siInscrits">
-						<webobject name = "extractionExcel"></webobject>
-						<webobject name = "ApsForEc">
-							<webobject name = "extractionFeuillePresence"></webobject>
-						</webobject>
-					</webobject>
+					
 				</td>
 				<td>	
 					<webobject name="FormAccel2">
@@ -131,6 +126,27 @@
 			</table>
 			<font color="#920040"><b>(*)</B><i> : &nbsp;on ne comptabilise pas les &eacute;tudiants ayant d&eacute;j&agrave; valid&eacute; cet EC lors d'une inscription ant&eacute;rieure.</i></font>
 			<table cellspacing="1" width="100%" border="1">
+				<thead>
+					<tr>
+						<td colspan="6" style = "text-align:left;vertical-align:middle">
+						<webobject name = "siInscrits">
+						<webobject name = "extractionExcelLnk">
+							<webobject name = "extractionExcel"></webobject> Liste des inscrits à cet EC
+						</webobject>
+						<webobject name = "extractionExcelNotesLnk">
+							<webobject name = "extractionExcelNotes"></webobject> Feuille de notes des inscrits à cet EC
+						</webobject>
+						<webobject name = "ApsForEc">
+							<webobject name = "HasUnSeulGroupe">
+								<webobject name = "extractionFeuillePresenceLnk">
+									<webobject name = "extractionFeuillePresence"></webobject>
+									 Feuille de présence au <webobject name = "TdOuTp"></webobject>
+									 </webobject>
+							</webobject>
+						</webobject>
+						</webobject>
+						</td>
+				   </tr>
 				<tr bgcolor="#57e8ff">
 					<th bgcolor="#6a1a3b"><font color="#ffffff">Dipl&ocirc;me</font></th>
 					<th bgcolor="#6a1a3b"><font color="#ffffff">Nom &amp; Pr&eacute;nom</font></th>
@@ -139,6 +155,8 @@
 					<th bgcolor="#6a1a3b"><font color="#ffffff">Moy s1</font></th>
 					<th bgcolor="#6a1a3b"><font color="#ffffff">Moy s2</font></th>	
 				</tr>
+				</thead>
+				<tbody>
 				<webobject name="Repetition2">
 					<tr>
 						<webobject name="Generic4"><webobject name="String14"></webobject></webobject>
@@ -149,6 +167,7 @@
 						<td align="center" width="90"><webobject name="String18"></webobject></td>
 					</tr>
 				</webobject>
+				</tbody>
 			</table>
 		</webobject>
 	</webobject>

@@ -426,7 +426,7 @@ public class Session extends CRIWebSession {
 	public String srcCssFile() {
 		return ((Application)criApp).urlImage("local_css/ipWeb.css",this.context());
 	}
-
+	
 	public String srcImgCadreBordD()
 	{
 		return monApp.urlImage("images/cadreSeul_CoteD.gif",this.context());

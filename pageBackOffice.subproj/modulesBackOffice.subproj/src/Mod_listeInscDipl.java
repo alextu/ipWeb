@@ -11,6 +11,7 @@ import nc.univ.ipweb.metier.scol.ScolMaquetteAp;
 import com.webobjects.appserver.WOComponent;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.eoaccess.EOModelGroup;
+import com.webobjects.eoaccess.EOUtilities;
 import com.webobjects.eocontrol.EOEditingContext;
 import com.webobjects.eocontrol.EOFetchSpecification;
 import com.webobjects.eocontrol.EOGenericRecord;
@@ -77,7 +78,9 @@ public class Mod_listeInscDipl extends CRIWebComponent {
 	private NSArray coulDipl = new NSArray(new Object[] {"#fcff4d","#ff7a00","#b9ff50","#00ff54","#00ffca","#3dceff","#6d5eff","#ff60d4","#ff5a60"});
 	private NSMutableDictionary dictCoulDipl;
 	
+	private NSArray aps;
     private ScolMaquetteAp currentAp;
+    private NSMutableDictionary groupCountForAp;
 	
     public Mod_listeInscDipl(WOContext context) {
         super(context);
@@ -109,6 +112,11 @@ public class Mod_listeInscDipl extends CRIWebComponent {
     public WOComponent fetcherListeInscritsEc() {
     	// On va pouvoir récupérer les inscrits à cet EC, tous diplômes confondus...
     	fetcherListeInscritsEC();
+    	// On fetch aussi les AP...
+    	Integer mecKey = (Integer)eoEcSelected.valueForKey("mecKey");
+    	aps = ScolMaquetteAp.fetchTpsAndTdsForEc(session().defaultEditingContext(), mecKey);
+    	// On reset le cache AP
+    	groupCountForAp = null;
     	return null;    	
     }
     
@@ -429,8 +437,7 @@ public class Mod_listeInscDipl extends CRIWebComponent {
     }
     
     public NSArray apsForEc() {
-    	Integer mecKey = (Integer)eoEcSelected.valueForKey("mecKey");
-    	return ScolMaquetteAp.fetchTpsAndTdsForEc(session().defaultEditingContext(), mecKey);
+    	return aps;
     }
 
     public ScolMaquetteAp getCurrentAp() {
@@ -440,6 +447,18 @@ public class Mod_listeInscDipl extends CRIWebComponent {
     public void setCurrentAp(ScolMaquetteAp currentAp) {
 		this.currentAp = currentAp;
 	}
+    
+    public boolean unSeulGroupeForCurrentAp() {
+    	if (groupCountForAp == null) {
+    		groupCountForAp = new NSMutableDictionary();
+    	}
+    	Integer groupCount = (Integer)groupCountForAp.objectForKey(currentAp.mapKey());
+    	if (groupCount == null) {
+    		groupCount = ScolMaquetteAp.countInscForAp(session().defaultEditingContext(), (Integer)eoEcSelected.valueForKey("mecKey"), currentAp.mapKey());
+    		groupCountForAp.setObjectForKey(groupCount, currentAp.mapKey());
+    	}
+    	return (currentAp.isTD() && groupCount <= 30) || (currentAp.isTP() && groupCount <= 50);
+    }
     
     public String titleForExtractionPdf() {
     	return "Extraire les feuilles de présence au " + currentAp.mhcoCode() + " de cet EC...";
@@ -572,7 +591,8 @@ public class Mod_listeInscDipl extends CRIWebComponent {
     
     private NSData extraitFeuillePresenceEC() {
 	    HashMap parametres = new HashMap();
-	    parametres.put("MECKEY", mecKey);
+	    parametres.put("MAPKEY", currentAp.mapKey());
+	    parametres.put("MECKEY", eoEcSelected.valueForKey("mecKey"));
 	    parametres.put("SEMESTRE", msemOrdre);
 	    parametres.put("ANNEE", ((Session)session()).getAnneeEnCours());
 	    parametres.put("MECCODE", eoEcSelected.valueForKey("mecCode"));
@@ -607,6 +627,11 @@ public class Mod_listeInscDipl extends CRIWebComponent {
     	return imprimerDocXLS(extraitListeInscrits(),"Liste_Inscrits_"+mecCode+".xls");
     }
     
+    public DownloadFic extractionFeuilleNotesExcel()
+    {
+    	return imprimerDocXLS(extraitListeInscrits(),"Feuille_Notes_Inscrits_"+mecCode+".xls");
+    }
+    
     private DownloadFic imprimerDocXLS(NSData donneesRapport,String titreRapport) {
     	DownloadFic nextPage;
     	nextPage = (DownloadFic)(pageWithName("DownloadFic"));
@@ -623,4 +648,11 @@ public class Mod_listeInscDipl extends CRIWebComponent {
 	    parametres.put("MECKEY", mecKey);
 	    return ((Session)session()).imprimeXLS("Liste_Inscrits_EC_Bourses.jasper", parametres);
 	}
+    
+    private NSData extraitFeuilleNotesInscrits() {
+    	// 
+    	HashMap parametres = new HashMap();
+    	parametres.put("MECKEY", mecKey);
+    	return ((Session)session()).imprimeXLS("feuilleNotesInscritsEC.jasper", parametres);
+    }
 }

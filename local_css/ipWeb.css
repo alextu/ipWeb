@@ -29,3 +29,35 @@ span.selected { color: #c00; font-size: inherit; font-weight: bold; text-decorat
 	border-bottom:1px dotted #fff;
 	margin-left:20px;
 }
+
+.button {
+	border-left: 1px solid rgb(140,140,140);
+	border-right: 1px solid rgb(140,140,140);
+	border-bottom: 1px solid rgb(140,140,140);
+	border-top: 1px solid rgb(149,149,149);
+	-moz-border-radius: 3px;
+	background-color:#ccc;
+	background-image: linear-gradient(bottom, rgb(230,230,230) 29%, rgb(245,245,245) 71%, rgb(255,255,255) 86%);
+	background-image: -o-linear-gradient(bottom, rgb(230,230,230) 29%, rgb(245,245,245) 71%, rgb(255,255,255) 86%);
+	background-image: -moz-linear-gradient(bottom, rgb(230,230,230) 29%, rgb(245,245,245) 71%, rgb(255,255,255) 86%);
+	background-image: -webkit-linear-gradient(bottom, rgb(230,230,230) 29%, rgb(245,245,245) 71%, rgb(255,255,255) 86%);
+	background-image: -ms-linear-gradient(bottom, rgb(230,230,230) 29%, rgb(245,245,245) 71%, rgb(255,255,255) 86%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.29, rgb(230,230,230)),
+		color-stop(0.71, rgb(245,245,245)),
+		color-stop(0.86, rgb(255,255,255))
+	);
+	border-radius: 3px;
+	display:inline-block;
+	padding:2px;
+	color: black;
+	text-decoration: none;
+}
+
+.button:hover {
+	text-decoration: none;
+}
