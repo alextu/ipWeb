@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 import nc.univ.ipweb.metier.scol.ScolMaquetteAp;
+import nc.univ.ipweb.metier.scol.ScolMaquetteResponsableEc;
 
 import com.webobjects.appserver.WOComponent;
 import com.webobjects.appserver.WOContext;
@@ -599,8 +600,17 @@ public class Mod_listeInscDipl extends CRIWebComponent {
 	    parametres.put("EC", eoEcSelected.valueForKey("mecLibelle"));
 	    // On va chercher le type d'AP et le nom du prof si dispo
 	    NSSet enseignants = new NSSet((NSArray)currentAp.scolMaquetteChargesAp().valueForKey("individu"));
-	    String nomAffichage = "";
-	    Iterator<EOGenericRecord> iterEns = enseignants.iterator();
+	    parametres.put("NOM_ENS", formatNomsIndividus(enseignants));
+	    parametres.put("TYPE_AP",currentAp.mhcoCode());
+	    // PS : ne marche pas en dev
+	    URL logoPath = application().resourceManager().pathURLForResourceNamed("images/logo.png", null, null);
+	    parametres.put("LOGO_PATH", logoPath != null ? logoPath.getFile() : null);
+	    return ((Session)session()).imprimePDF("feuillePresenceEc.jasper", parametres);
+    }
+    
+    private String formatNomsIndividus(Iterable individus) {
+    	String nomAffichage = "";
+	    Iterator<EOGenericRecord> iterEns = individus.iterator();
 	    while (iterEns.hasNext()) {
 	    	EOGenericRecord enseignant = iterEns.next();
 		    String ensPrenom = (String) ((EOGenericRecord)enseignant).valueForKey("prenom");
@@ -614,12 +624,7 @@ public class Mod_listeInscDipl extends CRIWebComponent {
 		    	nomAffichage += " / ";
 		    }
 	    }
-	    parametres.put("NOM_ENS", nomAffichage);
-	    parametres.put("TYPE_AP",currentAp.mhcoCode());
-	    // PS : ne marche pas en dev
-	    URL logoPath = application().resourceManager().pathURLForResourceNamed("images/logo.png", null, null);
-	    parametres.put("LOGO_PATH", logoPath != null ? logoPath.getFile() : null);
-	    return ((Session)session()).imprimePDF("feuillePresenceEc.jasper", parametres);
+	    return nomAffichage;
     }
     
     public DownloadFic extractionListeExcel()
@@ -629,7 +634,7 @@ public class Mod_listeInscDipl extends CRIWebComponent {
     
     public DownloadFic extractionFeuilleNotesExcel()
     {
-    	return imprimerDocXLS(extraitListeInscrits(),"Feuille_Notes_Inscrits_"+mecCode+".xls");
+    	return imprimerDocXLS(extraitFeuilleNotesInscrits(),"Feuille_Notes_Inscrits_"+mecCode+".xls");
     }
     
     private DownloadFic imprimerDocXLS(NSData donneesRapport,String titreRapport) {
@@ -653,6 +658,14 @@ public class Mod_listeInscDipl extends CRIWebComponent {
     	// 
     	HashMap parametres = new HashMap();
     	parametres.put("MECKEY", mecKey);
-    	return ((Session)session()).imprimeXLS("feuilleNotesInscritsEC.jasper", parametres);
+	    parametres.put("ANNEE", ((Session)session()).getAnneeEnCours());
+	    parametres.put("EC", eoEcSelected.valueForKey("mecLibelle"));
+	    parametres.put("MECCODE", eoEcSelected.valueForKey("mecCode"));
+	    NSArray responsables = ScolMaquetteResponsableEc.fetchResponsablesForEc(session().defaultEditingContext(), mecKey);
+	    parametres.put("NOM_RESPONSABLE", formatNomsIndividus(responsables));
+	    // PS : ne marche pas en dev
+	    URL logoPath = application().resourceManager().pathURLForResourceNamed("images/logo.png", null, null);
+	    parametres.put("LOGO_PATH", logoPath != null ? logoPath.getFile() : null);
+	    return ((Session)session()).imprimeXLS("feuilleNotesInscritsEC.jasper", parametres);
     }
 }

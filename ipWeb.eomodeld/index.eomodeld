@@ -211,6 +211,10 @@
         {
             className = "nc.univ.ipweb.metier.scol.ScolMaquetteRepartitionAp"; 
             name = ScolMaquetteRepartitionAp; 
+        }, 
+        {
+            className = "nc.univ.ipweb.metier.scol.ScolMaquetteResponsableEc"; 
+            name = ScolMaquetteResponsableEc; 
         }
     ); 
     storedProcedures = (
