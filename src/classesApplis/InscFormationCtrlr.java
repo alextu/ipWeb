@@ -415,7 +415,7 @@ public class InscFormationCtrlr {
 		int dispense = 0;
 		if (imrsemDispense != null) dispense = imrsemDispense.intValue();
 
-		if (dispense ==4 ) // le semestre en question a d�j� �t� obtenu
+		if (dispense ==4 || dispense == 14) // le semestre en question a d�j� �t� obtenu
 			semestreDejaObtenu = true;
 
 
