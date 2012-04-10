@@ -1,0 +1,144 @@
+Conditional1: WOConditional {
+	condition = messError;
+}
+
+Conditional2: WOConditional {
+	condition = appUseCas;
+}
+
+Conditional3: WOConditional {
+	condition = useIpAnonymes;
+}
+
+Conditional4: WOConditional {
+	condition = useMail;
+}
+
+Conditional5: WOConditional {
+	condition = useMail;
+	negate = true;
+}
+
+Conditional6: WOConditional {
+	condition = messError;
+}
+
+Conditional7: WOConditional {
+	condition = appUseCas;
+	negate = true;
+}
+
+Conditional8: WOConditional {
+	condition = etudiantUseCas;
+	negate = true;
+}
+
+Conditional9: WOConditional {
+	condition = etudiantUseCas;
+}
+
+Form1: WOForm {
+}
+
+Form2: WOForm {
+}
+
+Form3: WOForm {
+}
+
+Hyperlink1: WOHyperlink {
+	action = goIpAnonymes;
+	class = "linkPage";
+}
+
+Hyperlink2: WOHyperlink {
+	action = goCas;
+	class = "linkPage";
+}
+
+Hyperlink3: WOHyperlink {
+	action = goCas;
+	class = "linkPage";
+}
+
+Image1: WOImage {
+	border = 0;
+	src = "http://applis.univ-nc.nc/image_partagee/appliswo/clefs.gif";
+}
+
+PasswordField1: WOPasswordField {
+	value = password;
+}
+
+PasswordField2: WOPasswordField {
+	value = dateNaissEtud;
+}
+
+String1: WOString {
+	escapeHTML = false;
+	value = nomApplication;
+	valueWhenEmpty = "";
+}
+
+String2: WOString {
+	escapeHTML = false;
+	value = nomApplication;
+	valueWhenEmpty = "";
+}
+
+String3: WOString {
+	value = messError;
+}
+
+SubmitButton1: WOSubmitButton {
+	action = valideConnexion;
+	class = "bouton";
+	value = "Valider";
+}
+
+SubmitButton2: WOSubmitButton {
+	action = valideConnexion;
+	class = "bouton";
+	value = "Valider";
+}
+
+SubmitButton4: WOSubmitButton {
+	action = lanceAffNotice;
+	value = "AIDE sur l'application !";
+}
+
+TextField1: WOTextField {
+	value = login;
+}
+
+TextField2: WOTextField {
+	value = domain;
+}
+
+TextField3: WOTextField {
+	value = numEtud;
+	numberformat = "0";
+}
+
+btnConnect: WOSubmitButton {
+  action = valideConnexion;
+  value = "Valider";
+  class = "bouton";
+  title = "Valider";
+}
+
+erreurLogin:WOConditional{
+  condition=erreurLogin;
+}
+
+formLogin:WOForm {
+
+}
+
+txtLogin:WOTextField {
+  value = email;
+}
+
+txtPassw: WOPasswordField {
+  value = password;
+}

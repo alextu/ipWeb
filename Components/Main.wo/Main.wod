@@ -1,0 +1,12 @@
+CRIDefaultPage1: IPWebDefaultPage {
+	pageTitle = "IP Web";
+}
+
+CRIHTMLFooter1: CktlHTMLFooter {
+	showBar = true;
+	useDefaultMail = true;
+}
+
+MyLogin1: MyLogin {
+	nomApplication = "IP Web";
+}

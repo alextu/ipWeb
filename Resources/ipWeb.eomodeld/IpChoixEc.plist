@@ -1,0 +1,84 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "CE_DATE_CHOIX"; 
+            externalType = DATE; 
+            name = ceDateChoix; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "CHOIX_INTEGRE"; 
+            externalType = VARCHAR2; 
+            name = choixIntegre; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IDIPL_NUMERO"; 
+            externalType = NUMBER; 
+            name = idiplNumero; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IMREC_SEMESTRE"; 
+            externalType = NUMBER; 
+            name = imrecSemestre; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MREC_KEY"; 
+            externalType = NUMBER; 
+            name = mrecKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MRUE_KEY"; 
+            externalType = NUMBER; 
+            name = mrueKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MSEM_KEY"; 
+            externalType = NUMBER; 
+            name = msemKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (idiplNumero, imrecSemestre, mrecKey, mrueKey, msemKey); 
+    className = "org.cocktail.ipweb.serveur.metier.IpChoixEc"; 
+    classProperties = (
+        ceDateChoix, 
+        choixIntegre, 
+        fannKey, 
+        idiplNumero, 
+        imrecSemestre, 
+        mrecKey, 
+        mrueKey, 
+        msemKey
+    ); 
+    externalName = "IP_CHOIX_EC"; 
+    fetchSpecificationDictionary = {}; 
+    name = IpChoixEc; 
+    primaryKeyAttributes = (idiplNumero, mrecKey, msemKey); 
+}

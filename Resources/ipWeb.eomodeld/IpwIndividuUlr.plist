@@ -1,0 +1,226 @@
+{
+    attributes = (
+        {
+            columnName = "C_CIVILITE"; 
+            externalType = VARCHAR2; 
+            name = cCivilite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CATEGORIE_PRINC"; 
+            externalType = NUMBER; 
+            name = categoriePrinc; 
+            precision = 2; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_DECES"; 
+            externalType = DATE; 
+            name = dDeces; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_NAISSANCE"; 
+            externalType = DATE; 
+            name = dNaissance; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IND_ACTIVITE"; 
+            externalType = VARCHAR2; 
+            name = indActivite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IND_C_SITUATION_FAMILLE"; 
+            externalType = VARCHAR2; 
+            name = indCSituationFamille; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IND_PHOTO"; 
+            externalType = VARCHAR2; 
+            name = indPhoto; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IND_QUALITE"; 
+            externalType = VARCHAR2; 
+            name = indQualite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 120; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LANGUE_PREF"; 
+            externalType = VARCHAR2; 
+            name = languePref; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 3; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NOM_PATRONYMIQUE"; 
+            externalType = VARCHAR2; 
+            name = nomPatronymique; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            columnName = "NOM_USUEL"; 
+            externalType = VARCHAR2; 
+            name = nomUsuel; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = PRENOM; 
+            externalType = VARCHAR2; 
+            name = prenom; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }, 
+        {
+            columnName = "TEM_SS_DIPLOME"; 
+            externalType = VARCHAR2; 
+            name = temSsDiplome; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "TEM_VALIDE"; 
+            externalType = VARCHAR2; 
+            name = temValide; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "VILLE_DE_NAISSANCE"; 
+            externalType = VARCHAR2; 
+            name = villeDeNaissance; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }
+    ); 
+    attributesUsedForLocking = (noIndividu, persId); 
+    className = "org.cocktail.ipweb.serveur.metier.IpwIndividuUlr"; 
+    classProperties = (
+        cCivilite, 
+        categoriePrinc, 
+        dDeces, 
+        dNaissance, 
+        indActivite, 
+        indCSituationFamille, 
+        indPhoto, 
+        indQualite, 
+        languePref, 
+        noIndividu, 
+        nomPatronymique, 
+        nomUsuel, 
+        persId, 
+        prenom, 
+        temSsDiplome, 
+        temValide, 
+        toEtudiant, 
+        toPersTelephone, 
+        toRptCompte, 
+        vSituationsIndividu, 
+        villeDeNaissance
+    ); 
+    externalName = "INDIVIDU_ULR"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cCivilite, 
+            categoriePrinc, 
+            dDeces, 
+            dNaissance, 
+            indActivite, 
+            indCSituationFamille, 
+            indPhoto, 
+            indQualite, 
+            languePref, 
+            noIndividu, 
+            nomPatronymique, 
+            nomUsuel, 
+            persId, 
+            prenom, 
+            temSsDiplome, 
+            temValide, 
+            villeDeNaissance
+        ); 
+    }; 
+    name = IpwIndividuUlr; 
+    primaryKeyAttributes = (persId); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = IpwEtudiant; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = toEtudiant; 
+        }, 
+        {
+            destination = IpwPersonneTelephone; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = persId; sourceAttribute = persId; }); 
+            name = toPersTelephone; 
+        }, 
+        {
+            destination = IpwRepartCompte; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = persId; sourceAttribute = persId; }); 
+            name = toRptCompte; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            destination = VSituationsIndividu; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = vSituationsIndividu; 
+        }
+    ); 
+}

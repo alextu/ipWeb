@@ -1,0 +1,98 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "CHOIX_VALIDES"; 
+            externalType = VARCHAR2; 
+            name = choixValides; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CUMUL_ECTS"; 
+            externalType = NUMBER; 
+            name = cumulEcts; 
+            precision = 2; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }, 
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IDIPL_NUMERO"; 
+            externalType = NUMBER; 
+            name = idiplNumero; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "INSC_PS_INCOMPLETE"; 
+            externalType = VARCHAR2; 
+            name = inscPsIncomplete; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MRSEM_KEY_PS"; 
+            externalType = NUMBER; 
+            name = mrsemKeyPs; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MSEM_KEY"; 
+            externalType = NUMBER; 
+            name = msemKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NB_UE_INCOMPLETES"; 
+            externalType = NUMBER; 
+            name = nbUeIncompletes; 
+            precision = 2; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SS_DATE_MODIF"; 
+            externalType = DATE; 
+            name = ssDateModif; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }
+    ); 
+    attributesUsedForLocking = (choixValides, idiplNumero, inscPsIncomplete, msemKey); 
+    className = "org.cocktail.ipweb.serveur.metier.IpSemStat"; 
+    classProperties = (
+        choixValides, 
+        cumulEcts, 
+        fannKey, 
+        idiplNumero, 
+        inscPsIncomplete, 
+        mrsemKeyPs, 
+        msemKey, 
+        nbUeIncompletes, 
+        ssDateModif
+    ); 
+    externalName = "IP_SEM_STAT"; 
+    fetchSpecificationDictionary = {}; 
+    name = IpSemStat; 
+    primaryKeyAttributes = (idiplNumero, msemKey); 
+}

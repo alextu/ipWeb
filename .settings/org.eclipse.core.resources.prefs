@@ -1,16 +1,7 @@
-#Thu Feb 03 15:10:22 NCT 2011
+#Tue Apr 10 09:51:14 NCT 2012
 eclipse.preferences.version=1
-encoding//pageBackOffice.subproj/modulesBackOffice.subproj/LogsIp.wo=UTF-8
-encoding//pageBackOffice.subproj/modulesBackOffice.subproj/Mod_envoiMail.wo=UTF-8
-encoding//pageBackOffice.subproj/modulesBackOffice.subproj/Mod_envoiMail.wo/Mod_envoiMail.html=UTF-8
-encoding//pageBackOffice.subproj/modulesBackOffice.subproj/Mod_envoiMail.wo/Mod_envoiMail.wod=UTF-8
-encoding//pageBackOffice.subproj/modulesBackOffice.subproj/Mod_envoiMail.wo/Mod_envoiMail.woo=UTF-8
-encoding//pageBackOffice.subproj/modulesBackOffice.subproj/Mod_listeInscDipl.wo=UTF-8
-encoding//pageBackOffice.subproj/modulesBackOffice.subproj/Mod_listeInscDipl.wo/Mod_listeInscDipl.html=UTF-8
-encoding//pageBackOffice.subproj/modulesBackOffice.subproj/Mod_listeInscDipl.wo/Mod_listeInscDipl.wod=UTF-8
-encoding//pageBackOffice.subproj/modulesBackOffice.subproj/Mod_listeInscDipl.wo/Mod_listeInscDipl.woo=UTF-8
-encoding//pageBackOffice.subproj/modulesBackOffice.subproj/src/LogsIp.java=UTF-8
-encoding//pageBackOffice.subproj/modulesBackOffice.subproj/src/Mod_envoiMail.java=UTF-8
-encoding//pageBackOffice.subproj/modulesBackOffice.subproj/src/Mod_listeInscDipl.java=UTF-8
-encoding//pageBackOffice.subproj/src/PopUpMultiDiplSemEc.java=UTF-8
+encoding//Sources/org/cocktail/ipweb/serveur/components/pagebo/PopUpMultiDiplSemEc.java=UTF-8
+encoding//Sources/org/cocktail/ipweb/serveur/components/pagebo/modules/LogsIp.java=UTF-8
+encoding//Sources/org/cocktail/ipweb/serveur/components/pagebo/modules/Mod_envoiMail.java=UTF-8
+encoding//Sources/org/cocktail/ipweb/serveur/components/pagebo/modules/Mod_listeInscDipl.java=UTF-8
 encoding/<project>=UTF-8

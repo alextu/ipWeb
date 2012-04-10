@@ -1,0 +1,22 @@
+CRIDefaultPage1: IPWebDefaultPage {
+	pageTitle = "IP Web";
+}
+
+CRIHTMLFooter1: CktlHTMLFooter {
+	showBar = true;
+	useDefaultMail = true;
+}
+
+idEtudiant2: Identite {
+}
+
+lesFormationsSuivies: Formations {
+}
+
+lesIpDuSemestre: CadreIp {
+	onScolariteAnterieure = toPageScolariteAnterieureEtu;
+}
+
+scriptCacheDetail: WOJavaScript {
+	scriptSource = "scripts/cacheDetailsDiv.js";
+}

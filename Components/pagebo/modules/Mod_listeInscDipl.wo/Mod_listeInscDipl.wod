@@ -1,0 +1,321 @@
+Conditional1: WOConditional {
+	condition = listeDisponible;
+}
+
+Conditional2: WOConditional {
+	condition = possibiliteLogs;
+	negate = false;
+}
+
+Conditional3: WOConditional {
+	condition = listeDisponible;
+}
+
+Conditional4: WOConditional {
+	condition = listeInscAuxEc;
+	negate = true;
+}
+
+Conditional5: WOConditional {
+	condition = listeInscAuxEc;
+}
+
+Conditional6: WOConditional {
+	condition = listeDisponibleEC;
+}
+
+Conditional7: WOConditional {
+	condition = listeDisponibleEC;
+}
+
+Conditional8: WOConditional {
+	condition = listeInscAuxEc;
+	negate = true;
+}
+
+Conditional9: WOConditional {
+	condition = listeInscAuxEc;
+}
+
+Form1: WOForm {
+}
+
+Form2: WOForm {
+	multipleSubmit = true;
+	name = nomFormBR;
+}
+
+Form3: WOForm {
+}
+
+Form4: WOForm {
+}
+
+FormAccel: WOForm {
+	action = sousRechSurDebutNom;
+	name = nomFormAccel;
+}
+
+FormAccel2: WOForm {
+	action = sousRechSurDebutNom;
+	name = nomFormAccel;
+}
+
+Generic1: WOGenericContainer {
+	class = styleEtatIp;
+	elementName = "SPAN";
+}
+
+Generic2: WOGenericContainer {
+	class = styleRB1;
+	elementName = "SPAN";
+}
+
+Generic3: WOGenericContainer {
+	class = styleRB2;
+	elementName = "SPAN";
+}
+
+Generic4: WOGenericContainer {
+	bgcolor = bgcolorDipl;
+	elementName = "TD";
+	width = "180";
+}
+
+Hyperlink1: WOHyperlink {
+	action = detaillerEtudiant;
+	disabled = ipNonDisponible;
+	title = "Voir le détail des IP de l'étudiant(e)";
+}
+
+Hyperlink2: WOHyperlink {
+	action = voirLogEtud;
+	title = "Voir les logs des actions réalisées par l'étudiant(e)";
+}
+
+Hyperlink4: WOHyperlink {
+	action = detaillerEtudiant;
+	title = "Voir le détail des IP de l'étudiant(e)";
+}
+
+PopUpMultiDiplSemUe1: PopUpMultiDiplSemUe {
+	action = fetcherListeInscrits;
+	eoSelectionne = eoDiplSelected;
+	fspnKey = fspnKey;
+	typeSelection = 2;
+	msemOrdre = msemOrdre;
+	msemKey = msemKey;
+}
+
+PopUpMultiDiplSemUe2: PopUpMultiDiplSemUe {
+	action = fetcherListeInscritsEc;
+	eoSelectionne = eoEcSelected;
+	fspnKey = fspnKey;
+	typeSelection = 3;
+	msemOrdre = msemOrdre;
+	msemKey = msemKey;
+	fetchEc = true;
+}
+
+RadioButton1: WORadioButton {
+	onChange = fctSubmitChoixBR;
+	selection = brSelected;
+	value = 0;
+	name = "RBTypeListe";
+}
+
+RadioButton2: WORadioButton {
+	onChange = fctSubmitChoixBR;
+	selection = brSelected;
+	value = 1;
+	name = "RBTypeListe";
+}
+
+Repetition1: WORepetition {
+	item = lInscrit;
+	list = listeInscrits;
+}
+
+Repetition2: WORepetition {
+	item = lInscritEC;
+	list = listeInscritsEC;
+}
+
+String1: WOString {
+	value = lInscrit.adrNom;	// VALID
+}
+
+String10: WOString {
+	value = masqueAccel;
+}
+
+String11: WOString {
+	value = lInscrit.imrsemSession2;	// VALID
+}
+
+String12: WOString {
+	value = redoublant;
+}
+
+String13: WOString {
+	value = libEtatIp;
+}
+
+String14: WOString {
+	value = lInscritEC.formationAbreviation;	// VALID
+}
+
+String15: WOString {
+	value = integrationChoix;
+}
+
+String16: WOString {
+	value = resultatEC;
+	valueWhenEmpty = "-";
+}
+
+String17: WOString {
+	value = noteECSession1;
+	valueWhenEmpty = "-";
+}
+
+String18: WOString {
+	value = noteECSession2;
+	valueWhenEmpty = "-";
+}
+
+String19: WOString {
+	value = masqueAccelEc;
+}
+
+String2: WOString {
+	value = lInscrit.adrPrenom;	// VALID
+}
+
+String20: WOString {
+	value = nbInscritsEc;
+}
+
+String21: WOString {
+	value = titreFieldSet;
+}
+
+String22: WOString {
+	value = lInscritEC.adrPrenom;	// VALID
+}
+
+String23: WOString {
+	value = lInscritEC.adrNom;	// VALID
+}
+
+String3: WOString {
+	value = typeInsc;
+}
+
+String4: WOString {
+	value = nbInscrits;
+}
+
+String5: WOString {
+	value = libDispense;
+}
+
+String6: WOString {
+	value = lInscrit.libResSem;	// VALID
+}
+
+String7: WOString {
+	value = lInscrit.imrsemSession1;	// VALID
+}
+
+String8: WOString {
+	value = lInscrit.mention2;	// VALID
+}
+
+String9: WOString {
+	value = lInscrit.mention1;	// VALID
+}
+
+SubmitButton1: WOSubmitButton {
+	action = sousRechSurDebutNom;
+	value = " ? ";
+}
+
+SubmitButton2: WOSubmitButton {
+	action = raffraichir;
+	value = "Rafraîchir...";
+}
+
+SubmitButton3: WOSubmitButton {
+	action = raffraichirListeEC;
+	value = "Rafraîchir...";
+}
+
+SubmitButton4: WOSubmitButton {
+	action = sousRechEcSurDebutNom;
+	value = " ? ";
+}
+
+TextField1: WOTextField {
+	onFocus = "select();";
+	value = chaineAccel;
+}
+
+TextField2: WOTextField {
+	onFocus = "select();";
+	value = chaineAccelEc;
+}
+
+extractionExcelLnk : WOHyperlink {
+	action = extractionListeExcel;
+	class = "button";
+	title = "Extraire la liste des inscrits à cet EC...";
+}
+
+extractionExcel: WOImage {
+	title = "Extraire la liste des inscrits à cet EC...";
+	filename = "images/xls_icone.jpg";
+	style = "border:none;vertical-align:middle;height:16px;width:16px;";
+}
+
+extractionExcelNotesLnk : WOHyperlink {
+	action = extractionFeuilleNotesExcel;
+	class = "button";
+	title = "Extraire la feuille de notes des inscrits à cet EC...";
+}
+
+extractionExcelNotes: WOImage {
+	title = "Extraire la feuille de notes des inscrits à cet EC...";
+	filename = "images/xls_icone.jpg";
+	style = "border:none;vertical-align:middle;height:16px;width:16px;";
+}
+
+extractionFeuillePresenceLnk : WOHyperlink {
+	action = extractionFeuillePresenceEC;
+	class = "button";
+	title = titleForExtractionPdf;
+}
+
+extractionFeuillePresence: WOImage {
+	title = titleForExtractionPdf;
+	filename = "images/iconePDF.gif";
+	style = "border:none;vertical-align:middle;";
+}
+
+TdOuTp : WOString {
+	value = currentAp.mhcoCode;
+}
+
+siInscrits : WOConditional {
+	condition = pasDIncrits;
+	negate = yes;
+}
+
+ApsForEc : WORepetition {
+	list = apsForEc;
+	item = currentAp;
+}
+
+HasUnSeulGroupe : WOConditional {
+	condition = unSeulGroupeForCurrentAp;
+}

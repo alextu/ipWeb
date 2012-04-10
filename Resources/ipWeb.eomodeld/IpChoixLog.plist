@@ -1,0 +1,67 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "CL_DATE_LOG"; 
+            externalType = DATE; 
+            name = clDateLog; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ETAT_CHOIX"; 
+            externalType = VARCHAR2; 
+            name = etatChoix; 
+            valueClassName = NSString; 
+            valueType = s; 
+            width = 1; 
+        }, 
+        {
+            columnName = "IDIPL_NUMERO"; 
+            externalType = NUMBER; 
+            name = idiplNumero; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "IMREC_SEMESTRE"; 
+            externalType = NUMBER; 
+            name = imrecSemestre; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "LOG_ORDRE"; 
+            externalType = NUMBER; 
+            name = logOrdre; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MREC_KEY"; 
+            externalType = NUMBER; 
+            name = mrecKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MSEM_KEY"; 
+            externalType = NUMBER; 
+            name = msemKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (idiplNumero, imrecSemestre, mrecKey, msemKey); 
+    className = "org.cocktail.ipweb.serveur.metier.IpChoixLog"; 
+    classProperties = (clDateLog, etatChoix, idiplNumero, imrecSemestre, mrecKey, msemKey); 
+    externalName = "IP_CHOIX_LOG"; 
+    fetchSpecificationDictionary = {}; 
+    name = IpChoixLog; 
+    primaryKeyAttributes = (logOrdre); 
+}

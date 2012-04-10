@@ -1,0 +1,61 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            serverTimeZone = "Pacific/Noumea"; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            serverTimeZone = "Pacific/Noumea"; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "NO_TELEPHONE"; 
+            externalType = VARCHAR2; 
+            name = noTelephone; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 14; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "TYPE_NO"; 
+            externalType = VARCHAR2; 
+            name = typeNo; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 3; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "TYPE_TEL"; 
+            externalType = VARCHAR2; 
+            name = typeTel; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4; 
+        }
+    ); 
+    attributesUsedForLocking = (dCreation, dModification, noTelephone, persId, typeNo, typeTel); 
+    className = "org.cocktail.ipweb.serveur.metier.IpwPersonneTelephone"; 
+    classProperties = (dCreation, dModification, noTelephone, persId, typeNo, typeTel); 
+    externalName = "PERSONNE_TELEPHONE"; 
+    name = IpwPersonneTelephone; 
+    primaryKeyAttributes = (noTelephone, persId, typeNo, typeTel); 
+}

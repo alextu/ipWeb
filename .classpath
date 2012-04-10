@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="classesApplis/|classeMetier/|classCryptage/" kind="src" path="src"/>
-	<classpathentry kind="src" path="pageBackOffice.subproj/modulesBackOffice.subproj/src"/>
-	<classpathentry kind="src" path="onglets.subproj/src/classesOnglets"/>
-	<classpathentry excluding="classesOnglets/" kind="src" path="onglets.subproj/src"/>
-	<classpathentry kind="src" path="src/classCryptage"/>
-	<classpathentry kind="src" path="src/classeMetier"/>
-	<classpathentry kind="src" path="src/classesApplis"/>
-	<classpathentry kind="src" path="pagePrin.subproj/compPP.subproj/src"/>
-	<classpathentry kind="src" path="pageBackOffice.subproj/src"/>
-	<classpathentry kind="src" path="pagePrin.subproj/src"/>
+	<classpathentry kind="src" path="Sources"/>
+	<classpathentry kind="con" path="WOFramework/ERJars"/>
+	<classpathentry kind="con" path="WOFramework/ERExtensions"/>
+	<classpathentry kind="con" path="WOFramework/FwkCktlWebApp"/>
+	<classpathentry kind="con" path="WOFramework/Ajax"/>
 	<classpathentry kind="con" path="WOFramework/JavaWOExtensions"/>
 	<classpathentry kind="con" path="WOFramework/JavaEOAccess"/>
 	<classpathentry kind="con" path="WOFramework/JavaEOControl"/>
@@ -17,10 +12,6 @@
 	<classpathentry kind="con" path="WOFramework/JavaWebObjects"/>
 	<classpathentry kind="con" path="WOFramework/JavaXML"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="con" path="WOFramework/CRIUtil2"/>
-	<classpathentry kind="con" path="WOFramework/CRIWebExt2"/>
-	<classpathentry kind="con" path="WOFramework/LRWebAppException"/>
-	<classpathentry kind="con" path="WOFramework/CRIWebApp2"/>
 	<classpathentry kind="con" path="WOFramework/JavaJDBCAdaptor"/>
 	<classpathentry kind="lib" path="Libraries/JasperLib/commons-beanutils-1.7.jar"/>
 	<classpathentry kind="lib" path="Libraries/JasperLib/commons-collections-2.1.jar"/>

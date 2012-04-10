@@ -1,0 +1,17 @@
+lienCSS : ERXStyleSheet {
+ 	filename = "local_css/ipWeb.css";
+ 	framework = "app";
+}
+
+lienCSSNC : ERXStyleSheet {
+ 	href = "http://applis.univ-nc.nc/Templates/assa.css";
+}
+
+pageContent: WOComponentContent {
+}
+
+strTitle: WOString {
+  value = ^pageTitle;
+  escapeHTML = false;
+  valueWhenEmpty = "";
+}

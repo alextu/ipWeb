@@ -1,0 +1,46 @@
+Browser1: WOBrowser {
+	item = eoDiplAvecRN;
+	list = monCtrlrListeDiplRN.listeDiplomesAvecRN;
+	displayString = eoDiplAvecRN.diplome; // VALID
+	multiple = true;
+	selections = selectionDiplomesAvec;
+	value = eoDiplAvecRN.fspnKey;	// VALID
+	size = 15;
+	style = "width:300px;";
+}
+
+Browser2: WOBrowser {
+	item = eoDiplSansRN;
+	list = monCtrlrListeDiplRN.listeDiplomesSansRN;
+	displayString = eoDiplSansRN.diplome;	// VALID
+	selections = selectionDiplomesSans;
+	value = eoDiplSansRN.fspnKey;	// VALID
+	size = 15;
+	style = "width:300px;";
+	multiple = true;
+}
+
+Conditional2: WOConditional {
+	condition = gestionSortieRNAutorisee;
+}
+
+Conditional3: WOConditional {
+	condition = gestionSortieRNAutorisee;
+	negate = true;
+}
+
+FdiplAvecRN: WOForm {
+	multipleSubmit = true;
+}
+
+ajoutDiplAvecRN: WOSubmitButton {
+	action = ajoutDiplAvecRN;
+	title = "Ajouter diplome(s) avec acc�s aux RN/Web";
+	value = "<==";
+}
+
+supprDiplAvecRN: WOSubmitButton {
+	action = supprDiplAvecRN;
+	title = "Enlever diplome(s) avec acc�s aux RN/Web";
+	value = "==>";
+}

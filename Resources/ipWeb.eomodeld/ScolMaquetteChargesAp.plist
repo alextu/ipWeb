@@ -1,0 +1,37 @@
+{
+    attributes = (
+        {
+            columnName = "MAP_KEY"; 
+            externalType = NUMBER; 
+            name = mapKey; 
+            precision = 12; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (mapKey, persId); 
+    className = "org.cocktail.ipweb.serveur.metier.scol.ScolMaquetteChargesAp"; 
+    classProperties = (individu); 
+    externalName = "SCOLARITE.SCOL_MAQUETTE_CHARGES_AP"; 
+    fetchSpecificationDictionary = {}; 
+    name = ScolMaquetteChargesAp; 
+    primaryKeyAttributes = (mapKey, persId); 
+    relationships = (
+        {
+            destination = "FwkCktlWebApp_IndividuUlrPersId"; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = persId; sourceAttribute = persId; }); 
+            name = individu; 
+        }
+    ); 
+}

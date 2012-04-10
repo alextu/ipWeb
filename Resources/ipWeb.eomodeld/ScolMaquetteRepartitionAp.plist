@@ -1,0 +1,42 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MAP_KEY"; 
+            externalType = NUMBER; 
+            name = mapKey; 
+            precision = 12; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MEC_KEY"; 
+            externalType = NUMBER; 
+            name = mecKey; 
+            precision = 12; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MRAP_KEY"; 
+            externalType = NUMBER; 
+            name = mrapKey; 
+            precision = 12; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    className = "org.cocktail.ipweb.serveur.metier.scol.ScolMaquetteRepartitionAp"; 
+    classProperties = (fannKey, mapKey, mecKey); 
+    externalName = "SCOLARITE.SCOL_MAQUETTE_REPARTITION_AP"; 
+    fetchSpecificationDictionary = {}; 
+    name = ScolMaquetteRepartitionAp; 
+    primaryKeyAttributes = (mrapKey); 
+}

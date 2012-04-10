@@ -1,0 +1,52 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MBEC_TYPE"; 
+            externalType = VARCHAR2; 
+            name = mbecType; 
+            valueClassName = NSString; 
+            width = 1; 
+        }, 
+        {
+            columnName = "MEC_KEY"; 
+            externalType = NUMBER; 
+            name = mecKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (fannKey, mbecType, mecKey, persId); 
+    className = "org.cocktail.ipweb.serveur.metier.scol.ScolMaquetteResponsableEc"; 
+    classProperties = (fannKey, individu, mbecType, mecKey); 
+    externalName = "SCOLARITE.SCOL_MAQUETTE_RESPONSABLE_EC"; 
+    fetchSpecificationDictionary = {}; 
+    name = ScolMaquetteResponsableEc; 
+    primaryKeyAttributes = (mecKey, persId); 
+    relationships = (
+        {
+            destination = "FwkCktlWebApp_IndividuUlrPersId"; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = persId; sourceAttribute = persId; }); 
+            name = individu; 
+        }
+    ); 
+}

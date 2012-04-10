@@ -1,0 +1,13 @@
+CRIDefaultPage1: IPWebDefaultPage {
+	pageTitle = "IP Web";
+}
+
+CRIHTMLFooter1: CktlHTMLFooter {
+	showBar = true;
+	useDefaultMail = true;
+}
+
+ScolariteAnterieure : ScolariteAnterieure {
+	lesInscriptionsParAnnee = lesInscriptionsParAnnee;
+	onPrevious = previousPage;
+}
