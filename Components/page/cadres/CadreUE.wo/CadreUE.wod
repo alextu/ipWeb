@@ -146,16 +146,6 @@ GCcoulTexteCumulEcts: WOGenericContainer {
 	class = monUeCtrlr.coulTexteCumulEcts;
 }
 
-GCcoulTexte4: WOGenericContainer {
-	COLOR = monUeCtrlr.coulTexteCumulEcts;
-	elementName = "FONT";
-}
-
-GCcoulTexte5: WOGenericContainer {
-	COLOR = monUeCtrlr.coulTexteCumulEcts;
-	elementName = "FONT";
-}
-
 Generic1: WOGenericContainer {
 	elementName = "span";
 	class = ecEnCours.miseEnFormeStatut;
@@ -176,11 +166,6 @@ ImageUeOK: WOImage {
 RepetitionEcAAfficher: WORepetition {
 	item = ecEnCours;
 	list = listeEcAffichage;
-}
-
-String1: WOString {
-	value = monUeCtrlr.msgEctsUE;
-	escapeHTML = false;
 }
 
 STypeEcEnCours: WOString {
@@ -229,11 +214,6 @@ SNomUe: WOString {
 
 SOrdreUE: WOString {
 	value = monUeCtrlr.ordreUe;
-}
-
-String3: WOString {
-	value = monUeCtrlr.msgEctsUE;
-	escapeHTML = false;
 }
 
 SlibelleLongEc: WOString {
@@ -313,19 +293,4 @@ SBAjouterChoix: WOSubmitButton {
 SBValiderModif: WOSubmitButton {
 	action = validerModif;
 	value = "Enregistrer mes Choix";
-}
-
-olDetailEc: WOHyperlink {
-	href = "javascript:void(0);";
-	onMouseOut = "return nd();";
-	onMouseOver = ecEnCours.msgOlEc;
-}
-
-siAffCompact: WOConditional {
-	condition = monUeCtrlr.ueDetaillee;
-	negate = true;
-}
-
-siAffDetails: WOConditional {
-	condition = monUeCtrlr.ueDetaillee;
 }

@@ -45,12 +45,6 @@ Form2: WOForm {
 	name = nomFormBR;
 }
 
-Form3: WOForm {
-}
-
-Form4: WOForm {
-}
-
 FormAccel: WOForm {
 	action = sousRechSurDebutNom;
 	name = nomFormAccel;

@@ -50,10 +50,6 @@ choisirSemestre: WOHyperlink {
 	onMouseOver = msgOlSem;
 }
 
-choisirSemestre2: WOHyperlink {
-	action = changerSemestre;
-}
-
 condAffLienRn : WOConditional {
 	condition = rnDispo;
 }

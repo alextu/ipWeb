@@ -1,83 +1,90 @@
 <fieldset>
-     <legend><b>Mail aux étudiant inscrits à <webobject name="typeEnvoi"></webobject> :</b></legend>
-		 <table>
-			<tr>
-				<td valign="bottom">
-					<webobject name="FormChoixTypeEnvoi">
-						<u>Envoyer un mail aux inscrits&nbsp;:</u>&nbsp;
-						<webobject name="RadioButton1"></webobject><webobject name="GenericChoix1">&agrave; une formation...</webobject>
-						&nbsp;&nbsp;
-						<webobject name="RadioButton2"></webobject><webobject name="GenericChoix2">&agrave; un EC...</webobject>
-						<br>
-					</webobject>
-				</td>
-			</tr>
-		</table>
-		<webobject name="CondTypeFormation">
-			<webobject name="PopUpMultiDiplAnnee"></webobject>
-		</webobject>
-		<webobject name="CondTypeEc">
-			<webobject name="PopUpMultiDiplSemEc"></webobject>
-		</webobject>
-			<webobject name = "CondDestinatairesChoisis">
-				<fieldset>
-					<legend><b>
-						Envoie de votre mail : 
-						<webobject name = "existeInscritsEc">
-							(<webobject name = "nbInscEc"/> destinataires)
-						</webobject>				
-				</b></legend>
-					<webobject name = "MailForm">
-						<table>
-							<tr valign = "top">
-								<td>Sujet :
-								</td>
-								<td><webobject name = "champSujet"/>
-								</td>
-							</tr>
-							<tr valign = "top">
-								<td>Texte :
-								</td>
-								<td><webobject name = "champTexte"/>
-								</td>
-							</tr>
-						</table>
-						<webobject name = "BoutonValider"/>&nbsp;&nbsp;&nbsp;<webobject name = "BoutonAnnuler"/><br>
-					</webobject>
-					<br><i>Pour l'envoi de mails avec pi&egrave;ces jointes, utilisez votre client de messagerie habituel en cliquant sur le lien :</i> 
-					<ul>
-					<webobject name="CondTypeFormation">
-						<li>
-						<webobject name = "mailtoListeDiplome">Envoie à la liste de diffusion <webobject name = "codeListeDiplome"/></webobject>
-						</li>
-						ou
-					</webobject>
-					<webobject name = "IsListEC">
-						<li>
-						<webobject name = "HasInscritsEC"><webobject name = "MailToEc">Envoie aux adresses individuelles des étudiants de l'EC</webobject></webobject>
-						</li>
-					</webobject>
-					<webobject name = "IsNotListEC">
-						<li>
-						<webobject name = "HasInscrits"><webobject name = "MailTo">Envoie aux adresses individuelles des étudiants</webobject></webobject>
-						</li>
-					</webobject>						
-					</ul>
-		      	</fieldset>
-			</webobject>	
-			<webobject name = "errForm">	
-			  	<webobject name = "siEnvoiOk">
-						<span class=validee><webobject name = "messageEnvoiOk"/></span>
-						<webobject name = "btContinuerApresEnvoiOk"/>
-						<br>
-			  	</webobject>
-			  	<webobject name = "siErreur">
-						<span class= erreur><webobject name = "messageErreur"/></span>
-						<webobject name = "siAffBtContinuer">&nbsp;&nbsp;&nbsp;<webobject name = "btContinuer"/></webobject>
-						<webobject name = "siAffBtConfirmer">&nbsp;&nbsp;&nbsp;<webobject name = "btConfirmer"/></webobject>
-						<webobject name = "siAffBtRevenir">&nbsp;&nbsp;&nbsp;<webobject name = "btRevenir"/></webobject>
-						<br>
-				</webobject>
-			</webobject>
-	  <br>
- </fieldset>
+  <legend>
+    <b>Mail aux &eacute;tudiant inscrits &agrave; 
+      <webobject name = "typeEnvoi" />
+      :</b>
+  </legend>
+  <table>
+    <tr>
+      <td valign = "bottom">
+        <webobject name = "FormChoixTypeEnvoi">
+          <u>Envoyer un mail aux inscrits&nbsp;:</u>&nbsp; 
+          <webobject name = "RadioButton1" />
+          <webobject name = "GenericChoix1">&agrave; une formation...</webobject>
+          &nbsp;&nbsp; 
+          <webobject name = "RadioButton2" />
+          <webobject name = "GenericChoix2">&agrave; un EC...</webobject>
+          <br />
+        </webobject>
+      </td>
+    </tr>
+  </table>
+  <webobject name = "CondTypeFormation"> <webobject name = "PopUpMultiDiplAnnee" /> </webobject>
+  <webobject name = "CondTypeEc"> <webobject name = "PopUpMultiDiplSemEc" /> </webobject>
+  <webobject name = "CondDestinatairesChoisis">
+    <fieldset>
+      <legend>
+        <b>
+          Envoie de votre mail : 
+          <webobject name = "existeInscritsEc">
+            (<webobject name = "nbInscEc" />
+            destinataires) 
+          </webobject>
+        </b>
+      </legend>
+      <webobject name = "MailForm">
+        <table>
+          <tr valign = "top">
+            <td>Sujet : </td>
+            <td><webobject name = "champSujet" /> </td>
+          </tr>
+          <tr valign = "top">
+            <td>Texte : </td>
+            <td><webobject name = "champTexte" /> </td>
+          </tr>
+        </table>
+        <webobject name = "BoutonValider" />&nbsp;&nbsp;&nbsp;<webobject name = "BoutonAnnuler" />
+        <br />
+      </webobject>
+      <br />
+      <i>Pour l'envoi de mails avec pi&egrave;ces jointes, utilisez votre client de messagerie habituel en cliquant sur le lien :</i>
+      <ul>
+        <webobject name = "CondTypeFormation">
+          <li>
+            <webobject name = "mailtoListeDiplome">Envoie &agrave; la liste de diffusion <webobject name = "codeListeDiplome" /></webobject>
+          </li>
+          ou 
+        </webobject>
+        <webobject name = "IsListEC">
+          <li>
+            <webobject name = "HasInscritsEC">
+              <webobject name = "MailToEc">Envoie aux adresses individuelles des &eacute;tudiants de l'EC</webobject>
+            </webobject>
+          </li>
+        </webobject>
+        <webobject name = "IsNotListEC">
+          <li>
+            <webobject name = "HasInscrits">
+              <webobject name = "MailTo">Envoie aux adresses individuelles des &eacute;tudiants</webobject>
+            </webobject>
+          </li>
+        </webobject>
+      </ul>
+    </fieldset>
+  </webobject>
+  <webobject name = "errForm">
+    <webobject name = "siEnvoiOk">
+      <span class = "validee"><webobject name = "messageEnvoiOk" /></span>
+      <webobject name = "btContinuerApresEnvoiOk" />
+      <br />
+    </webobject>
+    <webobject name = "siErreur">
+      <span class = "erreur"><webobject name = "messageErreur" /></span>
+      <webobject name = "siAffBtContinuer">&nbsp;&nbsp;&nbsp;<webobject name = "btContinuer" /></webobject>
+      <webobject name = "siAffBtConfirmer">&nbsp;&nbsp;&nbsp;<webobject name = "btConfirmer" /></webobject>
+      <webobject name = "siAffBtRevenir">&nbsp;&nbsp;&nbsp;<webobject name = "btRevenir" /></webobject>
+      <br />
+    </webobject>
+  </webobject>
+  <br />
+</fieldset>

@@ -36,5 +36,7 @@
 	<classpathentry kind="lib" path="Libraries/JasperLib/itext-2.1.7.jar"/>
 	<classpathentry kind="lib" path="Libraries/JasperLib/bcmail-jdk14-139.jar"/>
 	<classpathentry kind="lib" path="Libraries/JasperLib/bcprov-jdk14-140.jar"/>
+	<classpathentry kind="con" path="WOFramework/FwkCktlAjaxWebExt"/>
+	<classpathentry kind="con" path="WOFramework/FwkCktlThemes"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

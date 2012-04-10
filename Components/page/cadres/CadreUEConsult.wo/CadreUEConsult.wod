@@ -20,10 +20,6 @@ GCcoulTexte5: WOGenericContainer {
 	CLASS = monUeCtrlr.coulTexteCumulEcts;
 }
 
-Generic1: WOGenericContainer {
-	elementName = ecEnCours.miseEnFormeStatut;
-}
-
 Generic2: WOGenericContainer {
 	elementName = "span";
 	class = ecEnCours.miseEnFormeStatut;
@@ -73,10 +69,4 @@ String6: WOString {
 
 String9: WOString {
 	value = ecEnCours.stPointsECTS;
-}
-
-flyOverTypeEc: WOHyperlink {
-	href = "javascript:void(0);";
-	onMouseOut = "return nd();";
-	onMouseOver = ecEnCours.msgOlTypeEc;
 }

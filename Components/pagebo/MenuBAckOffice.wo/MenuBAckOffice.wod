@@ -76,27 +76,12 @@ GCBordG: WOGenericContainer {
 	height = 450;
 }
 
-GContBandeau: WOGenericContainer {
-
-	elementName = "TD";
-
-	align = "LEFT";
-	valign = "TOP";
-	colspan = "2";
-}
-
 GenericContainer10: WOGenericContainer {
 	background = session.imgFinOnglets;
 	elementName = "TD";
 	ALIGN="LEFT";
 	HEIGHT="54";
 	COLSPAN="2";
-}
-
-ImBordDH: WOImage {
-	height = 58;
-	src = "images/cadreSeul_HautD.gif";
-	width = 25;
 }
 
 ImBordDH2: WOImage {
@@ -144,9 +129,6 @@ PopUpButton1: WOPopUpButton {
 	list = anneesUniv;
 	onChange = fctSubmitChange;
 	selection = anneeChoisie;
-}
-
-bandeauCtrl: BandeauControle {
 }
 
 imFinLigneOnglets: WOImage {

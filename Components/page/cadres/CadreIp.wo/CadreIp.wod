@@ -232,12 +232,6 @@ Generic1: WOGenericContainer {
 	SIZE = 4;
 }
 
-Generic2: WOGenericContainer {
-	elementName = "FONT";
-	COLOR = inscSem.coulStatutInscSemestre;
-	SIZE = 4;
-}
-
 Generic3: WOGenericContainer {
 	elementName = "FONT";
 	COLOR = inscSem.coulStatutInscSemestre;
@@ -264,11 +258,6 @@ Hyperlink3: WOHyperlink {
 
 Hyperlink4: WOHyperlink {
 	action = imprChoixPedag;
-}
-
-
-Hyperlink7: WOHyperlink {
-	action = demanderModif;
 }
 
 Image1: WOImage {
@@ -383,10 +372,6 @@ SubmitButton6: WOSubmitButton {
 
 jsPourExplicationTexte: WOJavaScript {
 	scriptSource = "scripts/overlib_mini.js";
-}
-
-jsPourExplicationTexteParam: WOJavaScript {
-	scriptString = "var ol_delay = 300;\nvar ol_width = 200;\nvar ol_offsetx = 15;\nvar ol_offsety = 15;\nvar ol_css = CSSCLASS;\nvar ol_bgclass = \"previewTitleBox\"; \r\nvar ol_captionfontclass = \"previewTitleText\"; \r\nvar ol_fgclass = \"previewContentBox\"; \r\nvar ol_textfontclass = \"previewContentText\";";
 }
 
 lesUEenConsult: CadreUEConsult {

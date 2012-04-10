@@ -19,9 +19,6 @@ Conditional3: WOConditional {
 	negate = true;
 }
 
-FormDetailPeriodes: Unknown {
-}
-
 FormDetailPeriodesI: WOForm {
 	multipleSubmit = true;
 	name = nomFormChoixAutoRnI;

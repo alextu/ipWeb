@@ -32,14 +32,6 @@ imFillerAfter: WOImage {
 	width = 15;
 }
 
-imFinLigneOnglets: WOImage {
-	alt = "F";
-	border = 0;
-	height = 54;
-	src = "images/cadreSeul_HautD.gif";
-	width = 9;
-}
-
 sOM1: WOString {
 	value = uneOption.titreOM;
 }

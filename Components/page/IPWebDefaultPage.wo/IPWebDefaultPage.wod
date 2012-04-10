@@ -9,9 +9,3 @@ lienCSSNC : ERXStyleSheet {
 
 pageContent: WOComponentContent {
 }
-
-strTitle: WOString {
-  value = ^pageTitle;
-  escapeHTML = false;
-  valueWhenEmpty = "";
-}

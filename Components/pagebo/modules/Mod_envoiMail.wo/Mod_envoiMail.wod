@@ -108,11 +108,6 @@ siErreur : WOConditional {
   condition = existeMessageErreur;
 }
 
-siPasErreur : WOConditional {
-  condition = existeMessageErreur;
-  negate = true;
-}
-
 messageErreur : WOString {
 	value = messageErreur;
 }
@@ -174,13 +169,6 @@ existeInscritsEc : WOConditional {
 
 nbInscEc : WOString {
   value = monEnvoiMailCtrl.nbreInscritsEC;
-}
-
-
-MailImg : WOImage {
-	filename = "edit.png";
-	alt = "Leur envoyer un email";
-	title = "Leur envoyer un email";
 }
 
 MailTo : WOHyperlink {
