@@ -15,9 +15,9 @@ import org.cocktail.fwkcktlwebapp.server.CktlMailBus;
 import org.cocktail.fwkcktlwebapp.server.CktlResourceManager;
 import org.cocktail.fwkcktlwebapp.server.CktlWebApplication;
 import org.cocktail.fwkcktlwebapp.server.components.CktlAlertPage;
+import org.cocktail.fwkcktlwebapp.server.version.A_CktlVersion;
 import org.cocktail.ipweb.serveur.controlleur.ImprJasper;
 
-import com.webobjects.appserver.WOApplication;
 import com.webobjects.appserver.WOComponent;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOResponse;
@@ -121,6 +121,16 @@ public class Application extends CktlWebApplication {
 		return modeDebug.booleanValue();
 	}
 
+    @Override
+    public A_CktlVersion appCktlVersion() {
+        return new Version();
+    }
+    
+    @Override
+    public A_CktlVersion appCktlVersionDb() {
+        return new VersionDatabase();
+    }
+	
 	public String copyright()
 	{
 		String message = "&copy; 2006-2012 Universit\351 de la Nouvelle-Cal\351donie";

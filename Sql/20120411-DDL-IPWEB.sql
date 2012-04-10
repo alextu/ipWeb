@@ -1,0 +1,31 @@
+-- Création de la table pour le versionning
+CREATE TABLE IP_WEB.DB_VERSION
+  (
+    DBV_ID      NUMBER(4,0) NOT NULL ENABLE,
+    DBV_LIBELLE VARCHAR2(15) NOT NULL ENABLE,
+    DBV_DATE DATE NOT NULL ENABLE,
+    DBV_INSTALL DATE,
+    DBV_COMMENT VARCHAR2(2000),
+    CONSTRAINT PK_DB_VERSION PRIMARY KEY (DBV_ID) USING INDEX TABLESPACE SCOL_INDX ENABLE
+  )
+  TABLESPACE "SCOL" ;
+COMMENT ON COLUMN IP_WEB.DB_VERSION.DBV_ID
+IS
+  'Identifiant de la version';
+COMMENT ON COLUMN GRHUM.DB_VERSION.DBV_LIBELLE
+IS
+  'Libelle de la version';
+COMMENT ON COLUMN GRHUM.DB_VERSION.DBV_DATE
+IS
+  'Date de release de la version';
+COMMENT ON COLUMN GRHUM.DB_VERSION.DBV_INSTALL
+IS
+  'Date d''installation de la version. Si non renseigne, la version n''est pas completement installee.';
+COMMENT ON COLUMN GRHUM.DB_VERSION.DBV_COMMENT
+IS
+  'Le commentaire : une courte description de cette version de la base de donnees.';
+COMMENT ON TABLE GRHUM.DB_VERSION
+IS
+  'Historique des versions du schema du user GRHUM';
+  
+CREATE SEQUENCE IP_WEB.DB_VERSION_SEQ MINVALUE 1 MAXVALUE 999999999999999999999999999 INCREMENT BY 1 START WITH 53 NOCACHE NOORDER NOCYCLE ;

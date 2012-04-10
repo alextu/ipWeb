@@ -1,0 +1,2 @@
+-- Création de la table pour le versionning
+INSERT INTO IP_WEB.DB_VERSION (DBV_ID, DBV_LIBELLE, DBV_DATE, DBV_INSTALL, DBV_COMMENT) VALUES (IP_WEB.DB_VERSION_SEQ.nextVal, '2.4.0.0', '11/04/2012', sysdate, 'Début du versionning');
