@@ -13,12 +13,12 @@
 	<parameter name="MECCODE" class="java.lang.String"/>
 	<parameter name="LOGO_PATH" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[select v.FORMATION_ABREVIATION as FILIERE, v.ADR_NOM || ' ' || initcap(v.ADR_PRENOM) as NOM_PRENOM
+		<![CDATA[select distinct * from (select v.FORMATION_ABREVIATION as FILIERE, v.ADR_NOM || ' ' || initcap(v.ADR_PRENOM) as NOM_PRENOM
 from ip_web.v_liste_insc_ec v
 where v.MEC_KEY = $P{MECKEY}
 and   v.IMREC_DISPENSE <> 14
-and   v.FANN_KEY = $P{ANNEE}
-order by v.ADR_NOM, v.ADR_PRENOM]]>
+and   v.FANN_KEY = $P{ANNEE})
+order by NOM_PRENOM]]>
 	</queryString>
 	<field name="FILIERE" class="java.lang.String"/>
 	<field name="NOM_PRENOM" class="java.lang.String"/>

@@ -131,18 +131,8 @@
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
             valueClassName = NSNumber; 
             valueType = i; 
-        }, 
-        {
-            columnName = "MSEM_KEY"; 
-            externalType = NUMBER; 
-            name = msemKey; 
-            precision = 12; 
-            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
-            valueClassName = NSNumber; 
-            valueType = i; 
         }
     ); 
-    attributesUsedForLocking = (etatRN, idiplAnneeSuivie); 
     className = EOGenericRecord; 
     classProperties = (
         adrNom, 
@@ -158,8 +148,7 @@
         imrecEtat, 
         imrecSession1, 
         imrecSession2, 
-        mailComplet, 
-        msemKey
+        mailComplet
     ); 
     externalName = "V_LISTE_INSC_EC_MAIL"; 
     internalInfo = {
@@ -173,10 +162,9 @@
             imrecDispense, 
             imrecSession1, 
             imrecSession2, 
-            mecKey, 
-            msemKey
+            mecKey
         ); 
     }; 
     name = VListeInscEc; 
-    primaryKeyAttributes = (etudNumero, fspnKey, mecKey, msemKey); 
+    primaryKeyAttributes = (etudNumero, fspnKey, idiplAnneeSuivie, mecKey); 
 }

@@ -13,7 +13,8 @@
 		<defaultValueExpression><![CDATA[new Integer(7631)]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[select v.MREC_KEY, v.MEC_KEY, v.FANN_KEY, ec.MEC_CODE, ec.MEC_LIBELLE,
+		<![CDATA[select distinct * from (
+select v.MREC_KEY, v.MEC_KEY, v.FANN_KEY, ec.MEC_CODE, ec.MEC_LIBELLE,
        v.FORMATION_ABREVIATION, v.ADR_NOM, initcap(v.ADR_PRENOM) ADR_PRENOM,
        decode(h.HIST_BOURSE,0,'',7,'',8,'', b.LIB_TYPE_BOURSE) TYPE_BOURSE,
        v.IMREC_SESSION1 M_S1, v.IMREC_SESSION2 M_S2
@@ -26,7 +27,8 @@ and   h.HIST_BOURSE = b.CODE_BOURSE
 and   ec.MEC_KEY = v.MEC_KEY
 and   v.MEC_KEY = $P{MECKEY}
 and   v.IMREC_DISPENSE <> 14
-order by v.ADR_NOM, v.ADR_PRENOM]]>
+)
+order by ADR_NOM, ADR_PRENOM]]>
 	</queryString>
 	<field name="MREC_KEY" class="java.math.BigDecimal"/>
 	<field name="MEC_KEY" class="java.math.BigDecimal"/>
@@ -37,8 +39,8 @@ order by v.ADR_NOM, v.ADR_PRENOM]]>
 	<field name="ADR_NOM" class="java.lang.String"/>
 	<field name="ADR_PRENOM" class="java.lang.String"/>
 	<field name="TYPE_BOURSE" class="java.lang.String"/>
-	<field name="M_S1" class="java.lang.String"/>
-	<field name="M_S2" class="java.lang.String"/>
+	<field name="M_S1" class="java.math.BigDecimal"/>
+	<field name="M_S2" class="java.math.BigDecimal"/>
 	<variable name="nbre_row" class="java.lang.Integer" calculation="Count">
 		<variableExpression><![CDATA[$F{FANN_KEY}]]></variableExpression>
 	</variable>
