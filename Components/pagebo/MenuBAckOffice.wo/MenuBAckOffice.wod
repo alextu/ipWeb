@@ -151,3 +151,7 @@ moduleIpEtud: Mod_IpEtud {
 scriptCacheDetail: WOJavaScript {
 	scriptSource = "scripts/cacheDetailsDiv.js";
 }
+
+Version : WOString {
+	value = application.appCktlVersion.txtVersion;
+}
