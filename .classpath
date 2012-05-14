@@ -19,7 +19,6 @@
 	<classpathentry kind="lib" path="Libraries/JasperLib/commons-javaflow-20060411.jar"/>
 	<classpathentry kind="lib" path="Libraries/JasperLib/commons-logging-1.0.2.jar"/>
 	<classpathentry kind="lib" path="Libraries/JasperLib/commons-logging-api-1.0.2.jar"/>
-	<classpathentry kind="lib" path="Libraries/JasperLib/log4j-1.2.9.jar"/>
 	<classpathentry kind="lib" path="Libraries/JasperLib/org-netbeans-core.jar"/>
 	<classpathentry kind="var" path="NEXT_LOCAL_ROOT/Library/WebObjects/Extensions/axis-ant.jar"/>
 	<classpathentry kind="var" path="NEXT_LOCAL_ROOT/Library/WebObjects/Extensions/axis.jar"/>
