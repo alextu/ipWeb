@@ -40,6 +40,7 @@ import com.webobjects.foundation.NSNotificationCenter;
 import com.webobjects.foundation.NSTimeZone;
 import com.webobjects.foundation.NSTimestamp;
 import com.webobjects.foundation.NSTimestampFormatter;
+import com.webobjects.foundation._NSUtilities;
 
 import er.extensions.appserver.ERXApplication;
 import er.extensions.eof.ERXEC;
@@ -121,6 +122,11 @@ public class Application extends CktlWebApplication {
 		return modeDebug.booleanValue();
 	}
 
+	@Override
+	public String mainModelName() {
+		return "ipWeb";
+	}
+	
     @Override
     public A_CktlVersion appCktlVersion() {
         return new Version();
