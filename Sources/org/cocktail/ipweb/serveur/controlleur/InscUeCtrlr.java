@@ -172,20 +172,22 @@ public class InscUeCtrlr {
 	// soit qu'elle ait ete acquise prededemment, 
 	// soit qu'elle possede des EC pour lesquelles il y a des IP de ScolPedagogie avec une dispense ! 
 	public boolean ueAyantDispense(Integer leMsemKey) {
-	    boolean res = false;
-	    // l'UE a pour parent le semestre qui nous interesse...
-	    if (msemKey.compareTo(leMsemKey)==0) {
-		// si l'UE est deje validee, alors on a notre reponse :-))
-		res = ueDejaValidee;
-		// faire le tour des EC ayant des IP...
-		java.util.Enumeration e = listeEcIpCt.objectEnumerator();
-		while (!res && e.hasMoreElements()) {
-		    InscEcCtrlr ecCt = (InscEcCtrlr)e.nextElement();
-		    if (ecCt.isEcBloque() && (ecCt.isEcDejaValide() || ecCt.isEcAvecNote()) )
-			res = true;
+		boolean res = false;
+		// l'UE a pour parent le semestre qui nous interesse...
+		if (msemKey.compareTo(leMsemKey)==0) {
+			// si l'UE est deje validee, alors on a notre reponse :-))
+			res = ueDejaValidee;
+			// faire le tour des EC ayant des IP...
+			if (listeEcIpCt != null) {
+				java.util.Enumeration e = listeEcIpCt.objectEnumerator();
+				while (!res && e.hasMoreElements()) {
+					InscEcCtrlr ecCt = (InscEcCtrlr)e.nextElement();
+					if (ecCt.isEcBloque() && (ecCt.isEcDejaValide() || ecCt.isEcAvecNote()) )
+						res = true;
+				}
+			}
 		}
-	    }
-	    return res;
+		return res;
 	}
 	
 	public InscSemestreCtrlr getInscSemCt() { return inscSemCt; }
