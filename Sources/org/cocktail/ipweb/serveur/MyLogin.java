@@ -80,7 +80,7 @@ public class MyLogin extends CktlWebComponent {
     
     public WOComponent goCas() {
     	WORedirect page =(WORedirect)pageWithName("WORedirect");
-    	page.setUrl(DirectAction.getLoginActionURL(this.context(),true,null,false,null));
+    	page.setUrl(DirectAction.getLoginActionURL(this.context(), false,null,false,null));
         return page;
     }
     

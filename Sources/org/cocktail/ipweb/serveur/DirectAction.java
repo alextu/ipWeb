@@ -56,7 +56,9 @@ public class DirectAction extends CktlWebAction {
     //Methode pour le CAS
     
     //Tout ok
-    public WOActionResults loginCasSuccessPage(String netId) {
+	@Override
+	public WOActionResults loginCasSuccessPage(String netId,
+			NSDictionary actionParams) {
 		CktlUserInfoDB user = new CktlUserInfoDB(cktlApp.dataBus());
 		user.compteForLogin(netId,null,true);
 //		LRLog.trace("pwd = "+arg0.password);
@@ -108,13 +110,6 @@ public class DirectAction extends CktlWebAction {
 	 */
 	public WOActionResults loginNoCasPage() {
 		// TODO Raccord de m�thode auto-g�n�r�
-		return null;
-	}
-
-	@Override
-	public WOActionResults loginCasSuccessPage(String netid,
-			NSDictionary actionParams) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
