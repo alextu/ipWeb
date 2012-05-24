@@ -11,8 +11,8 @@ import com.webobjects.foundation.NSDictionary;
 
 public class ScolMaquetteAp extends _ScolMaquetteAp {
   private static Logger log = Logger.getLogger(ScolMaquetteAp.class);
-  public static final int MAX_INSC_TD = 30;
-  public static final int MAX_INSC_TP = 50;
+  public static final int MAX_INSC_TD = 45;
+  public static final int MAX_INSC_TP = 25;
   
   public static NSArray fetchTpsAndTdsForEc(EOEditingContext ec, Integer mecKey) {
 	  EOQualifier qual = EOQualifier.qualifierWithQualifierFormat("scolMaquetteRepartitionAps.mecKey = %@ and (mhcoCode = 'TD' or mhcoCode = 'TP')", new NSArray(mecKey));

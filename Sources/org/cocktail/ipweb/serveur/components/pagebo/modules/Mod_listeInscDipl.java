@@ -462,7 +462,7 @@ public class Mod_listeInscDipl extends CktlWebComponent {
     		groupCount = ScolMaquetteAp.countInscForAp(session().defaultEditingContext(), (Integer)eoEcSelected.valueForKey("mecKey"), currentAp.mapKey());
     		groupCountForAp.setObjectForKey(groupCount, currentAp.mapKey());
     	}
-    	return (currentAp.isTD() && groupCount <= 30) || (currentAp.isTP() && groupCount <= 50);
+    	return (currentAp.isTD() && groupCount <= ScolMaquetteAp.MAX_INSC_TD) || (currentAp.isTP() && groupCount <= ScolMaquetteAp.MAX_INSC_TP);
     }
     
     public String titleForExtractionPdf() {
