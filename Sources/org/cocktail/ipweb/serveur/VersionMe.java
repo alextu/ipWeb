@@ -35,15 +35,15 @@ public final class VersionMe extends Object {
 	public static final String APPLICATION_STRID = "IPWEB";
     
 	// Version appli
-    public static final long SERIALVERSIONUID = 2400;
+    public static final long SERIALVERSIONUID = 2410;
     
     public static final int VERSIONNUMMAJ =     2;
     public static final int VERSIONNUMMIN =     4;
-    public static final int VERSIONNUMPATCH =   0;
+    public static final int VERSIONNUMPATCH =   1;
     public static final int VERSIONNUMBUILD =   0;
 	public static final int	VERSIONNUMRC = 0;
     
-    public static final String VERSIONDATE="11/04/2012";
+    public static final String VERSIONDATE="01/06/2012";
     public static final String COMMENT = null;
     
     

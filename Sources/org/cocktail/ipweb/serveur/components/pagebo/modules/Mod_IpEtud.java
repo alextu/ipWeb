@@ -125,7 +125,7 @@ public class Mod_IpEtud extends CktlWebComponent {
     	EOGenericRecord etudiant  = (EOGenericRecord)laNotif.userInfo().valueForKey("etudiant");
     	if (etudiant != null) {
     		etudNum = (Integer)etudiant.valueForKey("etudNumero");
-    		msemKey = (Integer)etudiant.valueForKey("msemKey");
+        	msemKey  = (Integer)laNotif.userInfo().valueForKey("msemKey");
     		changeEtudiant(); 
     	}
     }

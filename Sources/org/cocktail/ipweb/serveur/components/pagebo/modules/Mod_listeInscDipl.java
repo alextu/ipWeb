@@ -529,7 +529,7 @@ public class Mod_listeInscDipl extends CktlWebComponent {
     	
     	// avec en paramêtre à transmettre l'EO de l'étudiant choisi...
     	NSDictionary leDico;
-    	if (listeInscAuxEc) leDico = new NSDictionary(new Object[] {lInscritEC, new Boolean(detaillerIp)},new Object[] {"etudiant","detaillerIp"});
+    	if (listeInscAuxEc) leDico = new NSDictionary(new Object[] {lInscritEC, new Boolean(detaillerIp), msemKey},new Object[] {"etudiant","detaillerIp","msemKey"});
     	else leDico = new NSDictionary(new Object[] {lInscrit, new Boolean(detaillerIp)},new Object[] {"etudiant","detaillerIp"});
     	
     	((Session)session()).dderDetailIPEtudiant(leDico);
