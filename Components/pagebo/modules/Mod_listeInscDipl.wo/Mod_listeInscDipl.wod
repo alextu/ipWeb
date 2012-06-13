@@ -287,13 +287,13 @@ extractionExcelNotes: WOImage {
 extractionFeuillePresenceLnk : WOHyperlink {
 	action = extractionFeuillePresenceEC;
 	class = "button";
-	title = titleForExtractionPdf;
+	title = titleForExtractionFeuillePresence;
 }
 
 extractionFeuillePresence: WOImage {
-	title = titleForExtractionPdf;
-	filename = "images/iconePDF.gif";
-	style = "border:none;vertical-align:middle;";
+	title = titleForExtractionFeuillePresence;
+	filename = "images/xls_icone.jpg";
+	style = "border:none;vertical-align:middle;height:16px;width:16px;";
 }
 
 TdOuTp : WOString {

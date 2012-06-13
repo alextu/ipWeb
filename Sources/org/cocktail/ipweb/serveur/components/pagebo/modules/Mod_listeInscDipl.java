@@ -465,7 +465,7 @@ public class Mod_listeInscDipl extends CktlWebComponent {
     	return (currentAp.isTD() && groupCount <= ScolMaquetteAp.MAX_INSC_TD) || (currentAp.isTP() && groupCount <= ScolMaquetteAp.MAX_INSC_TP);
     }
     
-    public String titleForExtractionPdf() {
+    public String titleForExtractionFeuillePresence() {
     	return "Extraire les feuilles de présence au " + currentAp.mhcoCode() + " de cet EC...";
     }
     
@@ -585,13 +585,7 @@ public class Mod_listeInscDipl extends CktlWebComponent {
     // et non le contenu HTML d'une nouvelle page !
     public DownloadFic extractionFeuillePresenceEC()
     {
-    	DownloadFic nextPage;
-    	nextPage = (DownloadFic)(pageWithName("DownloadFic"));
-    	// On passe le photo controleur...
-    	boolean res = nextPage.initDownloadPDF(
-    			extraitFeuillePresenceEC(), "Feuille_Presence_" + mecCode + "_" + currentAp.mhcoCode() + ".pdf");
-    	if (!res) return null;
-    	else return nextPage;
+    	return imprimerDocXLS(extraitFeuillePresenceEC(), "Feuille_Presence_" + mecCode + "_" + currentAp.mhcoCode() + ".xls");
     }
     
     private NSData extraitFeuillePresenceEC() {
@@ -609,7 +603,7 @@ public class Mod_listeInscDipl extends CktlWebComponent {
 	    // PS : ne marche pas en dev
 	    URL logoPath = application().resourceManager().pathURLForResourceNamed("images/logo.png", null, null);
 	    parametres.put("LOGO_PATH", logoPath != null ? logoPath.getFile() : null);
-	    return ((Session)session()).imprimePDF("feuillePresenceEc.jasper", parametres);
+	    return ((Session)session()).imprimeXLS("feuillePresenceEc.jasper", parametres);
     }
     
     private String formatNomsIndividus(Iterable individus) {
